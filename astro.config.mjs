@@ -4,7 +4,6 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
 	site: 'https://lytos.org',
-	base: '/website',
 	integrations: [
 		starlight({
 			title: 'Lytos',
