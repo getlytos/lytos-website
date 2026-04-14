@@ -3,11 +3,11 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
-	site: 'https://le-socle.github.io',
+	site: 'https://lytos.org',
 	base: '/website',
 	integrations: [
 		starlight({
-			title: 'Le Socle',
+			title: 'Lytos',
 			logo: {
 				light: './src/assets/logo-light.svg',
 				dark: './src/assets/logo-dark.svg',
@@ -19,7 +19,7 @@ export default defineConfig({
 				fr: { label: 'Français', lang: 'fr' },
 			},
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/le-socle/socle' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/getlytos/lytos-method' },
 				{ icon: 'x.com', label: 'X', href: 'https://x.com/fred' },
 			],
 			sidebar: [
@@ -48,8 +48,8 @@ export default defineConfig({
 					label: 'CLI',
 					items: [
 						{ label: 'Overview', slug: 'cli/overview', translations: { fr: 'Vue d\'ensemble' } },
-						{ label: 'socle init', slug: 'cli/init' },
-						{ label: 'socle board', slug: 'cli/board' },
+						{ label: 'lytos init', slug: 'cli/init' },
+						{ label: 'lytos board', slug: 'cli/board' },
 					],
 				},
 				{
