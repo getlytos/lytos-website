@@ -3,8 +3,8 @@ title: Lytos
 description: A human-first method for working with AI agents.
 template: splash
 hero:
-  title: Your AI forgets everything. Lytos fixes that.
-  tagline: Give your AI agents persistent context, precise procedures, and verifiable quality criteria. One install. Everything in markdown. No vendor lock-in.
+  title: Your context. Your rules. Any model.
+  tagline: "Lytos is an AI-assisted development method that puts the developer — not the AI — at the center. Your intentions, your standards, your progress: everything lives in your Git repo. Portable, sovereign, model-independent."
   actions:
     - text: Get Started
       link: /en/getting-started/introduction/
@@ -17,65 +17,79 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## The problem
+## The sub-agent paradigm is a dead end
 
-Every AI session starts from scratch. You re-explain your project, your conventions, your constraints. The AI produces generic code. You repeat yourself. Sprint after sprint.
+Most current AI frameworks ask you to delegate to agents: an "architect" agent, a "tester" agent, a "reviewer" agent. The more you delegate, the less you control. Context scatters. Decisions become opaque. You lose control of your own project.
 
-**Giving your agent a persona doesn't fix this.** "You are a Senior Developer" changes the tone — not the quality.
+**Lytos makes the opposite choice.**
 
-What actually works: **structured context that persists.**
+No autonomous agents. No personas deciding for you. The AI stays a tool — powerful, but directed. You define the intent. You validate every step. The model executes. You govern.
 
 ---
 
-## The solution: 5 pillars, one directory
+## Your AI starts from zero every session
 
-`lytos init` creates a `.lytos/` directory in your project. Your AI reads it at the start of every session.
+Without structure, every conversation starts over. You re-explain the architecture. You repeat the constraints. You correct the same mistakes. The model generates generic code, disconnected from your real project.
+
+The result: hours lost reframing, inconsistencies piling up, and an AI that never truly understands your project.
+
+---
+
+## Your context belongs to you
+
+With classic cloud tools, your project context lives on their servers, in their formats, dependent on their APIs. Switching models means starting over.
+
+With Lytos, everything is Markdown in your Git repo. Your manifest, your standards, your project memory: version-controlled, portable, readable by any model.
+
+Claude today. GPT or Gemini tomorrow. Your context doesn't move.
+
+---
+
+## 5 pillars. One complete method.
+
+Lytos structures your collaboration with AI in five interlocking layers:
 
 <CardGrid>
   <Card title="Intent" icon="document">
-    Your project's constitution — the why, the stack, the constraints. The AI knows what it's building and why.
+    Your project's manifesto. Objective, scope, structural decisions. The AI knows *why* it codes, not just *what* to code.
   </Card>
   <Card title="Design" icon="puzzle">
-    9 reusable procedures — code review, testing, deployment, security. The AI follows steps, not vibes.
+    Your session playbooks. How to approach a code review, a refactor, a deployment. Reproducible workflows, tailored to your project.
   </Card>
   <Card title="Standards" icon="approve-check">
-    Quality criteria — 300 lines max, no magic numbers, tests required. Verifiable, not subjective.
+    Your quality rules. File size, naming, test coverage, forbidden patterns. The AI respects your requirements without being told twice.
   </Card>
   <Card title="Progress" icon="rocket">
-    Issues and sprint — a kanban board in markdown. The AI knows what to work on and what's blocked.
+    Your Git-native kanban. Tasks in progress, decisions made, sprint history. The AI knows where the project stands at every session.
   </Card>
   <Card title="Memory" icon="star">
-    Architecture decisions, patterns, bugs solved. The AI remembers what it learned — across sessions.
+    The project's living memory. Architecture, known bugs, emerging patterns, business context. What the AI must remember from one session to the next.
   </Card>
 </CardGrid>
 
 ---
 
-## 3 minutes to install
+## Operational in 2 minutes
 
 ```bash
-npx lytos-cli init
+npm install -g lytos-cli
+lyt init
 ```
 
-The CLI detects your stack, creates the `.lytos/` directory, and pre-fills the manifest. Then open your AI tool and say: **"Help me configure Lytos for this project."**
+`lyt init` generates the complete structure in your project: `manifest.md`, `skills/`, `rules/`, `issue-board/`, `memory/`. Everything in Markdown. Everything in your repo.
 
 ---
 
-## Works with everything
+## Works with your current setup
 
-- **Any language** — Python, TypeScript, Go, Rust, PHP, Swift...
-- **Any AI tool** — Claude Code, Cursor, Codex, and whatever comes next
-- **Any project size** — from solo side project to 50-person team
+Lytos is not another tool to learn. It's a layer of structure on top of what you already use.
 
----
+- **Claude Code** — native adapter included
+- **Cursor** — `.cursor/rules` generated automatically
+- **OpenAI / GPT** — system-prompt adapter included
+- **Gemini, Mistral, and all others** — Markdown is universal
 
-## Your knowledge belongs to you
-
-Everything is markdown. No API, no account, no telemetry. Your project context lives in git — not in a vendor's chat history.
-
-The day a model changes, a price increases, or a vendor pivots — you switch the engine. You don't start over.
-
-**[Read the manifesto →](/en/philosophy/manifesto/)**
+Your tools. Your models. Your method.
 
 ---
 

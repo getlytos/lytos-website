@@ -1,10 +1,10 @@
 ---
 title: Lytos
-description: Une méthode humain-IA pour travailler avec des agents IA.
+description: Une méthode de développement assisté par IA, souveraine et indépendante du modèle.
 template: splash
 hero:
-  title: Ton IA oublie tout. Lytos corrige ça.
-  tagline: Donne à tes agents IA un contexte persistant, des procédures précises, et des critères de qualité vérifiables. Une installation. Tout en markdown. Zéro vendor lock-in.
+  title: "Ton contexte. Tes règles. N'importe quel modèle."
+  tagline: "Lytos est une méthode de développement assisté par IA qui place le développeur — pas l'IA — au centre. Tes intentions, tes standards, ta progression : tout vit dans ton dépôt Git. Portable, souverain, indépendant du modèle."
   actions:
     - text: Commencer
       link: /fr/getting-started/introduction/
@@ -17,65 +17,79 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Le problème
+## Le paradigme des sub-agents est une impasse
 
-Chaque session IA repart de zéro. Tu réexpliques ton projet, tes conventions, tes contraintes. L'IA produit du code générique. Tu te répètes. Sprint après sprint.
+La majorité des frameworks IA actuels te demandent de déléguer à des agents : un agent "architecte", un agent "testeur", un agent "reviewer". Plus tu délègues, moins tu contrôles. Le contexte s'éparpille. Les décisions s'opacifient. Tu perds la main sur ton propre projet.
 
-**Donner un persona à ton agent ne résout pas ça.** "Tu es un développeur Senior" change le ton — pas la qualité.
+**Lytos fait le choix inverse.**
 
-Ce qui marche vraiment : **du contexte structuré qui persiste.**
+Pas d'agents autonomes. Pas de personas qui décident à ta place. L'IA reste un outil — puissant, mais dirigé. C'est toi qui définis l'intention. C'est toi qui valides chaque étape. Le modèle exécute. Toi, tu gouvernes.
 
 ---
 
-## La solution : 5 piliers, un répertoire
+## Ton IA recommence à zéro à chaque session
 
-`lytos init` crée un répertoire `.lytos/` dans ton projet. Ton IA le lit au début de chaque session.
+Sans structure, chaque conversation repart de zéro. Tu réexpliques l'architecture. Tu rappelles les contraintes. Tu corriges les mêmes erreurs. Le modèle génère du code générique, déconnecté de ton projet réel.
+
+Le résultat : des heures perdues à recadrer, des incohérences qui s'accumulent, et une IA qui ne comprend jamais vraiment ton projet.
+
+---
+
+## Ton contexte t'appartient
+
+Avec les outils cloud classiques, ton contexte projet vit dans leurs serveurs, dans leurs formats, dépendant de leurs APIs. Changer de modèle signifie tout recommencer.
+
+Avec Lytos, tout est en Markdown dans ton dépôt Git. Ton manifest, tes standards, ta mémoire de projet : version-contrôlés, portables, lisibles par n'importe quel modèle.
+
+Aujourd'hui Claude. Demain GPT ou Gemini. Ton contexte ne bouge pas.
+
+---
+
+## 5 piliers. Une méthode complète.
+
+Lytos structure ta collaboration avec l'IA en cinq couches qui s'emboîtent :
 
 <CardGrid>
   <Card title="Intent" icon="document">
-    La constitution du projet — le pourquoi, la stack, les contraintes. L'IA sait ce qu'elle construit et pourquoi.
+    Le manifeste de ton projet. Objectif, périmètre, décisions structurantes. L'IA sait *pourquoi* elle code, pas seulement *quoi* coder.
   </Card>
   <Card title="Design" icon="puzzle">
-    9 procédures réutilisables — code review, testing, déploiement, sécurité. L'IA suit des étapes, pas des intuitions.
+    Tes playbooks de session. Comment aborder une revue de code, une refacto, un déploiement. Des workflows reproductibles, adaptés à ton projet.
   </Card>
   <Card title="Standards" icon="approve-check">
-    Critères de qualité — 300 lignes max, pas de valeurs magiques, tests obligatoires. Vérifiable, pas subjectif.
+    Tes règles de qualité. Taille de fichiers, nommage, couverture de tests, patterns interdits. L'IA respecte tes exigences sans qu'on ait à les répéter.
   </Card>
   <Card title="Progress" icon="rocket">
-    Issues et sprint — un kanban board en markdown. L'IA sait sur quoi travailler et ce qui bloque.
+    Ton kanban Git-natif. Les tâches en cours, les décisions prises, l'historique des sprints. L'IA sait où en est le projet à chaque session.
   </Card>
   <Card title="Memory" icon="star">
-    Décisions d'architecture, patterns, bugs résolus. L'IA se souvient de ce qu'elle a appris — entre les sessions.
+    La mémoire vivante du projet. Architecture, bugs connus, patterns émergents, contexte métier. Ce que l'IA doit retenir d'une session à l'autre.
   </Card>
 </CardGrid>
 
 ---
 
-## 3 minutes pour installer
+## Opérationnel en 2 minutes
 
 ```bash
-npx lytos-cli init
+npm install -g lytos-cli
+lyt init
 ```
 
-Le CLI détecte ta stack, crée le répertoire `.lytos/`, et pré-remplit le manifest. Puis ouvre ton outil IA et dis : **"Aide-moi à configurer Lytos pour ce projet."**
+`lyt init` génère la structure complète dans ton projet : `manifest.md`, `skills/`, `rules/`, `issue-board/`, `memory/`. Tout en Markdown. Tout dans ton repo.
 
 ---
 
-## Compatible avec tout
+## Fonctionne avec ton setup actuel
 
-- **Tout langage** — Python, TypeScript, Go, Rust, PHP, Swift...
-- **Tout outil IA** — Claude Code, Cursor, Codex, et tout ce qui viendra
-- **Toute taille de projet** — du side project solo à l'équipe de 50 personnes
+Lytos n'est pas un outil de plus à apprendre. C'est une couche de structure qui s'ajoute à ce que tu utilises déjà.
 
----
+- **Claude Code** — adaptateur natif inclus
+- **Cursor** — `.cursor/rules` généré automatiquement
+- **OpenAI / GPT** — adaptateur system-prompt inclus
+- **Gemini, Mistral, et tous les autres** — le Markdown est universel
 
-## Ton savoir t'appartient
-
-Tout est du markdown. Pas d'API, pas de compte, pas de télémétrie. Ton contexte projet vit dans git — pas dans l'historique de chat d'un vendor.
-
-Le jour où un modèle change, un prix augmente, ou un vendor pivote — tu changes le moteur. Tu ne recommences pas à zéro.
-
-**[Lire le manifeste →](/fr/philosophy/manifesto/)**
+Tes outils. Tes modèles. Ta méthode.
 
 ---
 
