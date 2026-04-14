@@ -10,7 +10,7 @@ Choisis le chemin qui correspond à ta façon de travailler :
 ### 1. CLI (développeurs avec un terminal)
 
 ```bash
-npm install -g lytos
+npm install -g lytos-cli
 lytos init
 ```
 

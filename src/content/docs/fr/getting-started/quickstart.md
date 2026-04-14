@@ -8,7 +8,7 @@ description: Démarrer avec Lytos en 5 minutes.
 ### Avec le CLI (recommandé)
 
 ```bash
-npm install -g lytos
+npm install -g lytos-cli
 lytos init
 ```
 

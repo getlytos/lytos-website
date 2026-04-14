@@ -10,7 +10,7 @@ Choose the path that fits your workflow:
 ### 1. CLI (developers with a terminal)
 
 ```bash
-npm install -g lytos
+npm install -g lytos-cli
 lytos init
 ```
 
