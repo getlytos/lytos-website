@@ -3,8 +3,8 @@ title: Lytos
 description: Une méthode humain-IA pour travailler avec des agents IA.
 template: splash
 hero:
-  title: Lytos
-  tagline: Une méthode humain-IA pour travailler avec des agents IA. Skills, Memory et Rules d'abord — pas seulement des personas.
+  title: Ton IA oublie tout. Lytos corrige ça.
+  tagline: Donne à tes agents IA un contexte persistant, des procédures précises, et des critères de qualité vérifiables. Une installation. Tout en markdown. Zéro vendor lock-in.
   actions:
     - text: Commencer
       link: /fr/getting-started/introduction/
@@ -17,22 +17,62 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Les 5 piliers
+## Le problème
+
+Chaque session IA repart de zéro. Tu réexpliques ton projet, tes conventions, tes contraintes. L'IA produit du code générique. Tu te répètes. Sprint après sprint.
+
+**Donner un persona à ton agent ne résout pas ça.** "Tu es un développeur Senior" change le ton — pas la qualité.
+
+Ce qui marche vraiment : **du contexte structuré qui persiste.**
+
+---
+
+## La solution : 5 piliers, un répertoire
+
+`lytos init` crée un répertoire `.lytos/` dans ton projet. Ton IA le lit au début de chaque session.
 
 <CardGrid>
   <Card title="Intent" icon="document">
-    La constitution du projet — le pourquoi, la stack, les principes.
+    La constitution du projet — le pourquoi, la stack, les contraintes. L'IA sait ce qu'elle construit et pourquoi.
   </Card>
   <Card title="Design" icon="puzzle">
-    Des procédures réutilisables — code review, testing, déploiement. Des étapes, pas des intuitions.
+    9 procédures réutilisables — code review, testing, déploiement, sécurité. L'IA suit des étapes, pas des intuitions.
   </Card>
   <Card title="Standards" icon="approve-check">
-    Des critères de qualité — vérifiables, pas subjectifs.
+    Critères de qualité — 300 lignes max, pas de valeurs magiques, tests obligatoires. Vérifiable, pas subjectif.
   </Card>
   <Card title="Progress" icon="rocket">
-    Les issues et le sprint — ce qui avance, ce qui bloque.
+    Issues et sprint — un kanban board en markdown. L'IA sait sur quoi travailler et ce qui bloque.
   </Card>
   <Card title="Memory" icon="star">
-    Un cerveau persistant — l'IA se souvient entre les sessions.
+    Décisions d'architecture, patterns, bugs résolus. L'IA se souvient de ce qu'elle a appris — entre les sessions.
   </Card>
 </CardGrid>
+
+---
+
+## 3 minutes pour installer
+
+```bash
+npx lytos-cli init
+```
+
+Le CLI détecte ta stack, crée le répertoire `.lytos/`, et pré-remplit le manifest. Puis ouvre ton outil IA et dis : **"Aide-moi à configurer Lytos pour ce projet."**
+
+---
+
+## Compatible avec tout
+
+- **Tout langage** — Python, TypeScript, Go, Rust, PHP, Swift...
+- **Tout outil IA** — Claude Code, Cursor, Codex, et tout ce qui viendra
+- **Toute taille de projet** — du side project solo à l'équipe de 50 personnes
+
+---
+
+## Ton savoir t'appartient
+
+Tout est du markdown. Pas d'API, pas de compte, pas de télémétrie. Ton contexte projet vit dans git — pas dans l'historique de chat d'un vendor.
+
+Le jour où un modèle change, un prix augmente, ou un vendor pivote — tu changes le moteur. Tu ne recommences pas à zéro.
+
+**[Lire le manifeste →](/fr/philosophy/manifesto/)**
