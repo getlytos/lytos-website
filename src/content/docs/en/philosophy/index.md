@@ -3,4 +3,4 @@ title: uphilosophy
 description: Coming soon.
 ---
 
-This section is being written. Check the [GitHub repo](https://github.com/le-socle/socle) for the latest content.
+This section is being written. Check the [GitHub repo](https://github.com/getlytos/lytos-method) for the latest content.
