@@ -23,6 +23,8 @@ The manifest is a single file — `manifest.md` — placed at the root of `.lyto
 
 ## Why it matters
 
+> *"Delegating to AI without structure is outsourcing without a brief."*
+
 Without a manifest, an AI agent produces generic code. It doesn't know if your project is a library or a SaaS, if you prefer REST or GraphQL, if you deploy to AWS or a Raspberry Pi.
 
 The manifest is read at the start of **every session**. It's the first thing the agent loads, before skills, rules, or memory.

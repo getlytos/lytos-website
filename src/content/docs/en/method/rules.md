@@ -5,7 +5,9 @@ description: Non-negotiable quality criteria — Standards, the third pillar of 
 
 Rules are the third pillar of Lytos: **Standards**.
 
-Rules define what "well done" means. They are verifiable criteria, not vague recommendations. An AI agent reads them before every task and applies them without exception.
+Rules define what "well done" means. They are verifiable criteria, not vague recommendations.
+
+> *"What can't be verified won't be respected."* An AI agent reads them before every task and applies them without exception.
 
 ## Default rules
 

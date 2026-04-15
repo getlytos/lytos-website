@@ -5,6 +5,8 @@ description: Understand how you and your AI work together with Lytos — in 2 mi
 
 ## You talk. The AI works. Lytos keeps track.
 
+> *"Delegating to AI without structure is outsourcing without a brief."*
+
 That's the whole idea. You describe what you want to build. The AI creates tasks, codes, tests, and documents. Lytos makes sure nothing is lost between sessions.
 
 ---

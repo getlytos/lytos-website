@@ -23,6 +23,8 @@ Le manifest est un seul fichier — `manifest.md` — placé à la racine de `.l
 
 ## Pourquoi c'est important
 
+> *"Déléguer à l'IA sans structure, c'est sous-traiter sans brief."*
+
 Sans manifest, un agent IA produit du code générique. Il ne sait pas si ton projet est une bibliothèque ou un SaaS, si tu préfères REST ou GraphQL, si tu déploies sur AWS ou un Raspberry Pi.
 
 Le manifest est lu au début de **chaque session**. C'est la première chose que l'agent charge, avant les skills, les rules ou la memory.

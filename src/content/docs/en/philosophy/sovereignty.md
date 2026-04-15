@@ -37,4 +37,6 @@ The AI is an engine. Engines are swapped. The foundation is what persists.
 
 ## Your project knowledge belongs to you. Not to a vendor.
 
+> *"Choose your AI. Don't belong to it."*
+
 It runs on Claude Code today. It will run on tomorrow's model. It can run on a local LLM if a vendor's conditions become unacceptable.

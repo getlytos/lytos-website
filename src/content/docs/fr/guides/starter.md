@@ -5,6 +5,8 @@ description: Comprends comment toi et ton IA travaillez ensemble avec Lytos — 
 
 ## Tu parles. L'IA travaille. Lytos garde la trace.
 
+> *"Déléguer à l'IA sans structure, c'est sous-traiter sans brief."*
+
 C'est toute l'idée. Tu décris ce que tu veux construire. L'IA crée les tâches, code, teste et documente. Lytos s'assure que rien n'est perdu entre les sessions.
 
 ---

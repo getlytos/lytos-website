@@ -59,6 +59,8 @@ Each cortex file covers a domain:
 
 ## Why it matters
 
+> *"Quality doesn't come from the prompt. It comes from context."*
+
 Without memory, the AI makes the same mistakes twice. It suggests patterns you've already rejected. It doesn't know that you tried Redis and switched to PostgreSQL for good reasons.
 
 Memory is what makes Lytos **sovereign** — your project knowledge lives in files you own, not in a vendor's conversation history.

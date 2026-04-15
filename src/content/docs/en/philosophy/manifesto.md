@@ -3,6 +3,8 @@ title: Manifesto
 description: The founding philosophy of Lytos.
 ---
 
+> *"A project without process is a conversation. Not a delivery."*
+
 ## The observation
 
 The AI industry copies human organization — agents with personas, roles, titles. It's comforting. It's not the most robust mechanism for quality, memory, or consistency.

@@ -5,7 +5,9 @@ description: Les critères de qualité non-négociables — Standards, le troisi
 
 Les rules sont le troisième pilier de Lytos : **Standards**.
 
-Les rules définissent ce que "bien fait" signifie. Ce sont des critères vérifiables, pas des recommandations vagues. Un agent IA les lit avant chaque tâche et les applique sans exception.
+Les rules définissent ce que "bien fait" signifie. Ce sont des critères vérifiables, pas des recommandations vagues.
+
+> *"Ce qui ne se vérifie pas ne se respecte pas."* Un agent IA les lit avant chaque tâche et les applique sans exception.
 
 ## Rules par défaut
 

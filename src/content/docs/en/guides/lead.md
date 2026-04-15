@@ -161,3 +161,5 @@ Each sprint leaves behind:
 After 5 sprints, your AI is not the same AI. It has your project's context, your team's decisions, your domain knowledge. It doesn't guess anymore — it knows.
 
 **That's the lead's real job: build a system that gets smarter over time.**
+
+> *"The human doesn't write every line. They define the world."*

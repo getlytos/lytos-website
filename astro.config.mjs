@@ -41,6 +41,7 @@ export default defineConfig({
 						{ label: 'Memory', slug: 'method/memory', translations: { fr: 'Memory' } },
 						{ label: 'Issue Board', slug: 'method/issue-board' },
 						{ label: 'Orchestrator', slug: 'method/orchestrator', translations: { fr: 'Orchestrateur' } },
+						{ label: 'Sub-agents', slug: 'method/sub-agents' },
 					],
 				},
 				{

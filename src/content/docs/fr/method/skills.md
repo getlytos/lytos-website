@@ -7,6 +7,8 @@ Les skills sont le deuxième pilier de Lytos : **Design**.
 
 Un skill est une procédure étape par étape qui dit à l'agent IA *comment* effectuer un type de tâche spécifique. Pas des conseils vagues — des étapes concrètes.
 
+> *"Le role-play ne remplace pas le contexte."*
+
 ## Les 9 skills intégrés
 
 | Skill | Ce qu'il couvre |

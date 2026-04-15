@@ -7,6 +7,8 @@ Skills are the second pillar of Lytos: **Design**.
 
 A skill is a step-by-step procedure that tells the AI agent *how* to perform a specific type of task. Not vague advice — concrete steps.
 
+> *"Role-play doesn't replace context."*
+
 ## The 9 built-in skills
 
 | Skill | What it covers |

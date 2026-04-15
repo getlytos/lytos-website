@@ -3,6 +3,8 @@ title: Manifeste
 description: La philosophie fondatrice de Lytos.
 ---
 
+> *"Un projet sans process est une conversation. Pas une livraison."*
+
 ## Le constat
 
 L'industrie IA reproduit l'organisation humaine — des agents avec des personas, des rôles, des titres. C'est rassurant. Ce n'est pas le mécanisme le plus robuste pour obtenir qualité, mémoire et cohérence.

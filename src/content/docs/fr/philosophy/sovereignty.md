@@ -37,4 +37,6 @@ L'IA est un moteur. Les moteurs se changent. La fondation est ce qui persiste.
 
 ## Ton savoir projet t'appartient. Pas à un vendor.
 
+> *"Choisis ton IA. Ne lui appartiens pas."*
+
 Ça tourne sur Claude Code aujourd'hui. Ça tournera sur le modèle de demain. Ça peut tourner sur un LLM local si les conditions d'un vendor deviennent inacceptables.

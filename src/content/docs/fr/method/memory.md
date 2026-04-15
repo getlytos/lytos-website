@@ -59,6 +59,8 @@ Chaque fichier cortex couvre un domaine :
 
 ## Pourquoi c'est important
 
+> *"La qualité ne vient pas du prompt. Elle vient du contexte."*
+
 Sans memory, l'IA fait les mêmes erreurs deux fois. Elle suggère des patterns que tu as déjà rejetés. Elle ne sait pas que tu as essayé Redis et que tu es passé à PostgreSQL pour de bonnes raisons.
 
 La memory est ce qui rend Lytos **souverain** — ton savoir projet vit dans des fichiers que tu possèdes, pas dans l'historique de conversation d'un vendor.

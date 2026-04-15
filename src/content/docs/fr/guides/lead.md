@@ -161,3 +161,5 @@ Chaque sprint laisse derrière lui :
 Après 5 sprints, ton IA n'est plus la même IA. Elle a le contexte de ton projet, les décisions de ton équipe, la connaissance de ton domaine. Elle ne devine plus — elle sait.
 
 **C'est le vrai job du lead : construire un système qui devient plus intelligent au fil du temps.**
+
+> *"L'humain n'écrit pas chaque ligne. Il définit le monde."*
