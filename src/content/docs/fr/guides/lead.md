@@ -162,4 +162,16 @@ Après 5 sprints, ton IA n'est plus la même IA. Elle a le contexte de ton proje
 
 **C'est le vrai job du lead : construire un système qui devient plus intelligent au fil du temps.**
 
+---
+
+## La cohérence d'équipe — ce qui était impossible avant
+
+En développement traditionnel, tu ne peux pas demander à 10 développeurs de coder pareil. Conventions, linters, code reviews — ça réduit les écarts, ça ne les élimine jamais.
+
+Avec l'IA + Lytos, c'est différent. Un manifest, des rules, des skills — partagés par toute l'équipe. Chaque développeur brainstorme et valide. Le code est produit par le même moteur, avec le même contexte.
+
+Le résultat : un projet à 10 développeurs qui a **une seule voix**. Pas parce qu'on a forcé des humains à coder pareil — mais parce que la structure garantit la cohérence.
+
+> *"Le développeur brainstorme. Lytos harmonise."*
+
 > *"L'humain n'écrit pas chaque ligne. Il définit le monde."*

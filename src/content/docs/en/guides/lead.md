@@ -162,4 +162,16 @@ After 5 sprints, your AI is not the same AI. It has your project's context, your
 
 **That's the lead's real job: build a system that gets smarter over time.**
 
+---
+
+## Team consistency — what was impossible before
+
+In traditional development, you can't ask 10 developers to code the same way. Conventions, linters, code reviews — they reduce gaps, they never eliminate them.
+
+With AI + Lytos, it's different. One manifest, one set of rules, one set of skills — shared by the whole team. Each developer brainstorms and validates. The code is produced by the same engine, with the same context.
+
+The result: a 10-developer project that speaks **with one voice**. Not because you forced humans to code alike — but because structure guarantees consistency.
+
+> *"The developer brainstorms. Lytos harmonizes."*
+
 > *"The human doesn't write every line. They define the world."*

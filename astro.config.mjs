@@ -66,6 +66,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Manifesto', slug: 'philosophy/manifesto', translations: { fr: 'Manifeste' } },
 						{ label: 'Sovereignty', slug: 'philosophy/sovereignty', translations: { fr: 'Souveraineté' } },
+						{ label: 'Trainer Kit', slug: 'philosophy/trainers', translations: { fr: 'Kit formateur' } },
 					],
 				},
 			],
