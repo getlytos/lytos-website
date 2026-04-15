@@ -15,6 +15,8 @@ Une issue c'est une **tâche écrite assez clairement pour que ton IA puisse l'e
 
 Pense à un post-it — mais un post-it qui dit exactement quoi faire, pourquoi, et comment savoir quand c'est fini.
 
+**Une issue = une seule chose.** Comme construire une maison : on ne met pas "couler les fondations" et "poser le toit" sur le même post-it. Chaque issue a une responsabilité unique. Si tu dis "ajoute le login et aussi refais la homepage", ton IA va te demander de découper en deux issues — et elle aura raison.
+
 Tu n'écris pas les issues. Tu décris ce que tu veux, et ton IA les crée pour toi.
 
 ---

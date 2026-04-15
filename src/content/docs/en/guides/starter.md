@@ -15,6 +15,8 @@ An issue is a **task written down clearly enough that your AI can execute it**.
 
 Think of it like a sticky note — but one that says exactly what to do, why, and how to know when it's done.
 
+**One issue = one thing.** Like building a house: you don't put "pour the foundation" and "install the roof" on the same sticky note. Each issue has a single responsibility. If you say "add login and also redesign the homepage", your AI will ask you to split it into two issues — and it's right.
+
 You don't write issues. You describe what you want, and your AI creates them for you.
 
 ---
