@@ -101,56 +101,52 @@ L'IA va :
 
 ---
 
-## Écrire de bonnes issues
+## Créer des issues — plus simple que tu ne crois
 
-Une issue est ton principal outil de communication avec l'IA. Voici ce qui fait une bonne issue :
+**Tu n'écris pas les issues. Tu décris ce que tu veux. L'IA structure pour toi.**
 
-### La structure
+Le frontmatter YAML, la checklist, la definition of done — tu n'as pas besoin d'apprendre ça. L'IA connaît le template et crée l'issue dans le bon format.
 
-```yaml
----
-id: ISS-0042
-title: "Ajouter le rate limiting aux endpoints API"
-type: feature
-priority: P1-high
-effort: M
-skill: api-design
-skills_aux: [security, testing]
-status: 2-sprint
-branch: "feat/ISS-0042-rate-limiting"
-depends: [ISS-0038]
----
+### Ce que tu fais : brainstormer
+
+```
+"Je veux ajouter un système de login avec Google OAuth."
 ```
 
-### Le corps
+L'IA pose les bonnes questions :
+- "On doit supporter email/mot de passe aussi ou juste Google ?"
+- "Tu as besoin de rôles (admin, utilisateur) ?"
+- "Quels endpoints doivent être protégés ?"
 
-```markdown
-## Contexte
-Pourquoi cette tâche existe. Quel problème elle résout. Ce qu'on a déjà essayé.
+Puis elle crée l'issue avec la structure complète, la bonne priorité, et une checklist détaillée. Tu valides, c'est tout.
 
-## Solution proposée
-L'approche. Pas le code — la stratégie.
+### Ce qui compte : la qualité de ta description
 
-## Checklist
-1. [ ] Implémenter le middleware rate limiter
-2. [ ] Ajouter la configuration des limites par endpoint
-3. [ ] Écrire les tests d'intégration
-4. [ ] Mettre à jour la documentation API
+| Ce que tu dis | Ce qui se passe |
+|--------------|----------------|
+| "Ajouter un login" | L'IA devine tout — résultat générique |
+| "Ajouter un login Google OAuth avec JWT, protéger les endpoints /api/*" | L'IA crée une issue précise — résultat ciblé |
 
-## Definition of done
-- Tous les endpoints ont du rate limiting
-- Les tests couvrent les cas normaux et les dépassements
-- Documentation mise à jour
+Tu n'as pas besoin de connaître le YAML. Tu as besoin de savoir ce que tu veux construire.
+
+### Le cycle brainstorm → issue
+
+```
+Toi : "J'ai besoin de rate limiting sur l'API."
+IA :  "Quelles limites ? Par utilisateur ? Par endpoint ? Que se passe-t-il en cas de dépassement ?"
+Toi : "Par endpoint, 100 req/min, retourner 429 avec un header retry-after."
+IA :  → Crée ISS-0042 avec checklist complète, assigne skill api-design + security
+Toi : "Ça me va. On commence."
 ```
 
 ### Erreurs courantes
 
 | Erreur | Problème | Correction |
 |--------|----------|------------|
-| "Corriger l'API" | Trop vague — l'IA va deviner | "Ajouter le rate limiting au endpoint POST /users" |
-| Pas de checklist | L'IA ne sait pas quand c'est fini | Ajouter des étapes numérotées |
-| Pas de contexte | L'IA ne sait pas pourquoi | Ajouter 2-3 phrases de contexte |
-| Trop gros (effort: XL) | L'IA perd le fil | Découper en 2-3 issues plus petites |
+| "Corriger l'API" | Trop vague — l'IA va deviner | Décrire le problème précis et le comportement attendu |
+| Sauter le brainstorm | L'IA crée une issue superficielle | Prends 2 minutes pour discuter avant de créer |
+| Valider sans lire | L'issue peut manquer des edge cases | Lis la checklist, ajoute ce qui manque |
+| Trop gros | L'IA perd le fil | Demande : "On peut découper en issues plus petites ?" |
 
 ---
 

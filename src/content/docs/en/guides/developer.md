@@ -101,56 +101,52 @@ The AI will:
 
 ---
 
-## Writing good issues
+## Creating issues — easier than you think
 
-An issue is your main communication tool with the AI. Here's what makes a good one:
+**You don't write issues. You describe what you want. The AI structures it for you.**
 
-### The structure
+The YAML frontmatter, the checklist, the definition of done — you don't have to learn that. The AI knows the template and creates the issue in the right format.
 
-```yaml
----
-id: ISS-0042
-title: "Add rate limiting to API endpoints"
-type: feature
-priority: P1-high
-effort: M
-skill: api-design
-skills_aux: [security, testing]
-status: 2-sprint
-branch: "feat/ISS-0042-rate-limiting"
-depends: [ISS-0038]
----
+### What you do: brainstorm
+
+```
+"I want to add a login system with Google OAuth."
 ```
 
-### The body
+The AI asks the right questions:
+- "Should we support email/password too or just Google?"
+- "Do you need role-based access (admin, user)?"
+- "Which endpoints need to be protected?"
 
-```markdown
-## Context
-Why this task exists. What problem it solves. What we already tried.
+Then it creates the issue with the full structure, the right priority, and a detailed checklist. You just validate.
 
-## Proposed solution
-The approach. Not the code — the strategy.
+### What matters: the quality of your description
 
-## Checklist
-1. [ ] Implement rate limiter middleware
-2. [ ] Add configuration for limits per endpoint
-3. [ ] Write integration tests
-4. [ ] Update API documentation
+| What you say | What happens |
+|-------------|-------------|
+| "Add login" | AI guesses everything — generic result |
+| "Add Google OAuth login with JWT tokens, protect /api/* endpoints" | AI creates a precise issue — targeted result |
 
-## Definition of done
-- All endpoints have rate limiting
-- Tests cover normal and exceeded limits
-- Documentation updated
+You don't need to know YAML. You need to know what you want to build.
+
+### The brainstorm → issue cycle
+
+```
+You: "I need rate limiting on the API."
+AI:  "What limits do you want? Per user? Per endpoint? What happens when exceeded?"
+You: "Per endpoint, 100 req/min, return 429 with retry-after header."
+AI:  → Creates ISS-0042 with full checklist, assigns skill api-design + security
+You: "Looks good. Let's start."
 ```
 
 ### Common mistakes
 
 | Mistake | Problem | Fix |
 |---------|---------|-----|
-| "Fix the API" | Too vague — the AI will guess | "Add rate limiting to POST /users endpoint" |
-| No checklist | AI doesn't know when it's done | Add numbered steps |
-| No context | AI doesn't know why | Add 2-3 sentences of context |
-| Too big (effort: XL) | AI loses focus | Split into 2-3 smaller issues |
+| "Fix the API" | Too vague — the AI will guess | Describe the specific problem and expected behavior |
+| Skipping the brainstorm | AI creates a shallow issue | Take 2 minutes to discuss before creating |
+| Accepting without reading | Issue may miss edge cases | Read the checklist, add what's missing |
+| Too big | AI loses focus | Ask: "Can we split this into smaller issues?" |
 
 ---
 
