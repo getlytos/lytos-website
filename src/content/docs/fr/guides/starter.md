@@ -1,84 +1,114 @@
 ---
-title: Ta Première Session
-description: Commence à utiliser Lytos en 5 minutes — aucune connaissance technique requise.
+title: Comment ça marche
+description: Comprends comment toi et ton IA travaillez ensemble avec Lytos — en 2 minutes.
 ---
 
-## Installe Lytos
+## Tu parles. L'IA travaille. Lytos garde la trace.
 
-```bash
-npm install -g lytos-cli
-cd ton-projet
-lyt init
-```
-
-Réponds aux 4 questions. C'est fait. Tu as un répertoire `.lytos/` dans ton projet.
+C'est toute l'idée. Tu décris ce que tu veux construire. L'IA crée les tâches, code, teste et documente. Lytos s'assure que rien n'est perdu entre les sessions.
 
 ---
 
-## Ouvre ton outil IA et dis :
+## C'est quoi une issue ?
 
-```
-"Lis .lytos/LYTOS.md et aide-moi à configurer ce projet."
-```
+Une issue c'est une **tâche écrite assez clairement pour que ton IA puisse l'exécuter**.
 
-L'IA va :
-1. Lire la méthode
-2. Te poser des questions sur ton projet (ce qu'il fait, quelle stack, quelles contraintes)
-3. Remplir le manifest pour toi
+Pense à un post-it — mais un post-it qui dit exactement quoi faire, pourquoi, et comment savoir quand c'est fini.
 
-**Tu parles. L'IA écrit les fichiers.**
+Tu n'écris pas les issues. Tu décris ce que tu veux, et ton IA les crée pour toi.
 
 ---
 
-## Décris ce que tu veux construire
+## Le workflow
+
+### Étape 1 — Dis ce que tu veux
 
 ```
-"Je veux créer une app de gestion de tâches avec authentification."
+Toi : "Je veux une landing page avec un formulaire d'inscription email pour une waitlist."
 ```
 
-L'IA va :
-1. Poser des questions de clarification ("Web ou mobile ? Quel provider d'auth ?")
-2. Créer des issues (des tâches structurées) dans ton board
-3. Les prioriser et te suggérer par où commencer
+### Étape 2 — L'IA pose les bonnes questions
 
-**Tu n'as pas besoin de savoir ce qu'est une issue.** L'IA les crée dans le bon format. Tu valides, c'est tout.
+```
+IA :  "Qu'est-ce qui se passe quand quelqu'un s'inscrit ? Juste sauvegarder l'email ?
+       Tu veux vérifier les doublons ?"
 
-> **Conseil :** Prends 2 minutes pour relire les issues que l'IA a créées. Ajoute des détails si quelque chose manque. Une issue bien décrite fait gagner des heures de corrections plus tard. L'IA structure — toi tu valides et tu affines.
+Toi : "Oui, sauvegarder en base, vérifier les doublons, afficher un message de succès."
+```
+
+### Étape 3 — L'IA crée l'issue
+
+L'IA transforme ta conversation en une tâche structurée :
+
+> **ISS-0001 — Landing page avec inscription waitlist**
+>
+> - [ ] Créer la page HTML avec le formulaire
+> - [ ] Créer l'endpoint API pour sauvegarder les emails
+> - [ ] Ajouter la vérification de doublon
+> - [ ] Afficher un message de succès après inscription
+> - [ ] Écrire les tests
+
+### Étape 4 — Tu relis et tu affines
+
+> **Cette étape compte.** Prends 30 secondes pour relire l'issue. Il manque quelque chose ? Un cas particulier ? Une contrainte ? Ajoute-le maintenant — ça fait gagner des heures après.
+
+```
+Toi : "Ajoute une vérification que le format de l'email est valide avant de sauvegarder."
+
+IA :  → Met à jour la checklist
+```
+
+### Étape 5 — L'IA construit
+
+```
+Toi : "On commence."
+```
+
+L'IA suit la checklist étape par étape. Elle code, teste, et te dit quand c'est fini.
+
+### Étape 6 — Fermer et passer à la suite
+
+```
+Toi : "Ferme cette issue. C'est quoi la suite ?"
+```
+
+L'IA marque la tâche comme terminée, met à jour le board, et te propose la prochaine.
 
 ---
 
-## Commence à construire
+## Voir où tu en es
 
-```
-"On attaque la première issue."
-```
-
-L'IA lit l'issue, suit la procédure, et construit. Quand c'est fini :
-
-```
-"Ferme cette issue et montre-moi le board."
-```
-
-Lance `lyt board` à tout moment pour voir où tu en es :
+À tout moment, lance :
 
 ```bash
 lyt board
 ```
 
+Tu verras toutes tes tâches organisées par statut — ce qui est prévu, en cours, terminé. C'est ton tableau de bord projet.
+
 ---
 
-## C'est tout
+## Ce que l'IA retient
 
-Le cycle complet :
+À chaque session, l'IA lit le contexte de ton projet :
+- **Ce que** tu construis (le manifest)
+- **Comment** tu travailles (les skills et les rules)
+- **Ce qui s'est passé avant** (la memory)
 
-```
-1. Décris ce que tu veux       → L'IA crée les issues
-2. Choisis une issue           → L'IA la construit
-3. Valide et ferme             → L'IA met à jour le board
-4. Recommence                  → L'IA se souvient de ce qu'elle a appris
-```
+Tu ne réexpliques jamais ton projet. L'IA reprend là où elle s'est arrêtée.
 
-À chaque session, ton IA en sait plus sur ton projet. Plus besoin de réexpliquer. Plus besoin de recommencer.
+---
+
+## La règle d'or
+
+**Mieux tu décris ce que tu veux, mieux l'IA livre.**
+
+| Ce que tu dis | Ce que tu obtiens |
+|--------------|------------------|
+| "Fais-moi une app" | Code générique, suppositions fausses |
+| "Fais-moi une app de tâches avec drag-and-drop, login, et mode sombre" | Plan précis, code ciblé |
+
+Tu n'as pas besoin d'être technique. Tu as besoin d'être précis.
 
 ---
 
@@ -87,32 +117,27 @@ Le cycle complet :
 ```
 Toi : "Je veux une landing page avec un formulaire d'inscription email."
 
-IA :  "Qu'est-ce qui se passe quand quelqu'un s'inscrit ? Newsletter ? Waitlist ?
-       Tu as besoin de validation d'email ?"
+IA :  "Waitlist ou newsletter ? Besoin de validation d'email ?"
 
-Toi : "Waitlist. Juste sauvegarder l'email en base. Pas de validation pour l'instant."
+Toi : "Waitlist. Juste sauvegarder l'email. Pas de validation pour l'instant.
+       Mais ajoute une vérification de doublon."
 
-IA :  → Crée ISS-0001 "Créer une landing page avec inscription waitlist"
-       → Checklist : page HTML, formulaire, endpoint API, table en base, message de succès
-       → Priorité : P1-high, Effort : M
-
-Toi : "C'est bien mais ajoute une vérification de doublon d'email."
-
-IA :  → Met à jour la checklist, ajoute la vérification
+IA :  → Crée l'issue avec la checklist complète
        → "Prêt à commencer ?"
 
 Toi : "Go."
 
        ... L'IA construit, les tests passent ...
 
-IA :  → "Terminé. Issue fermée. Board mis à jour. Tu veux voir la prochaine issue ?"
+IA :  → "Terminé. Issue fermée. Board mis à jour. Prochaine issue ?"
 ```
 
-4 échanges. Pas de YAML. Pas de fichier de config à éditer. Tu as parlé, l'IA a travaillé.
+4 échanges. Tu as parlé, l'IA a travaillé.
 
 ---
 
-## Tu veux aller plus loin ?
+## Aller plus loin
 
+- [Installer Lytos](/fr/getting-started/installation/) — si tu n'as pas encore installé
 - [Guide Développeur](/fr/guides/developer/) — workflow quotidien, exemples d'interactions, bonnes pratiques
-- [Guide Lead Développeur](/fr/guides/lead/) — définir la méthode, superviser l'équipe, scaler
+- [Guide Lead Développeur](/fr/guides/lead/) — superviser ton équipe, définir la méthode

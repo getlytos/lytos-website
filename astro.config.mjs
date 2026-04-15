@@ -46,7 +46,7 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					items: [
-						{ label: 'Your First Session', slug: 'guides/starter', translations: { fr: 'Ta Première Session' } },
+						{ label: 'How It Works', slug: 'guides/starter', translations: { fr: 'Comment ça marche' } },
 						{ label: 'Developer', slug: 'guides/developer', translations: { fr: 'Développeur' } },
 						{ label: 'Lead Developer', slug: 'guides/lead', translations: { fr: 'Lead Développeur' } },
 					],

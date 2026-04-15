@@ -1,118 +1,143 @@
 ---
-title: Your First Session
-description: Start using Lytos in 5 minutes — no technical knowledge required.
+title: How It Works
+description: Understand how you and your AI work together with Lytos — in 2 minutes.
 ---
 
-## Install Lytos
+## You talk. The AI works. Lytos keeps track.
 
-```bash
-npm install -g lytos-cli
-cd your-project
-lyt init
-```
-
-Answer the 4 questions. Done. You have a `.lytos/` directory in your project.
+That's the whole idea. You describe what you want to build. The AI creates tasks, codes, tests, and documents. Lytos makes sure nothing is lost between sessions.
 
 ---
 
-## Open your AI tool and say:
+## What's an issue?
 
-```
-"Read .lytos/LYTOS.md and help me configure this project."
-```
+An issue is a **task written down clearly enough that your AI can execute it**.
 
-The AI will:
-1. Read the method
-2. Ask you about your project (what it does, what stack, what constraints)
-3. Fill in the manifest for you
+Think of it like a sticky note — but one that says exactly what to do, why, and how to know when it's done.
 
-**You just talk. The AI writes the files.**
+You don't write issues. You describe what you want, and your AI creates them for you.
 
 ---
 
-## Describe what you want to build
+## The workflow
+
+### Step 1 — Talk about what you want
 
 ```
-"I want to build a task management app with user authentication."
+You:  "I want a landing page with an email signup form for a waitlist."
 ```
 
-The AI will:
-1. Ask clarifying questions ("Web or mobile? Which auth provider?")
-2. Create issues (structured tasks) in your board
-3. Prioritize them and suggest where to start
+### Step 2 — The AI asks the right questions
 
-**You don't need to know what an issue is.** The AI creates them in the right format. You just validate.
+```
+AI:   "What happens when someone signs up? Just save the email?
+       Do you need duplicate checking?"
 
-> **Tip:** Take 2 minutes to read the issues the AI created. Add details if something is missing. A well-described issue saves hours of back-and-forth later. The AI structures — you validate and refine.
+You:  "Yes, save in database, check for duplicates, show a success message."
+```
+
+### Step 3 — The AI creates the issue
+
+The AI turns your conversation into a structured task:
+
+> **ISS-0001 — Landing page with waitlist signup**
+>
+> - [ ] Create HTML page with signup form
+> - [ ] Create API endpoint to save emails
+> - [ ] Add duplicate email check
+> - [ ] Show success message after signup
+> - [ ] Write tests
+
+### Step 4 — You review and refine
+
+> **This step matters.** Take 30 seconds to read the issue. Is something missing? An edge case? A constraint? Add it now — it saves hours later.
+
+```
+You:  "Add a check that the email format is valid before saving."
+
+AI:   → Updates the checklist
+```
+
+### Step 5 — The AI builds it
+
+```
+You:  "Let's start."
+```
+
+The AI follows the checklist step by step. It codes, tests, and tells you when it's done.
+
+### Step 6 — Close and move on
+
+```
+You:  "Close this issue. What's next?"
+```
+
+The AI marks it as done, updates the board, and suggests the next task.
 
 ---
 
-## Start building
+## See where you stand
 
-```
-"Let's start with the first issue."
-```
-
-The AI reads the issue, follows the procedure, and builds. When it's done:
-
-```
-"Close this issue and show me the board."
-```
-
-Run `lyt board` at any time to see where you stand:
+At any point, run:
 
 ```bash
 lyt board
 ```
 
----
-
-## That's it
-
-The full cycle:
-
-```
-1. Describe what you want     → AI creates issues
-2. Pick an issue               → AI builds it
-3. Validate and close          → AI updates the board
-4. Repeat                      → AI remembers what it learned
-```
-
-Each session, your AI knows more about your project. No re-explaining. No starting over.
+You'll see all your tasks organized by status — what's planned, what's in progress, what's done. It's your project dashboard.
 
 ---
 
-## Real example — from idea to done in 4 exchanges
+## What the AI remembers
+
+Each session, the AI reads your project context:
+- **What** you're building (the manifest)
+- **How** you work (the skills and rules)
+- **What happened before** (the memory)
+
+You never re-explain your project. The AI picks up where it left off.
+
+---
+
+## The golden rule
+
+**The better you describe what you want, the better the AI delivers.**
+
+| What you say | What you get |
+|-------------|-------------|
+| "Make an app" | Generic code, wrong assumptions |
+| "Make a task app with drag-and-drop, user login, and dark mode" | Precise plan, targeted code |
+
+You don't need to be technical. You need to be specific.
+
+---
+
+## Real example — idea to done in 4 exchanges
 
 ```
 You:  "I want a landing page with an email signup form."
 
-AI:   "What should happen when someone signs up? Newsletter? Waitlist?
-       Do you need email validation?"
+AI:   "Waitlist or newsletter? Need email validation?"
 
-You:  "Waitlist. Just save the email in a database. No validation for now."
+You:  "Waitlist. Just save the email. No validation for now.
+       But add a duplicate check."
 
-AI:   → Creates ISS-0001 "Create landing page with waitlist signup"
-       → Checklist: HTML page, form, API endpoint, database table, success message
-       → Priority: P1-high, Effort: M
-
-You:  "Looks good but add a duplicate email check."
-
-AI:   → Updates the checklist, adds the check
+AI:   → Creates the issue with full checklist
        → "Ready to start?"
 
 You:  "Go."
 
-       ... AI builds it, tests pass ...
+       ... AI builds, tests pass ...
 
-AI:   → "Done. Issue closed. Board updated. Want to see the next issue?"
+AI:   → "Done. Issue closed. Board updated. Next issue?"
 ```
 
-4 exchanges. No YAML. No config file to edit. You talked, the AI worked.
+4 exchanges. You talked, the AI worked.
 
 ---
 
-## Want to go further?
+## Go further
 
+- [Install Lytos](/en/getting-started/installation/) — if you haven't set up yet
 - [Developer Guide](/en/guides/developer/) — daily workflow, interaction examples, best practices
-- [Lead Developer Guide](/en/guides/lead/) — define the method, supervise the team, scale
+- [Lead Developer Guide](/en/guides/lead/) — supervise your team, define the method
