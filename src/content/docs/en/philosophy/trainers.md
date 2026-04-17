@@ -163,7 +163,26 @@ No. The manifest, skills, rules, memory — it's all Markdown. It works with Cla
 ### "Our developers won't adopt yet another process."
 Developers hate processes that serve no purpose. They adopt ones that save them time. With Lytos, they stop re-explaining their project. The AI respects their conventions. Recurring bugs don't come back. Resistance usually drops after the first sprint.
 
-## Suggested workshop exercise
+## Workshop exercise — Option A: the tutorial project (recommended)
+
+**Duration:** 20 minutes
+**Goal:** Experience the full Lytos workflow on a real project.
+
+**Preparation:** ask participants to install the CLI before the session (`npm install -g lytos-cli`).
+
+1. **Clone the tutorial project (2 min)** — `git clone https://github.com/getlytos/lytos-learn.git && cd lytos-learn`
+
+2. **Explore the board (3 min)** — `lyt board`. Show issues in every status, dependencies, the overview. Then `lyt show ISS-0006` to see the 50% progress bar.
+
+3. **Start an issue (2 min)** — `lyt start ISS-0002`. Show what happens: file moved, branch created, board updated.
+
+4. **Code with AI (8 min)** — Each participant opens their AI tool and says: "Read .lytos/manifest.md and the issue ISS-0002, then implement it." Observe: the AI understands the project immediately thanks to context.
+
+5. **Close and debrief (5 min)** — `lyt close ISS-0002`. Show the final board. Key point: every participant got a consistent result because the context was the same.
+
+**The tutorial project**: [github.com/getlytos/lytos-learn](https://github.com/getlytos/lytos-learn)
+
+## Workshop exercise — Option B: the comparison
 
 **Duration:** 15 minutes
 **Goal:** Make participants feel the difference between a prompt and structured context.
@@ -174,7 +193,7 @@ Developers hate processes that serve no purpose. They adopt ones that save them 
 
 3. **Debrief (5 min)** — The difference between the two is context. The prompt didn't change. The model didn't change. Only the structure around it changed. That's Lytos.
 
-**The key point to drive home:** notice that all results converge. In traditional coding, 10 developers produce 10 different styles — that's human, you can't ask people to code the same way. But with AI + a shared manifest, the code is consistent. For the first time, a 10-developer project can speak **with one voice**. The developer is no longer the one typing code — they brainstorm, refine requirements, validate results. Lytos guarantees consistency.
+**The key point in both exercises:** results converge. In traditional coding, 10 developers produce 10 different styles. With AI + a shared manifest, the code is consistent. For the first time, a 10-developer project can speak **with one voice**.
 
 > *"The developer brainstorms. Lytos harmonizes."*
 

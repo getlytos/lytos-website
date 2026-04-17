@@ -163,18 +163,37 @@ Non. Le manifest, les skills, les rules, la memory — c'est du Markdown. Ça fo
 ### "Nos développeurs ne vont pas adopter un process de plus."
 Les développeurs détestent les process qui ne servent à rien. Ils adoptent ceux qui leur font gagner du temps. Avec Lytos, ils ne réexpliquent plus leur projet. L'IA respecte leurs conventions. Les bugs récurrents ne reviennent pas. En général, la résistance tombe après le premier sprint.
 
-## Exercice d'atelier suggéré
+## Exercice d'atelier — Option A : le projet tutoriel (recommandé)
+
+**Durée :** 20 minutes
+**Objectif :** Faire vivre le workflow Lytos complet sur un vrai projet.
+
+**Préparation :** demander aux participants d'installer le CLI avant la session (`npm install -g lytos-cli`).
+
+1. **Cloner le projet tutoriel (2 min)** — `git clone https://github.com/getlytos/lytos-learn.git && cd lytos-learn`
+
+2. **Explorer le board (3 min)** — `lyt board`. Montrer les issues dans chaque statut, les dépendances, la vue d'ensemble. Puis `lyt show ISS-0006` pour voir la barre de progression à 50%.
+
+3. **Démarrer une issue (2 min)** — `lyt start ISS-0002`. Montrer ce qui se passe : fichier déplacé, branche créée, board mis à jour.
+
+4. **Coder avec l'IA (8 min)** — Chaque participant ouvre son IA et dit : "Lis .lytos/manifest.md et l'issue ISS-0002, puis implémente-la." Observer : l'IA comprend le projet immédiatement grâce au contexte.
+
+5. **Fermer et debrief (5 min)** — `lyt close ISS-0002`. Montrer le board final. Puis le point clé : chaque participant a obtenu un résultat cohérent parce que le contexte était le même.
+
+**Le projet tutoriel** : [github.com/getlytos/lytos-learn](https://github.com/getlytos/lytos-learn)
+
+## Exercice d'atelier — Option B : la comparaison
 
 **Durée :** 15 minutes
 **Objectif :** Faire toucher du doigt la différence entre un prompt et un contexte structuré.
 
-1. **Sans Lytos (5 min)** — Demandez aux participants de prompter une IA pour créer un endpoint API. Juste un prompt libre. Observez : chacun obtient un résultat différent, générique, avec des choix par défaut.
+1. **Sans Lytos (5 min)** — Demander aux participants de prompter une IA pour créer un endpoint API. Juste un prompt libre. Observer : chacun obtient un résultat différent, générique, avec des choix par défaut.
 
-2. **Avec un manifest (5 min)** — Donnez-leur un manifest de 30 lignes (stack, contraintes, conventions). Même demande. Observez : les résultats convergent, respectent les contraintes, sont adaptés au projet.
+2. **Avec un manifest (5 min)** — Leur donner un manifest de 30 lignes (stack, contraintes, conventions). Même demande. Observer : les résultats convergent, respectent les contraintes, sont adaptés au projet.
 
 3. **Debrief (5 min)** — La différence entre les deux, c'est le contexte. Le prompt n'a pas changé. Le modèle n'a pas changé. Seule la structure autour a changé. C'est ça, Lytos.
 
-**Le point clé à faire passer :** remarquez que tous les résultats convergent. En code traditionnel, 10 développeurs produisent 10 styles différents — c'est humain, on ne peut pas demander à des gens de coder pareil. Mais avec l'IA + un manifest partagé, le code est cohérent. Pour la première fois, un projet à 10 développeurs peut avoir **une seule voix**. Le développeur n'est plus celui qui tape du code — il brainstorme, affine le besoin, valide le résultat. Lytos garantit la cohérence.
+**Le point clé des deux exercices :** les résultats convergent. En code traditionnel, 10 développeurs produisent 10 styles différents. Avec l'IA + un manifest partagé, le code est cohérent. Pour la première fois, un projet à 10 développeurs peut avoir **une seule voix**.
 
 > *"Le développeur brainstorme. Lytos harmonise."*
 
