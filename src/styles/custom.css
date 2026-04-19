@@ -9,11 +9,25 @@
 	--lytos-paper: #f5f2ec;
 	--lytos-paper-deep: #ebe7dd;
 	--lytos-ink: #151515;
+	--lytos-ink-soft: #5d574b;
+	--lytos-ink-dim: #8a8273;
 	--lytos-ink-70: rgba(21, 21, 21, 0.7);
 	--lytos-ink-50: rgba(21, 21, 21, 0.5);
 	--lytos-ink-12: rgba(21, 21, 21, 0.12);
+	--lytos-ink-08: rgba(21, 21, 21, 0.08);
+	--lytos-ink-04: rgba(21, 21, 21, 0.04);
 	--lytos-olive: #4a5233;
-	--lytos-olive-soft: #8a9566;
+	--lytos-olive-deep: #3a4028;
+	--lytos-olive-dark: #2b3020;
+	--lytos-olive-soft: rgba(74, 82, 51, 0.10);
+	--lytos-olive-softer: rgba(74, 82, 51, 0.05);
+	--lytos-olive-line: rgba(74, 82, 51, 0.35);
+	--lytos-olive-soft-hex: #8a9566;
+	--lytos-danger: #7a2f2f;
+
+	/* Interaction timing */
+	--lytos-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+	--lytos-dur: 140ms;
 
 	/* Starlight accent = olive */
 	--sl-color-accent-low: #2a3220;
@@ -47,8 +61,8 @@
 	--sl-color-bg-nav: #151515;
 	--sl-color-bg-sidebar: #1a1a1a;
 	--sl-color-text: var(--lytos-paper);
-	--sl-color-text-accent: var(--lytos-olive-soft);
-	--sl-color-accent: var(--lytos-olive-soft);
+	--sl-color-text-accent: var(--lytos-olive-soft-hex);
+	--sl-color-accent: var(--lytos-olive-soft-hex);
 	--sl-color-accent-high: var(--lytos-paper);
 }
 
@@ -138,16 +152,48 @@ a.site-title img {
 	opacity: 0.78;
 }
 
-/* ─── Buttons — square corners, not pills ─────────────────────── */
+/* ─── Buttons — full state spec, per Clade Design ──────────────
+   Primary = olive-deep solid; hover olive-dark; active translate 1px.
+   Secondary = ink outline; hover inverts. Focus-visible olive ring. */
 
 .sl-link-button,
 .action {
 	border-radius: 2px !important;
-	font-weight: 500;
-	letter-spacing: 0.005em;
+	font-weight: 500 !important;
+	letter-spacing: -0.005em !important;
+	line-height: 1 !important;
+	padding: 11px 18px !important;
+	border: 1px solid transparent;
+	transition:
+		background var(--lytos-dur) var(--lytos-ease),
+		color var(--lytos-dur) var(--lytos-ease),
+		border-color var(--lytos-dur) var(--lytos-ease),
+		transform 60ms var(--lytos-ease),
+		box-shadow var(--lytos-dur) var(--lytos-ease);
 }
 
-/* Secondary action — outlined: paper background, ink border + text */
+/* Primary — olive-deep solid */
+.action.primary,
+.sl-link-button.primary {
+	background: var(--lytos-olive-deep) !important;
+	color: var(--lytos-paper) !important;
+	border-color: var(--lytos-olive-deep) !important;
+}
+
+.action.primary:hover,
+.sl-link-button.primary:hover {
+	background: var(--lytos-olive-dark) !important;
+	border-color: var(--lytos-olive-dark) !important;
+}
+
+.action.primary:active,
+.sl-link-button.primary:active {
+	background: var(--lytos-olive-dark) !important;
+	transform: translateY(1px);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary — ink outline, inverts on hover */
 .action.secondary,
 .sl-link-button.secondary {
 	background: transparent !important;
@@ -161,6 +207,13 @@ a.site-title img {
 	color: var(--lytos-paper) !important;
 }
 
+.action.secondary:active,
+.sl-link-button.secondary:active {
+	background: var(--lytos-ink) !important;
+	color: var(--lytos-paper) !important;
+	transform: translateY(1px);
+}
+
 :root[data-theme='dark'] .action.secondary,
 :root[data-theme='dark'] .sl-link-button.secondary {
 	color: var(--lytos-paper) !important;
@@ -171,6 +224,66 @@ a.site-title img {
 :root[data-theme='dark'] .sl-link-button.secondary:hover {
 	background: var(--lytos-paper) !important;
 	color: var(--lytos-ink) !important;
+}
+
+/* Focus-visible — olive ring, non-negociable for a11y */
+.action:focus-visible,
+.sl-link-button:focus-visible {
+	outline: 2px solid var(--lytos-olive) !important;
+	outline-offset: 2px !important;
+}
+
+/* Arrow in primary CTA nudges right on hover */
+.action:hover svg[aria-hidden],
+.sl-link-button:hover svg[aria-hidden] {
+	transform: translateX(3px);
+	transition: transform var(--lytos-dur) var(--lytos-ease);
+}
+
+/* ─── Sidebar — V3 "Wash" (soft olive tint on active) ──────────── */
+
+.sidebar-content a,
+.sidebar-pane a {
+	transition:
+		color var(--lytos-dur) var(--lytos-ease),
+		background var(--lytos-dur) var(--lytos-ease),
+		border-color var(--lytos-dur) var(--lytos-ease);
+}
+
+/* Hover — subtle ink wash */
+.sidebar-content a:not([aria-current='page']):hover,
+.sidebar-pane a:not([aria-current='page']):hover {
+	color: var(--lytos-ink) !important;
+	background: var(--lytos-ink-04) !important;
+}
+
+:root[data-theme='dark'] .sidebar-content a:not([aria-current='page']):hover,
+:root[data-theme='dark'] .sidebar-pane a:not([aria-current='page']):hover {
+	color: var(--lytos-paper) !important;
+	background: rgba(245, 242, 236, 0.06) !important;
+}
+
+/* Active — olive-deep ink on olive wash + left bar */
+.sidebar-content a[aria-current='page'],
+.sidebar-pane a[aria-current='page'] {
+	color: var(--lytos-olive-deep) !important;
+	background: var(--lytos-olive-soft) !important;
+	border-inline-start-color: var(--lytos-olive-deep) !important;
+	font-weight: 600 !important;
+}
+
+:root[data-theme='dark'] .sidebar-content a[aria-current='page'],
+:root[data-theme='dark'] .sidebar-pane a[aria-current='page'] {
+	color: #c9d0a8 !important;
+	background: rgba(74, 82, 51, 0.20) !important;
+	border-inline-start-color: #c9d0a8 !important;
+}
+
+/* Focus-visible on sidebar links */
+.sidebar-content a:focus-visible,
+.sidebar-pane a:focus-visible {
+	outline: 2px solid var(--lytos-olive);
+	outline-offset: -2px;
 }
 
 /* ─── Code — paper + ink, per Clade Design spec ───────────────── */
