@@ -3,7 +3,7 @@
    Typography: Newsreader (serif) for headings, Inter (sans) for UI,
    IBM Plex Mono for code. */
 
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
 
 :root {
 	--lytos-paper: #f5f2ec;
@@ -36,6 +36,9 @@
 	--sl-color-hairline: var(--lytos-ink-12);
 	--sl-color-gray-7: var(--lytos-ink-70);
 	--sl-color-gray-6: var(--lytos-ink-50);
+
+	/* Inline code background — readable on paper */
+	--sl-color-bg-inline-code: var(--lytos-paper-deep);
 }
 
 /* Dark theme — inverted */
@@ -49,27 +52,153 @@
 	--sl-color-accent-high: var(--lytos-paper);
 }
 
-/* Headings in Newsreader serif — the editorial voice */
+/* ─── Typography ──────────────────────────────────────────────── */
+
+/* Headings in Newsreader serif — editorial voice, tight line-heights */
 .sl-markdown-content h1,
 .sl-markdown-content h2,
 .sl-markdown-content h3,
 .sl-markdown-content h4,
 h1.page-title,
-main h1 {
+main h1,
+.hero h1 {
 	font-family: 'Newsreader', Georgia, serif;
 	font-feature-settings: 'ss01';
-	font-weight: 500;
-	letter-spacing: -0.01em;
 }
 
 .sl-markdown-content h1,
 h1.page-title,
 main h1 {
+	font-weight: 500;
 	letter-spacing: -0.02em;
+	line-height: 1.08;
+}
+
+.sl-markdown-content h2 {
+	font-weight: 500;
+	letter-spacing: -0.015em;
+	line-height: 1.15;
+}
+
+.sl-markdown-content h3,
+.sl-markdown-content h4 {
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	line-height: 1.25;
+}
+
+/* Site title (next to the glyph in the header) in Newsreader */
+.site-title,
+a.site-title,
+header .site-title,
+header a.site-title span {
+	font-family: 'Newsreader', Georgia, serif !important;
+	font-feature-settings: 'ss01';
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	font-size: 1.35rem;
+	line-height: 1;
+}
+
+/* ─── Hero — mixed bold + italic for rhythm ───────────────────── */
+
+.hero h1 {
+	font-weight: 500;
+	letter-spacing: -0.025em;
+	line-height: 1.02;
+}
+
+.hero h1 em {
+	font-style: italic;
 	font-weight: 500;
 }
 
-/* Code blocks: a touch tighter */
-.sl-markdown-content code {
+.hero .tagline {
+	font-family: 'Inter', sans-serif;
+	line-height: 1.55;
+	color: var(--sl-color-text);
+	opacity: 0.78;
+}
+
+/* ─── Buttons — square corners, not pills ─────────────────────── */
+
+.sl-link-button,
+.action {
+	border-radius: 2px !important;
+	font-weight: 500;
+	letter-spacing: 0.005em;
+}
+
+/* ─── Code — readable on paper ────────────────────────────────── */
+
+/* Inline code: subtle paper-deep background, ink text */
+:not(pre) > code {
+	font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	font-size: 0.88em;
+	background: var(--lytos-paper-deep);
+	color: var(--lytos-ink);
+	border: 1px solid var(--lytos-ink-12);
+	border-radius: 2px;
+	padding: 0.12em 0.35em;
 	font-feature-settings: 'zero', 'ss01';
+}
+
+:root[data-theme='dark'] :not(pre) > code {
+	background: rgba(245, 242, 236, 0.08);
+	color: var(--lytos-paper);
+	border-color: rgba(245, 242, 236, 0.15);
+}
+
+/* Code blocks — terminal feel: deep ink bg, paper text */
+.expressive-code .frame pre,
+.expressive-code pre {
+	background: var(--lytos-ink) !important;
+}
+
+.expressive-code .frame {
+	--ec-frm-edBg: var(--lytos-ink);
+	--ec-frm-frameBoxShdCssVal: none;
+	--ec-frm-edActTabBarBrdBtmCol: rgba(245, 242, 236, 0.1);
+	--ec-frm-edActTabIndicBtmCol: var(--lytos-olive-soft);
+	--ec-frm-tooltipSuccessBg: var(--lytos-olive);
+	box-shadow: none;
+	border: 1px solid var(--lytos-ink-12);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.expressive-code .frame .header,
+.expressive-code .frame.has-title .header {
+	background: #0b0b0b !important;
+	border-bottom: 1px solid rgba(245, 242, 236, 0.1);
+}
+
+.expressive-code .frame .header .title {
+	color: rgba(245, 242, 236, 0.7) !important;
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 0.82em;
+}
+
+/* Token colors — tuned for paper+olive identity on ink background */
+.expressive-code pre code {
+	color: #e8e4db !important;
+}
+
+.expressive-code .keyword,
+.expressive-code [style*='color:#569CD6'],
+.expressive-code [style*='color: #569CD6'] {
+	color: #c9d0a8 !important;
+}
+
+.expressive-code .string,
+.expressive-code [style*='color:#CE9178'],
+.expressive-code [style*='color: #CE9178'] {
+	color: #d9c38a !important;
+}
+
+.expressive-code .comment,
+.expressive-code [style*='color:#6A9955'],
+.expressive-code [style*='color: #6A9955'] {
+	color: rgba(245, 242, 236, 0.45) !important;
+	font-style: italic;
 }
