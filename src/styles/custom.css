@@ -103,8 +103,19 @@ header a.site-title span {
 }
 
 :root[data-theme='dark'] .site-title,
-:root[data-theme='dark'] a.site-title {
-	color: var(--lytos-paper);
+:root[data-theme='dark'] a.site-title,
+:root[data-theme='dark'] header .site-title,
+:root[data-theme='dark'] header a.site-title,
+:root[data-theme='dark'] header a.site-title span {
+	color: var(--lytos-paper) !important;
+}
+
+/* Make sure the logo image is never accidentally hidden or filtered */
+.site-title img,
+a.site-title img {
+	display: inline-block;
+	opacity: 1 !important;
+	filter: none !important;
 }
 
 /* ─── Hero — mixed bold + italic for rhythm ───────────────────── */
