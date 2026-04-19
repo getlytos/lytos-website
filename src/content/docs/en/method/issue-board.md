@@ -89,3 +89,7 @@ The `lytos board` command regenerates `BOARD.md` from the frontmatter of all iss
 | M | 30 min - 2h | Dedicated task |
 | L | 2h - 4h | Consider splitting |
 | XL | > 4h | Must be split |
+
+## Learn more
+
+- [Kanban in Git for AI projects: a folder-based board](/en/method/issue-board/kanban-in-git-for-ai-projects/) — how the `issue-board/` layout works in practice, what goes in the YAML frontmatter, and how the AI reads the board at session start.

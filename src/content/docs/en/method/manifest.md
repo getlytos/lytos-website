@@ -58,3 +58,8 @@ The existing system is a 15-year-old PHP monolith.
 - **Be specific, not aspirational.** Write what the project *is*, not what you wish it were.
 - **Update it when the project evolves.** The manifest is a living document.
 - **Keep it under 150 lines.** If it's longer, some content belongs in memory or rules.
+
+## Learn more
+
+- [How to write a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/) — what to put in the file the AI reads first, what to leave out, and how to keep it maintainable.
+- [AGENTS.md vs CLAUDE.md vs cursor rules: which to use](/en/method/manifest/agents-md-vs-claude-md-vs-cursor-rules/) — how the three major conventions relate, and why you probably don't have to choose.

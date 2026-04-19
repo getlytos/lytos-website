@@ -104,3 +104,7 @@ Rather than multiplying "specialized agents" that share the same model under the
 The result: sessions without costumes but with deep context, a clear procedure, and a model chosen for the task.
 
 Less fiction, more engineering — as a complement to what already works for you.
+
+## Learn more
+
+- [Alternative to Claude sub-agents: one agent, rich context](/en/method/sub-agents/alternative-to-claude-sub-agents/) — why multiplying personas rarely improves output, and what structured context does instead.

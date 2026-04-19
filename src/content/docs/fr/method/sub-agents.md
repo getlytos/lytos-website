@@ -104,3 +104,7 @@ Plutôt que de multiplier les "agents spécialisés" qui partagent le même mod�
 Le résultat : des sessions sans costume mais avec un contexte profond, une procédure claire, et un modèle choisi pour la tâche.
 
 Moins de fiction, davantage d'ingénierie — en complément de ce qui fonctionne déjà chez vous.
+
+## En savoir plus
+
+- [Alternative aux sub-agents Claude : un agent unique, contexte riche](/fr/method/sub-agents/alternative-to-claude-sub-agents/) — pourquoi multiplier les personas améliore rarement le résultat, et ce qu'un contexte structuré apporte à la place.

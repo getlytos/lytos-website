@@ -56,3 +56,7 @@ You can create your own skills in `skills/`. A skill is a markdown file with:
 3. A **checklist** (verification before marking done)
 
 Skills are reusable across projects. The 9 built-in skills cover most software development tasks.
+
+## Learn more
+
+- [How to write a skill for an AI agent](/en/method/skills/how-to-write-a-skill/) — the four sections every skill should have, when to split one, and how to version them.

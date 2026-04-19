@@ -65,3 +65,7 @@ rules/
 ```
 
 Project-specific rules **complement** the defaults — they do not replace them.
+
+## Learn more
+
+- [AI coding rules examples: verifiable criteria that hold](/en/method/rules/ai-coding-rules-examples/) — a worked set of rules (file size, function size, coverage, naming) and the anatomy of a rule that your AI will actually respect.

@@ -26,7 +26,7 @@ None of these are wrong. They each solve the same problem — "how does the agen
 | Convention | Vendor / tool | File path | Casing | Notable limit |
 |---|---|---|---|---|
 | CLAUDE.md | Anthropic Claude Code | repo root | uppercase | none published |
-| AGENTS.md | OpenAI Codex, community | repo root | uppercase | ~32 KiB soft cap in some harnesses |
+| AGENTS.md | OpenAI Codex, community | repo root | uppercase | 32 KiB cumulative limit in the Codex CLI (`project_doc_max_bytes`) |
 | cursor rules | Cursor | `.cursor/rules/*.mdc` | lowercase | per-file, loaded by pattern |
 | copilot-instructions.md | GitHub Copilot | `.github/copilot-instructions.md` | lowercase | modest size budget |
 

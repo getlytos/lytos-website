@@ -26,7 +26,7 @@ Aucun n'a tort. Chacun résout le même problème — "comment l'agent sait-il c
 | Convention | Vendor / outil | Chemin | Casse | Limite notable |
 |---|---|---|---|---|
 | CLAUDE.md | Anthropic Claude Code | racine du repo | majuscules | aucune publiée |
-| AGENTS.md | Codex OpenAI, communauté | racine du repo | majuscules | plafond ~32 KiB dans certains harnais |
+| AGENTS.md | Codex OpenAI, communauté | racine du repo | majuscules | limite cumulée de 32 Kio dans la CLI Codex (`project_doc_max_bytes`) |
 | cursor rules | Cursor | `.cursor/rules/*.mdc` | minuscules | par fichier, chargés par pattern |
 | copilot-instructions.md | GitHub Copilot | `.github/copilot-instructions.md` | minuscules | budget de taille modeste |
 

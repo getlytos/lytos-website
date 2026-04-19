@@ -54,3 +54,7 @@ Vous pouvez créer vos propres skills dans `skills/`. Un skill est un fichier ma
 3. Une **checklist** (vérification avant de marquer comme fait)
 
 Les skills sont réutilisables entre projets. Les 9 skills intégrés couvrent la majorité des tâches de développement.
+
+## En savoir plus
+
+- [Comment écrire un skill pour un agent IA](/fr/method/skills/how-to-write-a-skill/) — les quatre sections que doit contenir chaque skill, quand en découper un, et comment les versionner.

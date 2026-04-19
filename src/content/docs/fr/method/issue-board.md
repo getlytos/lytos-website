@@ -76,3 +76,7 @@ La commande `lytos board` régénère `BOARD.md` à partir du frontmatter de tou
 | M | 30 min - 2h | Tâche dédiée |
 | L | 2h - 4h | Envisager de découper |
 | XL | > 4h | Doit être découpé |
+
+## En savoir plus
+
+- [Kanban dans Git pour projets IA : un board en dossiers](/fr/method/issue-board/kanban-in-git-for-ai-projects/) — comment le dossier `issue-board/` fonctionne en pratique, ce que contient le frontmatter YAML, et comment l'IA lit le board au démarrage de session.

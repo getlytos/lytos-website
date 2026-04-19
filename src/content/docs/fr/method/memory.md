@@ -64,3 +64,7 @@ Chaque fichier cortex couvre un domaine :
 Sans memory, l'IA fait les mêmes erreurs deux fois. Elle suggère des patterns que vous avez déjà rejetés. Elle ne sait pas que vous avez essayé Redis et que vous êtes passé à PostgreSQL pour de bonnes raisons.
 
 La memory est ce qui rend Lytos **souverain** — votre savoir projet vit dans des fichiers que vous possédez, pas dans l'historique de conversation d'un vendor.
+
+## En savoir plus
+
+- [Comment organiser la mémoire de Claude Code entre sessions](/fr/method/memory/ai-coding-memory-across-sessions/) — guide pratique du dossier `memory/`, avec des exemples concrets et comment Claude Code, Cursor et Codex le lisent au démarrage de session.

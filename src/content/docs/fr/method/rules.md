@@ -60,3 +60,7 @@ rules/
 ```
 
 Les rules spécifiques **complètent** les défauts — elles ne les remplacent pas.
+
+## En savoir plus
+
+- [Exemples de règles pour IA de codage : critères vérifiables](/fr/method/rules/ai-coding-rules-examples/) — un jeu de rules concret (taille fichier, taille fonction, couverture, nommage) et l'anatomie d'une rule que votre IA respectera réellement.

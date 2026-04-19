@@ -64,3 +64,7 @@ Each cortex file covers a domain:
 Without memory, the AI makes the same mistakes twice. It suggests patterns you've already rejected. It doesn't know that you tried Redis and switched to PostgreSQL for good reasons.
 
 Memory is what makes Lytos **sovereign** — your project knowledge lives in files you own, not in a vendor's conversation history.
+
+## Learn more
+
+- [How to organize Claude Code memory across sessions](/en/method/memory/ai-coding-memory-across-sessions/) — a practical walkthrough of the `memory/` folder, with concrete file examples and how Claude Code, Cursor, and Codex pick it up at session start.
