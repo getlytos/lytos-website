@@ -1,137 +1,131 @@
 ---
 title: Dev roles in the AI era
-description: What disappears, what transforms, what emerges — our take on development roles with AI.
+description: How skills might evolve as AI becomes part of day-to-day work — a reading, not a prophecy.
 ---
 
-> *"Agile created roles to structure human work. When AI structures the work, some of those roles no longer have a reason to exist."*
+> *"Agile structured human collaboration. AI is likely shifting some of that balance — without making the roles obsolete."*
 
-**What follows is not a prophecy.** It's a reading of what we observe — using AI daily to develop, talking to teams making the transition, building Lytos. It's a fresh perspective, not an established truth.
+**This is neither a prophecy nor a manifesto about the end of a profession.** It's a reading, grounded in what we see every day: teams integrating AI into their work, practices adjusting, skills being recomposed. Nothing is settled. Everything may take a different trajectory depending on projects, team cultures, and tools.
 
-But it's one we stand behind.
+Our stance: the skills people have today don't become obsolete. They're the foundation on which the new practices are built. A developer who can read a complex system, a PO who can listen to a client, a Scrum Master who can unblock a team — these know-hows remain precious. What changes is where they apply.
 
 ## The agile precedent
 
-Agile created roles. Scrum Master, Product Owner, Agile Coach, Release Train Engineer. These roles didn't exist before 2001. They were born to solve a real problem: structuring collaboration between humans in an uncertain environment.
+Agile created roles. Scrum Master, Product Owner, Agile Coach, Release Train Engineer. These didn't exist before 2001. They were born to solve a real problem: structuring collaboration between humans in an uncertain environment.
 
-It worked. For 20 years.
+It worked. For more than twenty years.
 
-But agile structured collaboration **between humans**. When one of the collaborators becomes an AI — an executor with no ego, no fatigue, no political opinion on tabs vs spaces — the roles designed to manage human dynamics start losing their purpose.
+Agile structured collaboration **between humans**. When part of the work is gradually taken on by a tool — a fast, consistent executor without its own judgment — practices designed to handle human dynamics are likely to adjust. Not disappear: adjust.
 
-## What fades
+## What shifts
 
-We're not saying "these jobs are dead". We're saying: the problems they solve are changing in nature.
+We're not saying "these roles are dead". We're saying: it's possible that the problems they solve change in nature, and that the value of these roles concentrates on different dimensions.
 
 ### The Scrum Master
 
-**What they do today:** facilitate ceremonies, unblock teams, enforce the process, protect the team from disruptions.
+**Today:** facilitates ceremonies, unblocks the team, enforces process, shields the team from disruption.
 
-**What changes:** the process is no longer a social practice to maintain — it's code. Rules live in files. The orchestrator handles dependencies. The board is generated with a command. "Ceremonies" become file reads, not meetings.
+**What could recenter:** some of the process tends to move into the repo (versioned rules, generated board, orchestrator handling dependencies). Human facilitation — helping a team reach mutual understanding, arbitrate, hold a direction — remains essential. What changes is probably the ratio between time spent animating a process and time spent building the frame in which the team and the AI collaborate.
 
-**Our take:** the Scrum Master as we know it has fewer and fewer reasons to exist when the process lives in the repo. Human facilitation remains valuable — but it no longer justifies a full-time role when the AI doesn't need motivation on a Monday morning.
+On some projects, this evolution will make the function more strategic. On others, it will require acquiring a context-engineering skill that wasn't previously expected.
 
-### The "execution-only" dev
+### The execution-focused developer
 
-**What they do today:** pick up a ticket, code, submit a PR. Repeat.
+**Today:** picks up a ticket, codes, submits a PR. Repeats.
 
-**What changes:** AI codes faster, more consistently, and without style inconsistencies between developers. A well-defined ticket with a manifest and rules produces a predictable result — without a human typing every line.
+**What could evolve:** with good framing (manifest, rules, skills), AI can produce a portion of the code faster and more consistently than a team of developers with varied styles. A developer's value then shifts toward what AI does poorly: framing a problem, verifying that a result actually matches the intent, arbitrating between approaches, understanding a business context.
 
-**Our take:** the developer whose only contribution is fingers on a keyboard is on borrowed time. Value shifts toward the ability to define the need, challenge the AI, and validate the result.
+This isn't the end of development. It's the refocus of the developer on the irreplaceable part of the craft: judgment. Typing at a keyboard was already a minority fraction of a good developer's time.
 
 ### The style reviewer
 
-**What they do today:** check naming conventions, function sizes, code consistency during review.
+**Today:** checks naming, function size, code consistency during review.
 
-**What changes:** rules are automatically verifiable. The AI applies them before the PR even exists. `lyt lint` catches what a human would spend 20 minutes spotting.
+**What could evolve:** mechanically verifiable rules benefit from being verified mechanically. `lyt lint` and classic linters catch in seconds what a human takes a while to spot. Code review keeps its full meaning for what only a human can judge: is the solution relevant, is the intent clear, does it hold against an unexpected case, does it align with the architecture.
 
-**Our take:** code review remains essential — but for validating intent, logic, and architecture. Not for counting spaces.
+Review isn't threatened. It deepens because it's relieved of mechanical tasks.
 
-## What transforms
+## What could transform
 
-These roles don't disappear. They change in nature. And in many cases, they gain in impact.
+Some roles might evolve from a production register to a design register. Three hypotheses — to be verified team by team.
 
 ### Product Owner → Intent Architect
 
-| Before | After |
+| Current practice | Possible direction |
 |---|---|
-| Writes user stories for humans | Brainstorms with AI, refines requirements in conversation |
+| Writes user stories | Refines the need in dialogue with the AI |
 | Formats acceptance criteria | Validates the manifest and AI-generated issues |
-| Prioritizes a backlog in Jira | Defines the sprint, the AI structures dependencies |
-| Bridges dev ↔ business | Still the translator of client needs — but the AI is the technical counterpart |
+| Prioritizes a backlog | Defines the sprint, the AI structures dependencies |
+| Bridges dev ↔ business | Still the translator of client needs, with the AI as the technical counterpart |
 
-**The shift:** from writing to steering. The PO no longer spends hours formatting tickets. They spend time thinking about the real need.
+**The shift:** from writing to steering. A PO could spend less time formatting tickets, more time thinking about the real need. Client knowledge remains irreplaceable.
 
 ### Lead dev → System Architect
 
-| Before | After |
+| Current practice | Possible direction |
 |---|---|
 | Reads every PR line by line | Defines the manifest, rules, and skills |
-| Checks style and conventions | The AI applies them, the lead verifies the system works |
-| Catches bugs in review | Validates that the issue is well resolved, not that code is "clean" |
-| Enforces conventions verbally | Writes them once in rules — applied every session |
+| Checks style and conventions | Defines conventions; the AI applies them |
+| Catches bugs in review | Validates that the issue is well-resolved, not only that the code is clean |
+| Enforces conventions verbally | Writes them once in rules; they apply every session |
 
-**The shift:** from control to design. The lead no longer monitors — they define the world in which the AI produces.
-
-> *"The human doesn't write every line. They define the world."*
+**The shift:** from control to design. The lead would define more of the world in which the team and the AI produce — without disappearing from strategic review.
 
 ### Developer → AI Pilot
 
-| Before | After |
+| Current practice | Possible direction |
 |---|---|
-| Types code all day | Describes the need, challenges the AI, validates the result |
-| Personal style, individual habits | Code follows the manifest and rules, consistent across the team |
-| Expertise = knowing the syntax | Expertise = understanding the problem and knowing how to formulate it |
-| Value = typing speed | Value = quality of thinking |
+| Produces code | Describes the need, challenges the AI, validates the result |
+| Personal style | Code aligned with a shared manifest and rules |
+| Expertise = syntax mastery | Expertise = understanding the problem and being able to formulate it |
+| Value = speed and rigor at the keyboard | Value = quality of thought and soundness of judgment |
 
-**The shift:** from production to direction. A developer who asks the right questions produces more than a fast typist.
-
-> *"The developer brainstorms. Lytos harmonizes."*
+**The shift:** from production to direction of production. A developer who asks the right questions could deliver more than a fast typist — without the typist losing their place; their habits will be precious for verifying and teaching.
 
 ### QA → Standards Guardian
 
-| Before | After |
+| Current practice | Possible direction |
 |---|---|
 | Tests manually, writes test cases | Defines criteria in rules, the AI writes tests |
-| Verifies after the fact | Standards are applied during development |
-| Finds bugs | Defines the conditions that prevent them |
+| Verifies after the fact | Standards apply during development |
+| Finds bugs | Designs the conditions that make them rare |
 
-**The shift:** from execution to strategy. QA no longer hunts bugs — they design the system that prevents them.
+**The shift:** from execution to strategy. QA would no longer only hunt bugs — it would also design the system that makes them rare. Both remain useful; the balance between them may shift.
 
-## What emerges (maybe)
+## What could emerge
 
-We observe a new need that doesn't have a stable name yet.
+We see a need that doesn't have a stable name yet.
 
 ### The context engineer
 
-Someone who structures and maintains a project's `.lytos/`. Who optimizes the manifest to be precise without being verbose. Who consolidates memory to keep it relevant. Who designs skills tailored to the project. Who chooses the right model for each task type.
+Someone who structures and maintains a project's `.lytos/`. Who adjusts the manifest to be precise without being verbose. Who consolidates memory to keep it relevant. Who designs project-appropriate skills. Who chooses the right model for each task type.
 
-It's a mix of lead dev, PO, and knowledge manager. Today, the lead usually does this on top of their existing role. Tomorrow, on complex projects, it could become a role in its own right.
+It's a mix of lead dev, PO, and knowledge manager. Today this work is often done by the lead or whoever is most comfortable with AI in the team. On complex projects it could become a distinct role. It isn't forced to become one everywhere.
 
-We're not claiming this as a "new Lytos job title". We observe the need exists and no current role fully covers it.
+We don't claim this as a "new Lytos job title". We observe the need and note that no current role fully covers it.
 
-## The general pattern
+## A pattern, not a rule
 
-Agile responded to a human problem by adding human roles. AI changes the equation: when the executor is no longer human, roles designed to **manage** humans lose relevance. Roles designed to **think** gain it.
+The history of technological transformations often follows a similar pattern: a wave removes part of the mechanical execution and shifts value toward design and coordination.
 
-| Movement | What it adds | What it removes |
+| Wave | What it strengthened | What it reduced |
 |---|---|---|
-| **Agile** (2001) | Scrum Master, PO, Coach | Traditional project manager |
-| **DevOps** (2009) | SRE, Platform Engineer | The isolated sysadmin |
-| **AI + Lytos** (now) | Intent architect, context engineer | Process facilitator, pure executor |
+| **Agile** (2000s) | Scrum Master, PO, Coach | The traditional top-down project manager |
+| **DevOps** (2010s) | SRE, Platform Engineer | Sysadmin isolated from development |
+| **AI + Lytos** (now) | Intent architect, context engineer | The mechanical part of development and facilitation |
 
-The pattern is always the same: each technology wave removes **execution** roles and strengthens **design** roles.
+This pattern isn't a law. Each team, each culture, each project type moves at its own pace. Previous transformations didn't replace every role they touched — they redrew them.
 
-> *"Less execution, more thinking. Less human process, more steering."*
+## For your team
 
-## What this means for your team
+If this page leaves you wondering "what about me", a few directions — to weigh against your actual context:
 
-If you're reading this wondering "what about me":
+- **Scrum Master?** Your understanding of team dynamics is a rare skill. It could combine with a new practice: structuring the AI's context (manifest, rules, memory). Many Scrum Masters we've met find this an additional lever of impact.
 
-- **You're a Scrum Master?** Your value isn't in ceremonies — it's in your understanding of team dynamics. Learn to structure AI context (manifest, rules, memory). You could become the best context engineer in your organization.
+- **Product Owner?** Your knowledge of client needs is irreplaceable — AI won't take it. What may change is the ratio between time spent writing tickets and time spent building and challenging the need in dialogue with the AI.
 
-- **You're a PO?** Your knowledge of client needs is irreplaceable. The AI doesn't know what the client wants. You do. Learn to brainstorm with AI rather than writing tickets.
+- **Developer?** Your experience with code is a foundation, not a fading asset. What might amplify is the premium on the ability to formulate a problem and judge a result. The patterns you've internalized over the years are exactly what you bring to the AI to guide it.
 
-- **You're a dev?** Invest in your ability to formulate problems, not in a new framework. Syntax can be learned. Judgment cannot.
+- **Lead dev?** The system architect role already existed — AI gives it new tools. Defining a clear frame (rules, skills, manifest) could become as structuring for a team as a good software architecture is today.
 
-- **You're a lead?** This is your moment. The system architect role is higher leverage than anything you were doing in code review. Define the framework. The AI will do the rest.
-
-These aren't threats. They're transformations. And like all transformations, those who anticipate them come out stronger.
+These transformations aren't threats or guarantees. They're possible shifts, which will depend as much on the technology as on how each team chooses to integrate it. Lytos aims to offer a vocabulary and tools to accompany this evolution — without claiming to dictate it.
