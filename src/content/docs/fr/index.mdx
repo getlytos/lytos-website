@@ -41,6 +41,8 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import MethodFlow from '../../../components/MethodFlow.astro';
+import LytosPillars from '../../../components/LytosPillars.astro';
 import lytBoard from '../../../assets/lyt-board.png';
 import lytShow from '../../../assets/lyt-show.png';
 import lytLint from '../../../assets/lyt-lint.png';
@@ -82,27 +84,19 @@ Aujourd'hui Claude. Demain GPT ou Gemini. Votre contexte ne bouge pas.
 
 ---
 
-## 5 piliers. Une méthode complète.
+## La méthode, en un schéma
 
-Lytos structure votre collaboration avec l'IA en cinq couches qui s'emboîtent :
+Un seul diagramme pour expliquer Lytos — le développeur à la racine, le modèle comme outil interchangeable, le dépôt comme contexte partagé, et les cinq piliers qui structurent le travail.
 
-<CardGrid>
-  <Card title="Intent" icon="document">
-    Le manifeste de votre projet. Objectif, périmètre, décisions structurantes. L'IA sait *pourquoi* elle code, pas seulement *quoi* coder.
-  </Card>
-  <Card title="Design" icon="puzzle">
-    Vos playbooks de session. Comment aborder une revue de code, une refacto, un déploiement. Des workflows reproductibles, adaptés à votre projet.
-  </Card>
-  <Card title="Standards" icon="approve-check">
-    Vos règles de qualité. Taille de fichiers, nommage, couverture de tests, patterns interdits. L'IA respecte vos exigences sans qu'on ait à les répéter.
-  </Card>
-  <Card title="Progress" icon="rocket">
-    Votre kanban Git-natif. Les tâches en cours, les décisions prises, l'historique des sprints. L'IA sait où en est le projet à chaque session.
-  </Card>
-  <Card title="Memory" icon="star">
-    La mémoire vivante du projet. Architecture, bugs connus, patterns émergents, contexte métier. Ce que l'IA doit retenir d'une session à l'autre.
-  </Card>
-</CardGrid>
+<MethodFlow lang="fr" />
+
+---
+
+## Un petit schéma par pilier
+
+Chaque pilier est un dossier que vous pouvez ouvrir et lire. Pas de boîte noire, pas d'état caché — tout est en markdown, versionné dans votre dépôt.
+
+<LytosPillars lang="fr" />
 
 [Découvrir les 5 piliers en détail →](/fr/method/manifest/)
 

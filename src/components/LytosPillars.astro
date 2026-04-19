@@ -1,0 +1,347 @@
+---
+/**
+ * A small schematic per pillar.
+ *
+ * Five cards, one per pillar. Each has a glyph, the name,
+ * the file path, a mini schematic, and a caption.
+ *
+ * From Clade Design bundle: section "07 · the five pillars".
+ */
+interface Props {
+	lang?: 'en' | 'fr';
+}
+const { lang = 'en' } = Astro.props;
+
+const captions = lang === 'fr' ? {
+	manifest: 'Un seul fichier markdown. Identité, périmètre, stack, non-négociables. Chargé en premier à chaque session.',
+	skills: 'Des procédures numérotées. Un skill est une checklist, pas un persona. Neuf fournis de base, vous écrivez les vôtres.',
+	rules: 'Des seuils vérifiables. Fichier ≤ 300 lignes, fonction ≤ 30, couverture ≥ 80%. Ce qui ne se mesure pas ne se respecte pas.',
+	board: 'Un kanban en dossiers. Le frontmatter YAML est la source de vérité. Le dossier indique le statut.',
+	memory: 'Un fichier index + des notes par sujet. Architecture, patterns, bugs, métier. Chargé à la carte selon la tâche.',
+	headings: {
+		intent: 'I · INTENT',
+		design: 'II · DESIGN',
+		standards: 'III · STANDARDS',
+		progress: 'IV · PROGRESS',
+		memory: 'V · MEMORY',
+	},
+	names: {
+		manifest: 'Manifest',
+		skills: 'Skills',
+		rules: 'Rules',
+		board: 'Issue Board',
+		memory: 'Cortex',
+	},
+	labels: {
+		identity: 'Identité',
+		why: 'Pourquoi il existe',
+		stack: 'Stack',
+		constraints: 'Contraintes',
+		principles: 'Principes',
+		purpose: '1. Objectif',
+		procedure: '2. Procédure',
+		output: '3. Sortie',
+		checklist: '4. Checklist',
+		fileSize: 'taille fichier',
+		fnSize: 'taille fn',
+		params: 'paramètres',
+		coverage: 'couverture',
+		backlog: 'backlog',
+		sprint: 'sprint',
+		doing: 'en cours',
+		review: 'review',
+		done: 'done',
+	},
+} : {
+	manifest: 'A single markdown file. Identity, scope, stack, non-negotiables. Loaded first at every session.',
+	skills: 'Numbered procedures. A skill is a checklist, not a persona. Nine built-in; you write your own.',
+	rules: 'Verifiable thresholds. 300-line files, 30-line functions, 80% coverage. What can\'t be measured can\'t be respected.',
+	board: 'A kanban in folders. Frontmatter YAML is the source of truth. The folder is the status.',
+	memory: 'An index file and topic notes. Architecture, patterns, bugs, domain. Loaded à la carte per task.',
+	headings: {
+		intent: 'I · INTENT',
+		design: 'II · DESIGN',
+		standards: 'III · STANDARDS',
+		progress: 'IV · PROGRESS',
+		memory: 'V · MEMORY',
+	},
+	names: {
+		manifest: 'Manifest',
+		skills: 'Skills',
+		rules: 'Rules',
+		board: 'Issue Board',
+		memory: 'Cortex',
+	},
+	labels: {
+		identity: 'Identity',
+		why: 'Why it exists',
+		stack: 'Stack',
+		constraints: 'Constraints',
+		principles: 'Principles',
+		purpose: '1. Purpose',
+		procedure: '2. Procedure',
+		output: '3. Output',
+		checklist: '4. Checklist',
+		fileSize: 'file size',
+		fnSize: 'fn size',
+		params: 'params',
+		coverage: 'coverage',
+		backlog: 'backlog',
+		sprint: 'sprint',
+		doing: 'doing',
+		review: 'review',
+		done: 'done',
+	},
+};
+---
+
+<div class="pillars">
+	<!-- I · Manifest -->
+	<div class="pillar">
+		<div class="pillar-head">
+			<span class="pillar-num">{captions.headings.intent}</span>
+			<svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><path d="M18 10 H46 V54 H18 Z M24 20 H40 M24 28 H40 M24 36 H34" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+		</div>
+		<div class="pillar-name">{captions.names.manifest}</div>
+		<code class="pillar-file">manifest.md</code>
+		<div class="pillar-schematic">
+			<svg viewBox="0 0 200 110" aria-hidden="true">
+				<rect x="50" y="10" width="100" height="90" fill="none" stroke="currentColor" stroke-width="1.5"/>
+				<g>
+					<rect x="58" y="22" width="4" height="4" fill="currentColor"/>
+					<text x="68" y="26" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">{captions.labels.identity}</text>
+				</g>
+				<g>
+					<rect x="58" y="37" width="4" height="4" fill="currentColor"/>
+					<text x="68" y="41" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">{captions.labels.why}</text>
+				</g>
+				<g>
+					<rect x="58" y="52" width="4" height="4" fill="currentColor"/>
+					<text x="68" y="56" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">{captions.labels.stack}</text>
+				</g>
+				<g>
+					<rect x="58" y="67" width="4" height="4" fill="currentColor"/>
+					<text x="68" y="71" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">{captions.labels.constraints}</text>
+				</g>
+				<g>
+					<rect x="58" y="82" width="4" height="4" fill="currentColor"/>
+					<text x="68" y="86" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">{captions.labels.principles}</text>
+				</g>
+			</svg>
+		</div>
+		<p class="pillar-caption">{captions.manifest}</p>
+	</div>
+
+	<!-- II · Skills -->
+	<div class="pillar">
+		<div class="pillar-head">
+			<span class="pillar-num">{captions.headings.design}</span>
+			<svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
+				<g fill="none" stroke="currentColor" stroke-width="3">
+					<circle cx="20" cy="20" r="6"/>
+					<circle cx="44" cy="20" r="6"/>
+					<circle cx="32" cy="44" r="6"/>
+					<path d="M20 26 L32 38 M44 26 L32 38"/>
+				</g>
+			</svg>
+		</div>
+		<div class="pillar-name">{captions.names.skills}</div>
+		<code class="pillar-file">skills/</code>
+		<div class="pillar-schematic">
+			<svg viewBox="0 0 200 110" aria-hidden="true">
+				{[captions.labels.purpose, captions.labels.procedure, captions.labels.output, captions.labels.checklist].map((label, i) => (
+					<g>
+						<rect x="20" y={16 + i * 20} width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.2"/>
+						<text x="28" y={26 + i * 20} font-family="IBM Plex Mono, monospace" font-size="8" fill="currentColor" text-anchor="middle">{i + 1}</text>
+						<text x="44" y={26 + i * 20} font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">{label.slice(3)}</text>
+					</g>
+				))}
+			</svg>
+		</div>
+		<p class="pillar-caption">{captions.skills}</p>
+	</div>
+
+	<!-- III · Rules -->
+	<div class="pillar">
+		<div class="pillar-head">
+			<span class="pillar-num">{captions.headings.standards}</span>
+			<svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
+				<g fill="none" stroke="currentColor" stroke-width="3">
+					<path d="M10 10 L54 10 L54 54 L10 54 Z"/>
+					<path d="M18 24 L28 34 L46 18"/>
+				</g>
+			</svg>
+		</div>
+		<div class="pillar-name">{captions.names.rules}</div>
+		<code class="pillar-file">rules/</code>
+		<div class="pillar-schematic">
+			<svg viewBox="0 0 200 110" aria-hidden="true">
+				{[
+					{k: captions.labels.fileSize, v: '≤ 300'},
+					{k: captions.labels.fnSize, v: '≤ 30'},
+					{k: captions.labels.params, v: '≤ 4'},
+					{k: captions.labels.coverage, v: '≥ 80%'},
+				].map((r, i) => (
+					<g>
+						<text x="20" y={28 + i * 18} font-family="IBM Plex Mono, monospace" font-size="10" fill="rgba(21,21,21,0.7)">{r.k}</text>
+						<line x1="90" y1={24 + i * 18} x2="140" y2={24 + i * 18} stroke="rgba(21,21,21,0.12)"/>
+						<text x="180" y={28 + i * 18} font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor" text-anchor="end">{r.v}</text>
+					</g>
+				))}
+			</svg>
+		</div>
+		<p class="pillar-caption">{captions.rules}</p>
+	</div>
+
+	<!-- IV · Issue Board -->
+	<div class="pillar">
+		<div class="pillar-head">
+			<span class="pillar-num">{captions.headings.progress}</span>
+			<svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
+				<g fill="none" stroke="currentColor" stroke-width="3">
+					<rect x="8" y="16" width="48" height="32"/>
+					<line x1="24" y1="16" x2="24" y2="48"/>
+					<line x1="40" y1="16" x2="40" y2="48"/>
+				</g>
+			</svg>
+		</div>
+		<div class="pillar-name">{captions.names.board}</div>
+		<code class="pillar-file">issue-board/</code>
+		<div class="pillar-schematic">
+			<svg viewBox="0 0 200 110" aria-hidden="true">
+				{[captions.labels.backlog, captions.labels.sprint, captions.labels.doing, captions.labels.review, captions.labels.done].map((c, i) => (
+					<g>
+						<rect x={8 + i * 38} y="14" width="34" height="80" fill="none" stroke="rgba(21,21,21,0.12)" stroke-width="1"/>
+						<text x={25 + i * 38} y="26" font-family="IBM Plex Mono, monospace" font-size="7" fill="rgba(21,21,21,0.7)" text-anchor="middle">{c}</text>
+						{i < 3 && <rect x={11 + i * 38} y="34" width="28" height="10" fill="none" stroke="currentColor" stroke-width="1"/>}
+						{i < 3 && <rect x={11 + i * 38} y="50" width="28" height="10" fill="none" stroke="currentColor" stroke-width="1"/>}
+						{i === 3 && <rect x={11 + i * 38} y="34" width="28" height="10" fill="none" stroke="currentColor" stroke-width="1"/>}
+						{i === 4 && <rect x={11 + i * 38} y="34" width="28" height="10" fill="currentColor"/>}
+					</g>
+				))}
+			</svg>
+		</div>
+		<p class="pillar-caption">{captions.board}</p>
+	</div>
+
+	<!-- V · Memory -->
+	<div class="pillar">
+		<div class="pillar-head">
+			<span class="pillar-num">{captions.headings.memory}</span>
+			<svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
+				<g fill="none" stroke="currentColor" stroke-width="3">
+					<rect x="12" y="12" width="40" height="40"/>
+					<path d="M20 22 H44 M20 30 H44 M20 38 H36"/>
+				</g>
+			</svg>
+		</div>
+		<div class="pillar-name">{captions.names.memory}</div>
+		<code class="pillar-file">memory/</code>
+		<div class="pillar-schematic">
+			<svg viewBox="0 0 200 110" aria-hidden="true">
+				<rect x="20" y="20" width="50" height="70" fill="none" stroke="currentColor" stroke-width="1.5"/>
+				<text x="45" y="38" font-family="IBM Plex Mono, monospace" font-size="8" fill="currentColor" text-anchor="middle">MEMORY.md</text>
+				{['architecture', 'patterns', 'bugs', 'domain'].map((t, i) => (
+					<g>
+						<line x1="70" y1="55" x2="115" y2={30 + i * 18} stroke="rgba(21,21,21,0.12)" stroke-width="1"/>
+						<rect x="115" y={22 + i * 18} width="60" height="14" fill="none" stroke="currentColor" stroke-width="1"/>
+						<text x="145" y={32 + i * 18} font-family="IBM Plex Mono, monospace" font-size="8" fill="currentColor" text-anchor="middle">{t}.md</text>
+					</g>
+				))}
+			</svg>
+		</div>
+		<p class="pillar-caption">{captions.memory}</p>
+	</div>
+</div>
+
+<style>
+	.pillars {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 14px;
+		margin: 2rem 0;
+	}
+	@media (max-width: 1100px) {
+		.pillars { grid-template-columns: repeat(3, 1fr); }
+	}
+	@media (max-width: 720px) {
+		.pillars { grid-template-columns: repeat(2, 1fr); }
+	}
+	@media (max-width: 480px) {
+		.pillars { grid-template-columns: 1fr; }
+	}
+
+	.pillar {
+		border: 1px solid var(--lytos-ink-12);
+		background: var(--lytos-paper);
+		padding: 20px;
+		color: var(--lytos-ink);
+		display: flex;
+		flex-direction: column;
+	}
+	:global(:root[data-theme='dark']) .pillar {
+		background: #1a1a1a;
+		border-color: rgba(245, 242, 236, 0.12);
+		color: var(--lytos-paper);
+	}
+
+	.pillar-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 10px;
+	}
+	.pillar-num {
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: 0.65rem;
+		letter-spacing: 0.14em;
+		color: var(--lytos-ink-50);
+	}
+	.pillar-name {
+		font-family: 'Newsreader', Georgia, serif;
+		font-size: 1.2rem;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		color: inherit;
+	}
+	.pillar-file {
+		font-family: 'IBM Plex Mono', monospace !important;
+		font-size: 0.7rem !important;
+		color: var(--lytos-ink) !important;
+		background: var(--lytos-paper-deep) !important;
+		border: 1px solid var(--lytos-ink-12) !important;
+		padding: 2px 6px !important;
+		margin-top: 6px !important;
+		display: inline-block !important;
+		align-self: flex-start;
+	}
+	:global(:root[data-theme='dark']) .pillar-file {
+		color: var(--lytos-paper) !important;
+		background: #131418 !important;
+		border-color: rgba(245, 242, 236, 0.12) !important;
+	}
+	.pillar-schematic {
+		margin-top: 14px;
+		padding: 10px 0;
+		border-top: 1px solid var(--lytos-ink-12);
+		border-bottom: 1px solid var(--lytos-ink-12);
+		min-height: 110px;
+	}
+	:global(:root[data-theme='dark']) .pillar-schematic {
+		border-top-color: rgba(245, 242, 236, 0.12);
+		border-bottom-color: rgba(245, 242, 236, 0.12);
+	}
+	.pillar-schematic svg {
+		width: 100%;
+		height: 110px;
+	}
+	.pillar-caption {
+		font-size: 0.78rem;
+		color: var(--lytos-ink-soft);
+		margin: 12px 0 0;
+		line-height: 1.5;
+	}
+	:global(:root[data-theme='dark']) .pillar-caption {
+		color: #a8a294;
+	}
+</style>

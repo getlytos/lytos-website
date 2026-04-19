@@ -1,0 +1,286 @@
+---
+/**
+ * One diagram to explain Lytos.
+ *
+ * Three cards on top (Developer / Model / Repo), equation in the
+ * middle (Result = Model × Context), five pillars as a horizontal
+ * flow below, feedback arc at the bottom.
+ *
+ * From Clade Design bundle: section "05 · the method, at a glance".
+ */
+interface Props {
+	lang?: 'en' | 'fr';
+}
+const { lang = 'en' } = Astro.props;
+
+const copy = lang === 'fr' ? {
+	triad: [
+		{ title: 'Le développeur', sub: 'définit l\'intention, valide, oriente' },
+		{ title: 'Le modèle', sub: 'exécute — interchangeable' },
+		{ title: 'Le dépôt', sub: 'porte le contexte — markdown, versionné' },
+	],
+	equation: { prefix: 'Résultat = ', model: 'Modèle', op: '×', context: 'Contexte' },
+	equationCaption: 'Lytos structure le Contexte.',
+	pillars: [
+		{ n: 'I', name: 'INTENT',    file: 'manifest.md',   role: 'Pourquoi ce projet existe' },
+		{ n: 'II', name: 'DESIGN',   file: 'skills/',       role: 'Comment on aborde chaque tâche' },
+		{ n: 'III', name: 'STANDARDS', file: 'rules/',      role: 'Ce que "bien fait" veut dire' },
+		{ n: 'IV', name: 'PROGRESS', file: 'issue-board/', role: 'Ce qui avance, ce qui bloque' },
+		{ n: 'V', name: 'MEMORY',    file: 'memory/',       role: 'Ce que le projet a appris' },
+	],
+	loop: 'Chaque session se termine comme elle a commencé : la mémoire absorbe ce qui compte, le board avance, et la session suivante hérite du contexte — pas du chat.',
+	loopLabel: 'mémoire',
+	loopLabel2: 'session suivante',
+} : {
+	triad: [
+		{ title: 'The Developer', sub: 'defines intent, validates, orients' },
+		{ title: 'The Model', sub: 'executes — interchangeable' },
+		{ title: 'The Repo', sub: 'holds the context — markdown, versioned' },
+	],
+	equation: { prefix: 'Result = ', model: 'Model', op: '×', context: 'Context' },
+	equationCaption: 'Lytos structures the Context.',
+	pillars: [
+		{ n: 'I', name: 'INTENT',    file: 'manifest.md',   role: 'Why this project exists' },
+		{ n: 'II', name: 'DESIGN',   file: 'skills/',       role: 'How we do each task' },
+		{ n: 'III', name: 'STANDARDS', file: 'rules/',      role: 'What "done right" means' },
+		{ n: 'IV', name: 'PROGRESS', file: 'issue-board/', role: 'What is moving, what is blocked' },
+		{ n: 'V', name: 'MEMORY',    file: 'memory/',       role: 'What the project has learned' },
+	],
+	loop: 'Each session ends the way it began: memory absorbs what mattered, the board advances, and the next session inherits the context — not the chat.',
+	loopLabel: 'memory',
+	loopLabel2: 'next session',
+};
+---
+
+<div class="mf">
+	<div class="mf-triad">
+		<div class="mf-card">
+			<svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+				<circle cx="32" cy="32" r="6" fill="#151515"/>
+			</svg>
+			<h4>{copy.triad[0].title}</h4>
+			<p>{copy.triad[0].sub}</p>
+		</div>
+		<div class="mf-card">
+			<svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+				<rect x="16" y="16" width="32" height="32" fill="none" stroke="#151515" stroke-width="3" stroke-dasharray="3 4"/>
+			</svg>
+			<h4>{copy.triad[1].title}</h4>
+			<p>{copy.triad[1].sub}</p>
+		</div>
+		<div class="mf-card">
+			<svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+				<rect x="14" y="14" width="36" height="36" fill="none" stroke="#151515" stroke-width="3"/>
+				<rect x="20" y="22" width="24" height="2" fill="#151515"/>
+				<rect x="20" y="30" width="24" height="2" fill="#151515"/>
+				<rect x="20" y="38" width="16" height="2" fill="#151515"/>
+			</svg>
+			<h4>{copy.triad[2].title}</h4>
+			<p>{copy.triad[2].sub}</p>
+		</div>
+	</div>
+
+	<div class="mf-equation">
+		<div class="mf-eq-line">
+			<span>{copy.equation.prefix}</span>
+			<em>{copy.equation.model}</em>
+			<span class="mf-op">{copy.equation.op}</span>
+			<em>{copy.equation.context}</em>
+		</div>
+		<div class="mf-eq-caption">{copy.equationCaption}</div>
+	</div>
+
+	<div class="mf-pillars">
+		{copy.pillars.map((p) => (
+			<div class="mf-pillar">
+				<span class="mf-pillar-tick" aria-hidden="true"></span>
+				<span class="mf-pillar-num">{p.n}</span>
+				<div class="mf-pillar-name">{p.name}</div>
+				<code class="mf-pillar-file">{p.file}</code>
+				<p class="mf-pillar-role">{p.role}</p>
+			</div>
+		))}
+	</div>
+
+	<div class="mf-loop">
+		<p class="mf-loop-text">{copy.loop}</p>
+		<svg viewBox="0 0 280 50" width="280" height="50" aria-hidden="true" class="mf-loop-svg">
+			<path d="M8 40 L8 18 L272 18" fill="none" stroke="#151515" stroke-width="1.5"/>
+			<path d="M268 14 L272 18 L268 22" fill="none" stroke="#151515" stroke-width="1.5"/>
+			<circle cx="8" cy="40" r="3" fill="#151515"/>
+			<text x="14" y="44" font-family="IBM Plex Mono, monospace" font-size="10" fill="rgba(21,21,21,0.7)">{copy.loopLabel}</text>
+			<text x="196" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="rgba(21,21,21,0.7)">{copy.loopLabel2}</text>
+		</svg>
+	</div>
+</div>
+
+<style>
+	.mf {
+		background: var(--lytos-paper);
+		border: 1px solid var(--lytos-ink-12);
+		padding: 40px;
+		margin: 2rem 0;
+	}
+	:global(:root[data-theme='dark']) .mf {
+		background: #1a1a1a;
+		border-color: rgba(245, 242, 236, 0.12);
+	}
+	.mf-triad {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+		margin-bottom: 40px;
+	}
+	@media (max-width: 600px) {
+		.mf-triad { grid-template-columns: 1fr; }
+	}
+	.mf-card {
+		border: 1px solid var(--lytos-ink-12);
+		padding: 20px;
+		background: var(--lytos-paper);
+	}
+	:global(:root[data-theme='dark']) .mf-card {
+		background: #131418;
+		border-color: rgba(245, 242, 236, 0.12);
+	}
+	.mf-card svg { color: var(--lytos-ink); }
+	:global(:root[data-theme='dark']) .mf-card svg path,
+	:global(:root[data-theme='dark']) .mf-card svg rect,
+	:global(:root[data-theme='dark']) .mf-card svg circle { stroke: var(--lytos-paper); fill: var(--lytos-paper); }
+	:global(:root[data-theme='dark']) .mf-card svg rect[fill='none'],
+	:global(:root[data-theme='dark']) .mf-card svg circle[fill='none'] { fill: none; }
+	.mf-card h4 {
+		font-family: 'Newsreader', Georgia, serif;
+		font-size: 1.2rem;
+		font-weight: 600;
+		margin: 10px 0 4px;
+		letter-spacing: -0.01em;
+		color: var(--lytos-ink);
+	}
+	:global(:root[data-theme='dark']) .mf-card h4 { color: var(--lytos-paper); }
+	.mf-card p {
+		font-size: 0.82rem;
+		color: var(--lytos-ink-soft);
+		margin: 0;
+		line-height: 1.5;
+	}
+	:global(:root[data-theme='dark']) .mf-card p { color: #a8a294; }
+
+	.mf-equation {
+		text-align: center;
+		padding: 22px 0 30px;
+		border-top: 1px solid var(--lytos-ink-12);
+		border-bottom: 1px solid var(--lytos-ink-12);
+		margin-bottom: 40px;
+	}
+	.mf-eq-line {
+		font-family: 'Newsreader', Georgia, serif;
+		font-size: clamp(1.5rem, 4vw, 2.4rem);
+		font-weight: 500;
+		letter-spacing: -0.02em;
+		color: var(--lytos-ink);
+	}
+	:global(:root[data-theme='dark']) .mf-eq-line { color: var(--lytos-paper); }
+	.mf-eq-line em { font-style: italic; }
+	.mf-op {
+		font-family: 'IBM Plex Mono', monospace;
+		font-weight: 400;
+		color: var(--lytos-ink-dim);
+		font-size: 0.7em;
+		font-style: normal;
+		margin: 0 0.3em;
+	}
+	.mf-eq-caption {
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: 0.7rem;
+		color: var(--lytos-ink-50);
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		margin-top: 10px;
+	}
+
+	.mf-pillars {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 16px;
+	}
+	@media (max-width: 900px) {
+		.mf-pillars { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+	}
+	@media (max-width: 520px) {
+		.mf-pillars { grid-template-columns: 1fr; }
+	}
+	.mf-pillar {
+		position: relative;
+		border-top: 2px solid var(--lytos-ink);
+		padding-top: 14px;
+	}
+	:global(:root[data-theme='dark']) .mf-pillar { border-top-color: var(--lytos-paper); }
+	.mf-pillar-tick {
+		position: absolute;
+		top: -5px;
+		left: 0;
+		width: 8px;
+		height: 8px;
+		background: var(--lytos-ink);
+	}
+	:global(:root[data-theme='dark']) .mf-pillar-tick { background: var(--lytos-paper); }
+	.mf-pillar-num {
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: 0.68rem;
+		color: var(--lytos-ink-50);
+		letter-spacing: 0.14em;
+	}
+	.mf-pillar-name {
+		font-family: 'Newsreader', Georgia, serif;
+		font-size: 1.15rem;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		margin-top: 2px;
+		color: var(--lytos-ink);
+	}
+	:global(:root[data-theme='dark']) .mf-pillar-name { color: var(--lytos-paper); }
+	.mf-pillar-file {
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: 0.72rem !important;
+		color: var(--lytos-ink) !important;
+		background: var(--lytos-paper-deep) !important;
+		border: 1px solid var(--lytos-ink-12) !important;
+		padding: 2px 6px !important;
+		display: inline-block;
+		margin-top: 8px;
+	}
+	.mf-pillar-role {
+		font-size: 0.82rem;
+		color: var(--lytos-ink-soft);
+		margin: 10px 0 0;
+		line-height: 1.45;
+	}
+	:global(:root[data-theme='dark']) .mf-pillar-role { color: #a8a294; }
+
+	.mf-loop {
+		margin-top: 40px;
+		padding-top: 24px;
+		border-top: 1px dashed var(--lytos-ink-12);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+	}
+	@media (max-width: 720px) {
+		.mf-loop { flex-direction: column; align-items: flex-start; }
+	}
+	.mf-loop-text {
+		font-size: 0.82rem;
+		color: var(--lytos-ink-soft);
+		max-width: 520px;
+		line-height: 1.55;
+		margin: 0;
+	}
+	:global(:root[data-theme='dark']) .mf-loop-text { color: #a8a294; }
+	.mf-loop-svg { flex-shrink: 0; }
+	:global(:root[data-theme='dark']) .mf-loop-svg path,
+	:global(:root[data-theme='dark']) .mf-loop-svg circle { stroke: var(--lytos-paper); fill: var(--lytos-paper); }
+	:global(:root[data-theme='dark']) .mf-loop-svg path[fill='none'] { fill: none; }
+	:global(:root[data-theme='dark']) .mf-loop-svg text { fill: rgba(245, 242, 236, 0.7) !important; }
+</style>

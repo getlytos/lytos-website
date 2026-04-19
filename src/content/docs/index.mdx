@@ -41,6 +41,8 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import MethodFlow from '../../components/MethodFlow.astro';
+import LytosPillars from '../../components/LytosPillars.astro';
 import lytBoard from '../../assets/lyt-board.png';
 import lytShow from '../../assets/lyt-show.png';
 import lytLint from '../../assets/lyt-lint.png';
@@ -78,27 +80,19 @@ Claude today. GPT or Gemini tomorrow. Your context doesn't move.
 
 ---
 
-## 5 pillars. One complete method.
+## The method, at a glance
 
-Lytos structures your collaboration with AI in five interlocking layers:
+One diagram to explain Lytos — the Developer at the root, the Model as an interchangeable tool, the Repo as the shared context, and the five pillars that structure the work.
 
-<CardGrid>
-  <Card title="Intent" icon="document">
-    Your project's manifesto. Objective, scope, structural decisions. The AI knows *why* it codes, not just *what* to code.
-  </Card>
-  <Card title="Design" icon="puzzle">
-    Your session playbooks. How to approach a code review, a refactor, a deployment. Reproducible workflows, tailored to your project.
-  </Card>
-  <Card title="Standards" icon="approve-check">
-    Your quality rules. File size, naming, test coverage, forbidden patterns. The AI respects your requirements without being told twice.
-  </Card>
-  <Card title="Progress" icon="rocket">
-    Your Git-native kanban. Tasks in progress, decisions made, sprint history. The AI knows where the project stands at every session.
-  </Card>
-  <Card title="Memory" icon="star">
-    The project's living memory. Architecture, known bugs, emerging patterns, business context. What the AI must remember from one session to the next.
-  </Card>
-</CardGrid>
+<MethodFlow lang="en" />
+
+---
+
+## A small schematic per pillar
+
+Each pillar is a folder you can open and read. No black box, no hidden state — everything is markdown, versioned in your repo.
+
+<LytosPillars lang="en" />
 
 [Explore the 5 pillars in detail →](/en/method/manifest/)
 
