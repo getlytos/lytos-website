@@ -1,6 +1,75 @@
+/* Lytos — visual identity.
+   Palette: papier + encre + accent olive.
+   Typography: Newsreader (serif) for headings, Inter (sans) for UI,
+   IBM Plex Mono for code. */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
 :root {
-	--sl-color-accent-low: #1a1a2e;
-	--sl-color-accent: #e94560;
-	--sl-color-accent-high: #f5c6d0;
-	--sl-font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--lytos-paper: #f5f2ec;
+	--lytos-paper-deep: #ebe7dd;
+	--lytos-ink: #151515;
+	--lytos-ink-70: rgba(21, 21, 21, 0.7);
+	--lytos-ink-50: rgba(21, 21, 21, 0.5);
+	--lytos-ink-12: rgba(21, 21, 21, 0.12);
+	--lytos-olive: #4a5233;
+	--lytos-olive-soft: #8a9566;
+
+	/* Starlight accent = olive */
+	--sl-color-accent-low: #2a3220;
+	--sl-color-accent: #4a5233;
+	--sl-color-accent-high: #c9d0a8;
+
+	/* Font stacks */
+	--sl-font-system: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--sl-font-system-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Light theme — paper & ink */
+:root[data-theme='light'] {
+	--sl-color-bg: var(--lytos-paper);
+	--sl-color-bg-nav: var(--lytos-paper);
+	--sl-color-bg-sidebar: var(--lytos-paper);
+	--sl-color-text: var(--lytos-ink);
+	--sl-color-text-accent: var(--lytos-olive);
+	--sl-color-hairline-light: var(--lytos-ink-12);
+	--sl-color-hairline: var(--lytos-ink-12);
+	--sl-color-gray-7: var(--lytos-ink-70);
+	--sl-color-gray-6: var(--lytos-ink-50);
+}
+
+/* Dark theme — inverted */
+:root[data-theme='dark'] {
+	--sl-color-bg: #151515;
+	--sl-color-bg-nav: #151515;
+	--sl-color-bg-sidebar: #1a1a1a;
+	--sl-color-text: var(--lytos-paper);
+	--sl-color-text-accent: var(--lytos-olive-soft);
+	--sl-color-accent: var(--lytos-olive-soft);
+	--sl-color-accent-high: var(--lytos-paper);
+}
+
+/* Headings in Newsreader serif — the editorial voice */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+h1.page-title,
+main h1 {
+	font-family: 'Newsreader', Georgia, serif;
+	font-feature-settings: 'ss01';
+	font-weight: 500;
+	letter-spacing: -0.01em;
+}
+
+.sl-markdown-content h1,
+h1.page-title,
+main h1 {
+	letter-spacing: -0.02em;
+	font-weight: 500;
+}
+
+/* Code blocks: a touch tighter */
+.sl-markdown-content code {
+	font-feature-settings: 'zero', 'ss01';
 }
