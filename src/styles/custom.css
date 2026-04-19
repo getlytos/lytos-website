@@ -256,6 +256,73 @@ a.site-title img {
 	transition: transform var(--lytos-dur) var(--lytos-ease);
 }
 
+/* ─── Footer — V1 Minimal (one-line, editorial) ────────────────
+   Sits flush at the bottom of every page, under Starlight's default
+   prev/next pager (which still renders via <Default /> in LytosFooter). */
+
+.lytos-ft {
+	padding: 28px 0;
+	margin-top: 64px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px 20px;
+	border-top: 1px solid var(--lytos-ink-12);
+	font-family: 'Inter', system-ui, sans-serif;
+	font-size: 13px;
+	color: var(--lytos-ink-soft);
+}
+
+.lytos-ft a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px solid var(--lytos-ink-12);
+	transition: border-color var(--lytos-dur) var(--lytos-ease),
+		color var(--lytos-dur) var(--lytos-ease);
+}
+
+.lytos-ft a:hover {
+	color: var(--lytos-olive-deep);
+	border-bottom-color: var(--lytos-olive-deep);
+}
+
+.lytos-ft-brand {
+	font-family: 'Newsreader', Georgia, serif;
+	font-style: italic;
+	font-size: 16px;
+	color: var(--lytos-ink);
+}
+
+.lytos-ft-sep {
+	color: var(--lytos-ink-dim);
+}
+
+.lytos-ft-meta {
+	font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	font-size: 11px;
+	letter-spacing: 0.12em;
+	color: var(--lytos-ink-dim);
+	margin-left: auto;
+}
+
+:root[data-theme='dark'] .lytos-ft {
+	color: #a8a294;
+	border-top-color: rgba(245, 242, 236, 0.10);
+}
+
+:root[data-theme='dark'] .lytos-ft-brand {
+	color: var(--lytos-paper);
+}
+
+:root[data-theme='dark'] .lytos-ft a {
+	border-bottom-color: rgba(245, 242, 236, 0.15);
+}
+
+:root[data-theme='dark'] .lytos-ft a:hover {
+	color: #c9d0a8;
+	border-bottom-color: #c9d0a8;
+}
+
 /* ─── Hero illustration — V6 "Issue Board vivant" ──────────────
    A mini kanban where one card migrates from In Progress to Done,
    then the Done card appears. All CSS animations, no JS.

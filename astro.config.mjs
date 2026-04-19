@@ -84,6 +84,9 @@ export default defineConfig({
 				},
 			],
 			customCss: ['./src/styles/custom.css'],
+			components: {
+				Footer: './src/components/LytosFooter.astro',
+			},
 			expressiveCode: {
 				themes: ['github-light', 'github-dark'],
 				styleOverrides: {
