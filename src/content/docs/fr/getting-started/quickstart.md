@@ -29,25 +29,25 @@ bash install.sh
 
 ### Avec le template GitHub (pas besoin de terminal)
 
-Utilise le [starter template](https://github.com/getlytos/starter) → clique **"Use this template"** sur GitHub.
+Utilisez le [starter template](https://github.com/getlytos/starter) → cliquez sur **"Use this template"** sur GitHub.
 
-## Configurer avec ton IA
+## Configurer avec votre IA
 
-Ouvre ton outil IA et dis-lui :
+Ouvrez votre outil IA et dites-lui :
 
 > **"Aide-moi à configurer Lytos pour ce projet."**
 
-L'IA lit le briefing (`.lytos/LYTOS.md`), comprend la méthode, et t'aide à remplir ton manifest : nom du projet, pourquoi il existe, stack technique, principes de décision, modèles IA à utiliser.
+L'IA lit le briefing (`.lytos/LYTOS.md`), comprend la méthode, et vous aide à remplir votre manifest : nom du projet, pourquoi il existe, stack technique, principes de décision, modèles IA à utiliser.
 
-Tu n'as pas besoin de tout remplir toi-même — l'IA détecte ta stack en lisant ton `package.json`, `requirements.txt` ou `go.mod`.
+Vous n'avez pas besoin de tout remplir vous-même — l'IA détecte votre stack en lisant votre `package.json`, `requirements.txt` ou `go.mod`.
 
 ## Et ensuite ?
 
-| Quand tu veux... | Fais ça |
+| Quand vous voulez... | Faites ça |
 |------------------|---------|
-| Poser des critères de qualité | Lis `.lytos/rules/default-rules.md` |
-| Structurer tes tâches | Crée ton premier sprint depuis `.lytos/templates/sprint.md` |
-| Suivre une procédure précise | Charge un skill depuis `.lytos/skills/` |
-| Suivre l'avancement | Utilise `.lytos/issue-board/BOARD.md` |
+| Poser des critères de qualité | Lisez `.lytos/rules/default-rules.md` |
+| Structurer vos tâches | Créez votre premier sprint depuis `.lytos/templates/sprint.md` |
+| Suivre une procédure précise | Chargez un skill depuis `.lytos/skills/` |
+| Suivre l'avancement | Utilisez `.lytos/issue-board/BOARD.md` |
 
 Tout est optionnel. Le manifest + la memory suffisent pour commencer.

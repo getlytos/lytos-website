@@ -5,7 +5,7 @@ description: Le savoir accumulé qui persiste entre les sessions — Memory, le 
 
 La memory est le cinquième pilier de Lytos : **Memory**.
 
-Les agents IA sont stateless — ils oublient tout entre les sessions. La memory leur donne un savoir persistant sur ton projet, stocké dans des fichiers que tu possèdes.
+Les agents IA sont stateless — ils oublient tout entre les sessions. La memory leur donne un savoir persistant sur votre projet, stocké dans des fichiers que vous possédez.
 
 ## Structure
 
@@ -54,13 +54,13 @@ Chaque fichier cortex couvre un domaine :
 ## Quoi NE PAS stocker
 
 - Snippets de code (ils vivent dans le code)
-- Historique git (utilise `git log`)
-- Détails temporaires de tâches (utilise l'issue board)
+- Historique git (utilisez `git log`)
+- Détails temporaires de tâches (utilisez l'issue board)
 
 ## Pourquoi c'est important
 
 > *"La qualité ne vient pas du prompt. Elle vient du contexte."*
 
-Sans memory, l'IA fait les mêmes erreurs deux fois. Elle suggère des patterns que tu as déjà rejetés. Elle ne sait pas que tu as essayé Redis et que tu es passé à PostgreSQL pour de bonnes raisons.
+Sans memory, l'IA fait les mêmes erreurs deux fois. Elle suggère des patterns que vous avez déjà rejetés. Elle ne sait pas que vous avez essayé Redis et que vous êtes passé à PostgreSQL pour de bonnes raisons.
 
-La memory est ce qui rend Lytos **souverain** — ton savoir projet vit dans des fichiers que tu possèdes, pas dans l'historique de conversation d'un vendor.
+La memory est ce qui rend Lytos **souverain** — votre savoir projet vit dans des fichiers que vous possédez, pas dans l'historique de conversation d'un vendor.

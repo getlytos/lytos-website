@@ -25,7 +25,7 @@ Les agents sont comme des pods Kubernetes — stateless, scalables, sans identit
 4. **Le contrôle est humain.** Les agents exécutent. L'humain valide et oriente.
 5. **Complémentarité, pas mimétisme.** L'IA n'est pas un humain dématérialisé.
 6. **Progressif par design.** On commence petit, on ajoute quand on en a besoin.
-7. **La souveraineté par le texte.** Le savoir projet vit dans des fichiers que tu possèdes, versionnes, relis et migres — pas chez un vendor.
+7. **La souveraineté par le texte.** Le savoir projet vit dans des fichiers que vous possédez, versionnez, relisez et migrez — pas chez un vendor.
 
 ## Le rôle de l'humain
 
@@ -41,6 +41,6 @@ L'IA est un moteur interchangeable. La fondation est ce qui persiste.
 
 Ce n'est pas une promesse d'équivalence parfaite entre tous les modèles. C'est une garantie de continuité du contexte, des procédures et de la mémoire quand le moteur change.
 
-Le jour où un vendor change ses conditions, augmente ses prix, ou sort un modèle qui casse ton workflow — tu changes le moteur. Tu ne recommences pas à zéro.
+Le jour où un vendor change ses conditions, augmente ses prix, ou sort un modèle qui casse votre workflow — vous changez le moteur. Vous ne recommencez pas à zéro.
 
 [Lire le manifeste complet sur GitHub →](https://github.com/getlytos/lytos-method/blob/main/MANIFESTO.md)

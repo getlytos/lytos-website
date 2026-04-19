@@ -5,7 +5,7 @@ description: Toutes les façons d'installer Lytos.
 
 ## 3 façons d'installer
 
-Choisis le chemin qui correspond à ta façon de travailler :
+Choisissez le chemin qui correspond à votre façon de travailler :
 
 ### 1. CLI (développeurs avec un terminal)
 
@@ -14,7 +14,7 @@ npm install -g lytos-cli
 lytos init
 ```
 
-Le CLI détecte ta stack, demande le nom du projet et l'outil IA, puis crée tout. Interactif ou avec des options :
+Le CLI détecte votre stack, demande le nom du projet et l'outil IA, puis crée tout. Interactif ou avec des options :
 
 ```bash
 lytos init --name "Mon API" --tool claude --yes
@@ -31,7 +31,7 @@ Même résultat que le CLI, mais télécharge les fichiers depuis GitHub.
 
 ### 3. Template GitHub (vibe coders, pas de terminal)
 
-Utilise le [starter template](https://github.com/getlytos/starter) → clique **"Use this template"** → ouvre dans Claude Code ou Codex → dis **"Aide-moi à configurer Lytos."**
+Utilisez le [starter template](https://github.com/getlytos/starter) → cliquez sur **"Use this template"** → ouvrez dans Claude Code ou Codex → dites **"Aide-moi à configurer Lytos."**
 
 Parfait pour les développeurs qui codent directement depuis les apps IA.
 
@@ -55,8 +55,8 @@ Plus un `CLAUDE.md` ou `.cursorrules` à la racine du projet.
 
 ## Après l'installation
 
-Ouvre ton outil IA et dis-lui :
+Ouvrez votre outil IA et dites-lui :
 
 > **"Aide-moi à configurer Lytos pour ce projet."**
 
-L'IA lit le briefing, comprend la méthode, et te guide pour remplir le manifest.
+L'IA lit le briefing, comprend la méthode, et vous guide pour remplir le manifest.

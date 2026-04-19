@@ -25,7 +25,7 @@ Le manifest est un seul fichier — `manifest.md` — placé à la racine de `.l
 
 > *"Déléguer à l'IA sans structure, c'est sous-traiter sans brief."*
 
-Sans manifest, un agent IA produit du code générique. Il ne sait pas si ton projet est une bibliothèque ou un SaaS, si tu préfères REST ou GraphQL, si tu déploies sur AWS ou un Raspberry Pi.
+Sans manifest, un agent IA produit du code générique. Il ne sait pas si votre projet est une bibliothèque ou un SaaS, si vous préférez REST ou GraphQL, si vous déployez sur AWS ou un Raspberry Pi.
 
 Le manifest est lu au début de **chaque session**. C'est la première chose que l'agent charge, avant les skills, les rules ou la memory.
 
@@ -55,6 +55,6 @@ Le système actuel est un monolithe PHP vieux de 15 ans.
 
 ## Bonnes pratiques
 
-- **Sois spécifique, pas aspirationnel.** Écris ce que le projet *est*, pas ce que tu voudrais qu'il soit.
-- **Mets-le à jour quand le projet évolue.** Le manifest est un document vivant.
+- **Soyez spécifique, pas aspirationnel.** Écrivez ce que le projet *est*, pas ce que vous voudriez qu'il soit.
+- **Mettez-le à jour quand le projet évolue.** Le manifest est un document vivant.
 - **Reste sous 150 lignes.** Si c'est plus long, une partie du contenu appartient à la memory ou aux rules.

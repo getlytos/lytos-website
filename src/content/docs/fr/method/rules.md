@@ -51,12 +51,12 @@ Lytos inclut un fichier `default-rules.md` couvrant :
 
 ## Ajouter des rules spécifiques au projet
 
-Crée des fichiers supplémentaires dans `rules/` pour compléter les défauts :
+Créez des fichiers supplémentaires dans `rules/` pour compléter les défauts :
 
 ```
 rules/
 ├── default-rules.md      # Universelles (fournies par Lytos)
-└── api-rules.md           # Tes rules spécifiques
+└── api-rules.md           # Vos rules spécifiques
 ```
 
 Les rules spécifiques **complètent** les défauts — elles ne les remplacent pas.

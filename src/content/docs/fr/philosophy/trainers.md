@@ -15,7 +15,7 @@ L'agent lui donne la recette. Sans hésiter.
 
 C'est le moment où tout s'effondre. Si un agent "spécialisé en Gutenberg" peut donner une recette de cuisine sans broncher, c'est qu'il n'est pas spécialisé. Il joue un rôle. Le costume ne change rien au modèle en dessous.
 
-> *"Un agent déguisé en senior dev ne connaît pas ton code. Il connaît le mot 'senior'."*
+> *"Un agent déguisé en senior dev ne connaît pas votre code. Il connaît le mot 'senior'."*
 
 Ce déclic a lancé Lytos. Si les personas ne servent à rien, qu'est-ce qui fait la différence ? La réponse : **le contexte et la structure**.
 
@@ -26,11 +26,11 @@ Ce déclic a lancé Lytos. Si les personas ne servent à rien, qu'est-ce qui fai
 Du verbe **λύειν** (lyein) : détacher, libérer. C'est la racine d'**analyse** (ana-lysis : décomposer pour comprendre) et de **catalyse** (accélérer une réaction sans être consommé).
 
 Le nom porte la philosophie :
-- **Délié** des vendors — ton contexte t'appartient, pas à un fournisseur
-- **Détaché** des modèles — change de moteur IA sans perdre ta fondation
+- **Délié** des vendors — votre contexte vous appartient, pas à un fournisseur
+- **Détaché** des modèles — changez de moteur IA sans perdre votre fondation
 - **Libéré** des personas — pas de fiction, de l'ingénierie
 
-> *"Choisis ton IA. Ne lui appartiens pas."*
+> *"Choisissez votre IA. Ne lui appartenez pas."*
 
 ## Le pitch — 3 versions
 
@@ -205,8 +205,8 @@ Toutes les phrases clés en un seul endroit, à réutiliser en formation :
 |---|---|
 | Vision | *"L'agile a structuré la collaboration humaine. Lytos structure la collaboration avec l'IA."* |
 | Personas | *"Le role-play ne remplace pas le contexte."* |
-| Personas | *"Un agent déguisé en senior dev ne connaît pas ton code. Il connaît le mot 'senior'."* |
-| Souveraineté | *"Choisis ton IA. Ne lui appartiens pas."* |
+| Personas | *"Un agent déguisé en senior dev ne connaît pas votre code. Il connaît le mot 'senior'."* |
+| Souveraineté | *"Choisissez votre IA. Ne lui appartenez pas."* |
 | Process | *"Un projet sans process est une conversation. Pas une livraison."* |
 | Process | *"Sans process, chaque session repart de zéro. Avec Lytos, chaque session s'appuie sur la dernière."* |
 | Contexte | *"La qualité ne vient pas du prompt. Elle vient du contexte."* |

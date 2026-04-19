@@ -19,13 +19,18 @@ npx lytos-cli init
 
 ## Commandes
 
-| Commande | Ce qu'elle fait | Statut |
-|----------|----------------|--------|
-| `lytos init` | Scaffold `.lytos/` dans ton projet | Disponible |
-| `lytos board` | Régénérer BOARD.md depuis le frontmatter des issues | Disponible |
-| `lytos lint` | Valider la structure et le contenu de `.lytos/` | Bientôt |
-| `lytos doctor` | Diagnostic complet — fichiers manquants, liens cassés, memory obsolète | Bientôt |
-| `lytos status` | Afficher le DAG du sprint dans le terminal | Bientôt |
+| Commande | Ce qu'elle fait |
+|----------|-----------------|
+| `lyt init` | Génère `.lytos/` dans votre projet (interactif, détecte la stack) |
+| `lyt board` | Régénère `BOARD.md` depuis le frontmatter des issues |
+| `lyt lint` | Valide la structure et le contenu de `.lytos/` |
+| `lyt doctor` | Diagnostic complet — fichiers manquants, liens cassés, mémoire obsolète, score de santé |
+| `lyt show` | Affiche le détail d'une issue avec sa progression |
+| `lyt start` | Démarre une issue — déplace vers in-progress, crée la branche, met à jour le board |
+| `lyt close` | Ferme une issue — déplace vers done, vérifie la checklist, met à jour le board |
+| `lyt claim` | Attribue une issue à vous-même |
+| `lyt upgrade` | Met à jour les fichiers méthode dans `.lytos/` depuis la version bundled |
+| `lyt update` | Met à jour le CLI Lytos lui-même vers la dernière version |
 
 ## Principes de conception
 

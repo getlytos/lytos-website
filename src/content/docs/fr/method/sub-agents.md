@@ -25,7 +25,7 @@ Maintenant, habillez votre perceuse d'un costume de menuisier. Collez-lui une é
 
 Elle ne fera pas un trou meilleur ou moins bon.
 
-> *"Un agent déguisé en senior dev ne connaît pas ton code. Il connaît le mot 'senior'."*
+> *"Un agent déguisé en senior dev ne connaît pas votre code. Il connaît le mot 'senior'."*
 
 C'est exactement ce que fait l'industrie avec les sub-agents. On prend un LLM, on lui colle un system prompt qui dit *"Tu es un développeur senior expert en React avec 15 ans d'expérience"*, et on appelle ça un agent spécialisé.
 

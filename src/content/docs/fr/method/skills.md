@@ -47,7 +47,7 @@ skills_aux: [testing, security]
 
 ## Ajouter des skills custom
 
-Tu peux créer tes propres skills dans `skills/`. Un skill est un fichier markdown avec :
+Vous pouvez créer vos propres skills dans `skills/`. Un skill est un fichier markdown avec :
 
 1. Un **objectif** clair (quand utiliser ce skill)
 2. Une **procédure** (étapes numérotées)

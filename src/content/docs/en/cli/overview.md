@@ -19,13 +19,18 @@ npx lytos-cli init
 
 ## Commands
 
-| Command | What it does | Status |
-|---------|-------------|--------|
-| `lytos init` | Scaffold `.lytos/` in your project | Available |
-| `lytos board` | Regenerate BOARD.md from issue frontmatter | Available |
-| `lytos lint` | Validate `.lytos/` structure and content | Coming soon |
-| `lytos doctor` | Full diagnostic — missing files, broken links, stale memory | Coming soon |
-| `lytos status` | Display sprint DAG in terminal | Coming soon |
+| Command | What it does |
+|---------|--------------|
+| `lyt init` | Scaffold `.lytos/` in your project (interactive, detects your stack) |
+| `lyt board` | Regenerate `BOARD.md` from issue frontmatter |
+| `lyt lint` | Validate `.lytos/` structure and content |
+| `lyt doctor` | Full diagnostic — missing files, broken links, stale memory, health score |
+| `lyt show` | Display issue detail with progress bar |
+| `lyt start` | Start an issue — move to in-progress, create branch, update board |
+| `lyt close` | Close an issue — move to done, check the checklist, update board |
+| `lyt claim` | Assign an issue to yourself |
+| `lyt upgrade` | Update method files in `.lytos/` from the bundled version |
+| `lyt update` | Update the Lytos CLI itself to the latest version |
 
 ## Design principles
 

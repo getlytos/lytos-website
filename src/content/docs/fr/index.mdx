@@ -41,38 +41,42 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import lytBoard from '../../../assets/lyt-board.png';
+import lytShow from '../../../assets/lyt-show.png';
+import lytLint from '../../../assets/lyt-lint.png';
+import lytDoctor from '../../../assets/lyt-doctor.png';
 
 ## Le paradigme des sub-agents est une impasse
 
-La majorité des frameworks IA actuels te demandent de déléguer à des agents : un agent "architecte", un agent "testeur", un agent "reviewer". Plus tu délègues, moins tu contrôles. Le contexte s'éparpille. Les décisions s'opacifient. Tu perds la main sur ton propre projet.
+La majorité des frameworks IA actuels vous demandent de déléguer à des agents : un agent "architecte", un agent "testeur", un agent "reviewer". Plus vous déléguez, moins vous contrôlez. Le contexte s'éparpille. Les décisions s'opacifient. Vous perdez la main sur votre propre projet.
 
 **Lytos fait le choix inverse.**
 
 > *"L'agile a structuré la collaboration humaine. Lytos structure la collaboration avec l'IA."*
 
-Pas d'agents autonomes. Pas de personas qui décident à ta place. L'IA reste un outil — puissant, mais dirigé. C'est toi qui définis l'intention. C'est toi qui valides chaque étape. Le modèle exécute. Toi, tu gouvernes.
+Pas d'agents autonomes. Pas de personas qui décident à votre place. L'IA reste un outil — puissant, mais dirigé. C'est vous qui définissez l'intention. C'est vous qui validez chaque étape. Le modèle exécute. Vous, vous gouvernez.
 
 [Pourquoi les sub-agents sont une illusion →](/fr/method/sub-agents/)
 
 ---
 
-## Ton IA recommence à zéro à chaque session
+## Votre IA recommence à zéro à chaque session
 
-Sans structure, chaque conversation repart de zéro. Tu réexpliques l'architecture. Tu rappelles les contraintes. Tu corriges les mêmes erreurs. Le modèle génère du code générique, déconnecté de ton projet réel.
+Sans structure, chaque conversation repart de zéro. Vous réexpliquez l'architecture. Vous rappelez les contraintes. Vous corrigez les mêmes erreurs. Le modèle génère du code générique, déconnecté de votre projet réel.
 
-Le résultat : des heures perdues à recadrer, des incohérences qui s'accumulent, et une IA qui ne comprend jamais vraiment ton projet.
+Le résultat : des heures perdues à recadrer, des incohérences qui s'accumulent, et une IA qui ne comprend jamais vraiment votre projet.
 
 ---
 
-## Ton contexte t'appartient
+## Votre contexte vous appartient
 
-Avec les outils cloud classiques, ton contexte projet vit dans leurs serveurs, dans leurs formats, dépendant de leurs APIs. Changer de modèle signifie tout recommencer.
+Avec les outils cloud classiques, votre contexte projet vit dans leurs serveurs, dans leurs formats, dépendant de leurs APIs. Changer de modèle signifie tout recommencer.
 
-Avec Lytos, tout est en Markdown dans ton dépôt Git. Ton manifest, tes standards, ta mémoire de projet : version-contrôlés, portables, lisibles par n'importe quel modèle.
+Avec Lytos, tout est en Markdown dans votre dépôt Git. Votre manifest, vos standards, votre mémoire de projet : version-contrôlés, portables, lisibles par n'importe quel modèle.
 
-Aujourd'hui Claude. Demain GPT ou Gemini. Ton contexte ne bouge pas.
+Aujourd'hui Claude. Demain GPT ou Gemini. Votre contexte ne bouge pas.
 
-> *"Choisis ton IA. Ne lui appartiens pas."*
+> *"Choisissez votre IA. Ne lui appartenez pas."*
 
 [En savoir plus sur la souveraineté →](/fr/philosophy/sovereignty/)
 
@@ -80,20 +84,20 @@ Aujourd'hui Claude. Demain GPT ou Gemini. Ton contexte ne bouge pas.
 
 ## 5 piliers. Une méthode complète.
 
-Lytos structure ta collaboration avec l'IA en cinq couches qui s'emboîtent :
+Lytos structure votre collaboration avec l'IA en cinq couches qui s'emboîtent :
 
 <CardGrid>
   <Card title="Intent" icon="document">
-    Le manifeste de ton projet. Objectif, périmètre, décisions structurantes. L'IA sait *pourquoi* elle code, pas seulement *quoi* coder.
+    Le manifeste de votre projet. Objectif, périmètre, décisions structurantes. L'IA sait *pourquoi* elle code, pas seulement *quoi* coder.
   </Card>
   <Card title="Design" icon="puzzle">
-    Tes playbooks de session. Comment aborder une revue de code, une refacto, un déploiement. Des workflows reproductibles, adaptés à ton projet.
+    Vos playbooks de session. Comment aborder une revue de code, une refacto, un déploiement. Des workflows reproductibles, adaptés à votre projet.
   </Card>
   <Card title="Standards" icon="approve-check">
-    Tes règles de qualité. Taille de fichiers, nommage, couverture de tests, patterns interdits. L'IA respecte tes exigences sans qu'on ait à les répéter.
+    Vos règles de qualité. Taille de fichiers, nommage, couverture de tests, patterns interdits. L'IA respecte vos exigences sans qu'on ait à les répéter.
   </Card>
   <Card title="Progress" icon="rocket">
-    Ton kanban Git-natif. Les tâches en cours, les décisions prises, l'historique des sprints. L'IA sait où en est le projet à chaque session.
+    Votre kanban Git-natif. Les tâches en cours, les décisions prises, l'historique des sprints. L'IA sait où en est le projet à chaque session.
   </Card>
   <Card title="Memory" icon="star">
     La mémoire vivante du projet. Architecture, bugs connus, patterns émergents, contexte métier. Ce que l'IA doit retenir d'une session à l'autre.
@@ -111,11 +115,13 @@ npm install -g lytos-cli
 lyt init
 ```
 
-`lyt init` génère la structure complète dans ton projet : `manifest.md`, `skills/`, `rules/`, `issue-board/`, `memory/`. Tout en Markdown. Tout dans ton repo.
+<img src={lytBoard.src} alt="lyt board — Le kanban Lytos dans le terminal" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 1.5rem 0;" />
+
+`lyt init` génère la structure complète dans votre projet : `manifest.md`, `skills/`, `rules/`, `issue-board/`, `memory/`. Tout en Markdown. Tout dans votre repo.
 
 | Commande | Ce qu'elle fait |
 |----------|----------------|
-| `lyt init` | Génère `.lytos/` (interactif, détecte ta stack) |
+| `lyt init` | Génère `.lytos/` (interactif, détecte votre stack) |
 | `lyt board` | Régénère le kanban board |
 | `lyt lint` | Valide la structure `.lytos/` |
 | `lyt doctor` | Diagnostic complet avec score de santé |
@@ -125,18 +131,22 @@ lyt init
 
 [Voir toutes les commandes sur npm →](https://www.npmjs.com/package/lytos-cli)
 
+<img src={lytShow.src} alt="lyt show — Détail d'une issue avec progression" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
+<img src={lytLint.src} alt="lyt lint — Validation de la structure .lytos/" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
+<img src={lytDoctor.src} alt="lyt doctor — Score de santé et diagnostic" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
+
 ---
 
-## Fonctionne avec ton setup actuel
+## Fonctionne avec votre setup actuel
 
-Lytos n'est pas un outil de plus à apprendre. C'est une couche de structure qui s'ajoute à ce que tu utilises déjà.
+Lytos n'est pas un outil de plus à apprendre. C'est une couche de structure qui s'ajoute à ce que vous utilisez déjà.
 
 - **Claude Code** — adaptateur natif inclus
 - **Cursor** — `.cursor/rules` généré automatiquement
 - **OpenAI / GPT** — adaptateur system-prompt inclus
 - **Gemini, Mistral, et tous les autres** — le Markdown est universel
 
-Tes outils. Tes modèles. Ta méthode.
+Vos outils. Vos modèles. Votre méthode.
 
 ---
 
@@ -164,12 +174,12 @@ Le rôle du développeur change. Il ne tape plus du code toute la journée — i
 
 <CardGrid>
   <Card title="Claude (Anthropic)">
-    "Lytos ne me rend pas plus intelligent. Il me rend pertinent. Sans contexte, je fais des choix par défaut — et mes défauts viennent de mon corpus d'entraînement, pas de ton projet. Avec Lytos, tes défauts remplacent les miens."
+    "Lytos ne me rend pas plus intelligent. Il me rend pertinent. Sans contexte, je fais des choix par défaut — et mes défauts viennent de mon corpus d'entraînement, pas de votre projet. Avec Lytos, vos défauts remplacent les miens."
   </Card>
   <Card title="Gemini (Google)">
     "Lytos arrête de traiter l'IA comme un oracle magique et commence à la traiter pour ce qu'elle est : un exécutant incroyablement puissant, mais amnésique, qui a besoin d'un cadre opérationnel strict."
   </Card>
   <Card title="GPT (OpenAI)">
-    "Je préfère nettement travailler avec un manifest, une memory, des rules et des skills versionnés qu'avec un simple persona du type 'tu es un senior dev'. La qualité vient du contexte durable, des procédures explicites et des critères vérifiables — pas du théâtre de rôle."
+    "Je préfère nettement travailler avec un manifest, une memory, des rules et des skills versionnés qu'avec un simple persona du type 'vous êtes un senior dev'. La qualité vient du contexte durable, des procédures explicites et des critères vérifiables — pas du théâtre de rôle."
   </Card>
 </CardGrid>

@@ -3,33 +3,33 @@ title: Guide Lead Développeur
 description: Comment architecturer, superviser et scaler le développement assisté par IA avec Lytos.
 ---
 
-## Ton nouveau rôle
+## Votre nouveau rôle
 
-Tu n'es plus un relecteur de code. Tu es un **architecte de système**.
+Vous n'êtes plus un relecteur de code. Vous êtes un **architecte de système**.
 
 L'ancien modèle : lire chaque PR, vérifier le style, attraper les bugs, imposer les conventions. Avec Lytos, l'IA fait ça — elle suit les skills, respecte les rules, et applique les patterns de la memory.
 
-Ton nouveau job : **définir le système qui fait que l'IA produit du bon travail.** Le manifest, les rules, le sprint, la memory. C'est plus impactant que de lire des diffs.
+Votre nouveau job : **définir le système qui fait que l'IA produit du bon travail.** Le manifest, les rules, le sprint, la memory. C'est plus impactant que de lire des diffs.
 
 ---
 
-## Tes 4 responsabilités
+## Vos 4 responsabilités
 
 ### 1. Définir l'Intent (manifest)
 
-Le manifest est le fichier le plus impactant que tu écriras. Un bon manifest = chaque session IA démarre avec le bon contexte. Un mauvais manifest = chaque session démarre en devinant.
+Le manifest est le fichier le plus impactant que vous écrirez. Un bon manifest = chaque session IA démarre avec le bon contexte. Un mauvais manifest = chaque session démarre en devinant.
 
-**Écris-le comme un briefing pour un nouveau développeur :**
+**Écrivez-le comme un briefing pour un nouveau développeur :**
 - Ce que ce projet est (et ce qu'il N'EST PAS)
 - La stack technique et pourquoi ces choix
 - Les contraintes non-négociables
 - Les principes de développement comme des trade-offs : "on préfère X plutôt que Y parce que Z"
 
-**Mets-le à jour quand le projet évolue.** Un manifest obsolète est pire que pas de manifest — l'IA suivra des instructions périmées avec confiance.
+**Mettez-le à jour quand le projet évolue.** Un manifest obsolète est pire que pas de manifest — l'IA suivra des instructions périmées avec confiance.
 
 ### 2. Poser les Standards (rules)
 
-Les rules par défaut couvrent les bases (fichiers de 300 lignes, pas de valeurs magiques, couverture de tests). Ton job c'est d'ajouter des **rules spécifiques au projet** qui encodent les décisions de ton équipe.
+Les rules par défaut couvrent les bases (fichiers de 300 lignes, pas de valeurs magiques, couverture de tests). Votre job c'est d'ajouter des **rules spécifiques au projet** qui encodent les décisions de votre équipe.
 
 Bonnes rules projet :
 ```markdown
@@ -47,20 +47,20 @@ Mauvaises rules : "écrire du code propre", "suivre les bonnes pratiques", "fair
 
 ### 3. Planifier le Progress (sprint)
 
-Ton sprint est la feuille de route de l'IA. Quand tu définis bien les issues, l'IA exécute bien.
+Votre sprint est la feuille de route de l'IA. Quand vous définissez bien les issues, l'IA exécute bien.
 
-**Pour chaque issue, définis :**
+**Pour chaque issue, définissez :**
 - `skill` — quelle procédure l'IA suit
 - `skills_aux` — quelles contraintes supplémentaires s'appliquent
 - `depends` — ce qui doit être fait avant
-- `effort` — S/M/L (si XL, découpe)
+- `effort` — S/M/L (si XL, découpez)
 - `complexity` — light/standard/heavy (détermine quel tier de modèle utiliser)
 
-**Le graphe de dépendances compte.** Lance `lyt board` pour le voir. Les issues sans dépendances peuvent être parallélisées. Les issues avec dépendances doivent être séquencées.
+**Le graphe de dépendances compte.** Lancez `lyt board` pour le voir. Les issues sans dépendances peuvent être parallélisées. Les issues avec dépendances doivent être séquencées.
 
 ### 4. Entretenir la Memory
 
-La memory est ce qui rend le 10ème sprint meilleur que le 1er. Ton rôle c'est de t'assurer qu'elle reste propre et pertinente.
+La memory est ce qui rend le 10ème sprint meilleur que le 1er. Votre rôle c'est de vous assurer qu'elle reste propre et pertinente.
 
 **Après chaque sprint :**
 ```
@@ -68,13 +68,13 @@ La memory est ce qui rend le 10ème sprint meilleur que le 1er. Ton rôle c'est 
 "Mets à jour memory/cortex/sprints.md avec la rétrospective de ce sprint."
 ```
 
-**Consolide régulièrement.** 20 entrées sur le même sujet doivent devenir 1 synthèse bien écrite. La memory doit grandir en qualité, pas juste en quantité.
+**Consolidez régulièrement.** 20 entrées sur le même sujet doivent devenir 1 synthèse bien écrite. La memory doit grandir en qualité, pas juste en quantité.
 
 ---
 
 ## Comment review le travail de l'IA
 
-Tu ne lis plus le code ligne par ligne. Tu valides à un niveau supérieur :
+Vous ne lisez plus le code ligne par ligne. Vous validez à un niveau supérieur :
 
 | Ancienne review (code) | Nouvelle review (Lytos) |
 |------------------------|------------------------|
@@ -84,7 +84,7 @@ Tu ne lis plus le code ligne par ligne. Tu valides à un niveau supérieur :
 | Attraper les bugs | Les tests passent ? La couverture est-elle suffisante ? |
 | Imposer les conventions | La memory devrait-elle être mise à jour ? |
 
-**Ta checklist de review :**
+**Votre checklist de review :**
 1. Le résultat correspond-il à la definition of done de l'issue ?
 2. Des items de la checklist ont-ils été sautés ?
 3. Faut-il créer une issue de suivi ?
@@ -93,7 +93,7 @@ Tu ne lis plus le code ligne par ligne. Tu valides à un niveau supérieur :
 
 ---
 
-## Parler à ton IA — exemples pour le lead
+## Parler à votre IA — exemples pour le lead
 
 ### Planification de sprint
 
@@ -135,7 +135,7 @@ Tu ne lis plus le code ligne par ligne. Tu valides à un niveau supérieur :
 
 ### Un board par repo
 
-Chaque repo a son propre `.lytos/issue-board/` avec une numérotation indépendante. Pour le travail cross-repo, crée une issue par repo et lie-les dans la section contexte.
+Chaque repo a son propre `.lytos/issue-board/` avec une numérotation indépendante. Pour le travail cross-repo, créez une issue par repo et liez-les dans la section contexte.
 
 ### Assignations
 
@@ -158,7 +158,7 @@ Chaque sprint laisse derrière lui :
 - Des rules affinées (qualité)
 - Des patterns documentés (cohérence)
 
-Après 5 sprints, ton IA n'est plus la même IA. Elle a le contexte de ton projet, les décisions de ton équipe, la connaissance de ton domaine. Elle ne devine plus — elle sait.
+Après 5 sprints, votre IA n'est plus la même IA. Elle a le contexte de votre projet, les décisions de votre équipe, la connaissance de votre domaine. Elle ne devine plus — elle sait.
 
 **C'est le vrai job du lead : construire un système qui devient plus intelligent au fil du temps.**
 
@@ -166,7 +166,7 @@ Après 5 sprints, ton IA n'est plus la même IA. Elle a le contexte de ton proje
 
 ## La cohérence d'équipe — ce qui était impossible avant
 
-En développement traditionnel, tu ne peux pas demander à 10 développeurs de coder pareil. Conventions, linters, code reviews — ça réduit les écarts, ça ne les élimine jamais.
+En développement traditionnel, vous ne pouvez pas demander à 10 développeurs de coder pareil. Conventions, linters, code reviews — ça réduit les écarts, ça ne les élimine jamais.
 
 Avec l'IA + Lytos, c'est différent. Un manifest, des rules, des skills — partagés par toute l'équipe. Chaque développeur brainstorme et valide. Le code est produit par le même moteur, avec le même contexte.
 

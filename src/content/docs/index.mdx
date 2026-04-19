@@ -41,7 +41,6 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
-import lytosGif from '../../assets/lytos.gif';
 import lytBoard from '../../assets/lyt-board.png';
 import lytShow from '../../assets/lyt-show.png';
 import lytLint from '../../assets/lyt-lint.png';
@@ -112,9 +111,7 @@ npm install -g lytos-cli
 lyt init
 ```
 
-<img src={lytosGif.src} alt="Lytos demo — lyt init, lyt board, lyt lint" style="border-radius: 8px; margin: 1.5rem 0;" />
-
-<img src={lytBoard.src} alt="lyt board — Lytos kanban board in the terminal" style="border-radius: 8px; margin: 1.5rem 0;" />
+<img src={lytBoard.src} alt="lyt board — Lytos kanban board in the terminal" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 1.5rem 0;" />
 
 `lyt init` generates the complete structure in your project: `manifest.md`, `skills/`, `rules/`, `issue-board/`, `memory/`. Everything in Markdown. Everything in your repo.
 
@@ -130,8 +127,9 @@ lyt init
 
 [See all commands on npm →](https://www.npmjs.com/package/lytos-cli)
 
-<img src={lytShow.src} alt="lyt show — Issue detail with progress bar" style="border-radius: 8px; margin: 0.5rem 0 1.5rem;" />
-<img src={lytLint.src} alt="lyt lint — Validate .lytos/ structure" style="border-radius: 8px; margin: 0.5rem 0 1.5rem;" />
+<img src={lytShow.src} alt="lyt show — Issue detail with progress bar" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
+<img src={lytLint.src} alt="lyt lint — Validate .lytos/ structure" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
+<img src={lytDoctor.src} alt="lyt doctor — Health score and diagnostic" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
 
 ---
 

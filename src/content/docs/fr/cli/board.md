@@ -39,4 +39,4 @@ lytos board
 
 Le frontmatter YAML de chaque fichier d'issue est la source de vérité — pas `BOARD.md`. Le board est une vue générée qui peut être régénérée à tout moment.
 
-Si tu modifies le statut d'une issue en la déplaçant dans un autre dossier, lance `lytos board` pour rafraîchir l'index.
+Si vous modifiez le statut d'une issue en la déplaçant dans un autre dossier, lancez `lytos board` pour rafraîchir l'index.
