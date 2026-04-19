@@ -124,13 +124,10 @@ header a.site-title span {
 	color: var(--lytos-paper) !important;
 }
 
-/* Make sure the logo image is never accidentally hidden or filtered */
-.site-title img,
-a.site-title img {
-	display: inline-block;
-	opacity: 1 !important;
-	filter: none !important;
-}
+/* NB — no display override on .site-title img: Starlight uses
+   `display: none` via .light:sl-hidden / .dark:sl-hidden to swap the
+   light/dark logo per theme. Forcing display here would defeat that
+   and leave a ghost box before the visible glyph. */
 
 /* ─── Header layout — identical across splash + docs ────────────
    Starlight reserves the first grid column to the sidebar width on
