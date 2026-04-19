@@ -7,9 +7,9 @@ description: Pourquoi votre savoir projet doit vous appartenir, pas à un vendor
 
 GPT-4 remplacé par GPT-4o remplacé par o1 remplacé par o3. Claude 2 → 3 → 3.5 → 4. Les modèles changent tous les 3-6 mois. Les APIs évoluent. Les prix changent. Des features disparaissent. Des vendors pivotent.
 
-Sans Lytos, votre contexte projet vit dans des conversations propriétaires. Votre workflow est câblé sur un outil spécifique. Le jour où le vendor change ses conditions, augmente ses prix, ou sort un nouveau modèle qui casse votre workflow — vous recommencez à zéro.
+Sans un cadre comme Lytos, une partie du contexte projet peut se retrouver dans des conversations propriétaires, et le workflow câblé sur un outil spécifique. Le jour où le vendor change ses conditions, augmente ses prix, ou sort un modèle qui perturbe votre workflow, les coûts de migration peuvent être significatifs.
 
-C'est exactement le problème du vendor lock-in qu'on a connu avec AWS, Salesforce, Adobe. Sauf que là, ça change quatre fois par an.
+C'est une variante du vendor lock-in déjà croisé avec AWS, Salesforce, Adobe — à une cadence plus rapide.
 
 ## La réponse
 

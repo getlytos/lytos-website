@@ -1,15 +1,15 @@
 ---
 title: Sub-agents
-description: Pourquoi les personas ne servent à rien — et ce qui fait vraiment la différence.
+description: Une lecture critique des personas — et ce qui nous semble faire la différence.
 ---
 
-## Les sub-agents n'existent pas
+## Les sub-agents, une approche qui nous semble limitée
 
-Votre "expert React", votre "architecte senior", votre "spécialiste DevOps" — c'est le même LLM avec un déguisement différent.
+Les "expert React", "architecte senior", "spécialiste DevOps" qu'on rencontre dans de nombreux frameworks reposent souvent sur le même LLM, avec un system prompt différent.
 
-L'industrie IA a inventé les personas d'agents comme on invente des titres de poste : ça rassure, ça donne l'impression de structure, mais ça ne change rien au résultat. Un modèle de langage ne code pas mieux parce qu'on lui dit qu'il est senior.
+Les personas d'agents ont apporté une forme d'organisation dans un paysage nouveau ; ils donnent un vocabulaire familier et une impression de structure. Notre observation, à l'usage : cette couche de déguisement change peu le résultat comparé à ce qui se joue ailleurs — le choix du modèle et la qualité du contexte.
 
-Cette page dit tout haut ce que les praticiens savent tout bas.
+Cette page expose une lecture — pas une vérité générale.
 
 ## La perceuse
 
@@ -27,9 +27,9 @@ Elle ne fera pas un trou meilleur ou moins bon.
 
 > *"Un agent déguisé en senior dev ne connaît pas votre code. Il connaît le mot 'senior'."*
 
-C'est exactement ce que fait l'industrie avec les sub-agents. On prend un LLM, on lui colle un system prompt qui dit *"Tu es un développeur senior expert en React avec 15 ans d'expérience"*, et on appelle ça un agent spécialisé.
+On retrouve ce pattern dans beaucoup de setups sub-agents. On prend un LLM, on lui ajoute un system prompt du type *"Tu es un développeur senior expert en React avec 15 ans d'expérience"*, et on le présente comme un agent spécialisé.
 
-Le modèle n'a pas changé. Ses capacités n'ont pas changé. Son "expérience" est une fiction textuelle.
+Le modèle, lui, n'a pas changé. Ses capacités non plus. L'« expérience » affichée est une construction textuelle.
 
 Ce qui fait la différence, c'est **la mèche** — le modèle choisi pour la tâche :
 
@@ -42,17 +42,17 @@ Ce qui fait la différence, c'est **la mèche** — le modèle choisi pour la t�
 
 Choisir le mauvais modèle pour une tâche, c'est comme percer du béton avec une mèche à bois. Le costume ne rattrapera pas l'erreur de mèche.
 
-## L'illusion des personas
+## Les limites des personas
 
 L'idée est séduisante : créer un "agent QA", un "agent architecte", un "agent rédacteur". Leur donner des personnalités, des spécialisations, des styles de communication.
 
-Sauf que ça ne marche pas.
+Notre lecture, à l'usage, est plus nuancée.
 
-**Un persona ne crée pas de compétence.** Dire à un modèle qu'il est expert en sécurité ne lui donne pas de nouvelles connaissances en sécurité. Ses poids n'ont pas changé. Son entraînement n'a pas changé. Tout ce qui change, c'est la distribution probabiliste de ses tokens de sortie — il va *parler* comme un expert, pas *raisonner* comme un expert.
+**Un persona ne crée pas de compétence nouvelle.** Dire à un modèle qu'il est expert en sécurité ne lui apporte pas de connaissances en sécurité qu'il n'avait pas. Ses poids n'ont pas changé, son entraînement non plus. Ce qui change, c'est la distribution probabiliste de ses tokens de sortie — il va *parler* davantage comme un expert, sans raisonner différemment pour autant.
 
-**Les personas ajoutent du bruit.** Un system prompt de 500 tokens qui décrit une personnalité, c'est 500 tokens de moins pour le contexte utile. Et le modèle doit maintenir la cohérence de cette fiction en plus de résoudre le problème réel.
+**Les personas ont un coût en contexte.** Un system prompt de 500 tokens qui décrit une personnalité, c'est autant de tokens pris sur le contexte utile. Le modèle maintient en plus la cohérence de cette fiction.
 
-**Ce qui marche, c'est une stratégie de modèles.** Pas "quel costume donner à mon agent", mais "quel modèle pour quelle tâche". C'est une décision d'ingénierie, pas de casting.
+**Ce que Lytos privilégie, c'est une stratégie de modèles.** Moins "quel costume donner à mon agent", davantage "quel modèle pour quelle tâche". Une décision d'ingénierie, en complément des pratiques de cadrage existantes.
 
 Lytos ne crée pas de personas. Lytos définit une stratégie :
 
@@ -62,11 +62,11 @@ Lytos ne crée pas de personas. Lytos définit une stratégie :
 
 Le résultat ne dépend pas de qui l'agent "est". Il dépend de ce qu'il sait et de ce qu'il peut.
 
-## Ce qui compte vraiment
+## Ce qui nous semble compter
 
-Si le persona ne fait rien, qu'est-ce qui fait la différence entre un agent qui produit un résultat médiocre et un agent qui produit un résultat excellent ?
+Si le persona a un effet limité, qu'est-ce qui fait, selon notre expérience, la différence entre un résultat médiocre et un résultat satisfaisant ?
 
-Deux choses. Deux seulement.
+Deux dimensions nous semblent déterminantes.
 
 ### Le modèle
 
@@ -93,7 +93,7 @@ Aucun de ces éléments ne dit à l'agent "qui il est". Ils lui disent tous **ce
 
 ## L'approche Lytos
 
-Au lieu de créer 15 "agents spécialisés" qui sont tous le même modèle avec des costumes différents, Lytos fait trois choses :
+Plutôt que de multiplier les "agents spécialisés" qui partagent le même modèle sous le capot, Lytos propose de se concentrer sur trois leviers :
 
 **1. Choisir le bon modèle pour la tâche.** C'est la mèche. La décision qui a le plus d'impact sur le résultat.
 
@@ -101,6 +101,6 @@ Au lieu de créer 15 "agents spécialisés" qui sont tous le même modèle avec 
 
 **3. Donner une procédure claire.** C'est le skill. Pas "sois un expert", mais "voici les étapes, voici la checklist, voici les critères de validation".
 
-Le résultat : des agents sans costume mais avec un contexte profond, une procédure claire, et le bon moteur sous le capot.
+Le résultat : des sessions sans costume mais avec un contexte profond, une procédure claire, et un modèle choisi pour la tâche.
 
-Pas de fiction. Pas de casting. De l'ingénierie.
+Moins de fiction, davantage d'ingénierie — en complément de ce qui fonctionne déjà chez vous.

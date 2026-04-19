@@ -38,18 +38,18 @@ The name carries the philosophy:
 Lytos is an AI-assisted development method. Instead of dressing up AI in a persona, you give it what actually makes it better: structured project context that persists across sessions. Everything lives in Markdown in your Git repo. Portable, sovereign, model-independent.
 
 ### 2-minute version
-Agile structured collaboration between humans. But when working with AI, there's nothing. Every session starts from zero. The developer re-explains the project. The AI forgets everything. The output is generic.
+Agile structured collaboration between humans. When working with AI, the frame is often less formalized. Each session can start from zero: the developer re-explains the project, the AI forgets the essentials, the output trends toward generic.
 
-The industry responded by creating "specialized agents" — an architect agent, a tester agent, a reviewer agent. In reality, it's the same model in different costumes. It's comforting. It doesn't work.
+One common response has been to create "specialized agents" — an architect agent, a tester agent, a reviewer agent. It gives useful landmarks; our experience suggests the real lever lies elsewhere, in the quality of context.
 
-Lytos flips the problem. Rather than dressing up the AI, we structure what it receives: a project manifest, reusable procedures, verifiable quality criteria, a task board, and memory that persists. The AI doesn't guess anymore — it knows.
+Lytos offers a complementary path. Rather than dressing up the AI with a persona, we structure what it receives: a project manifest, reusable procedures, verifiable quality criteria, a task board, memory that persists. The AI guesses less — it leans on shared context.
 
 ### Workshop version (5 minutes — with the metaphor)
-Take a drill. The same tool bores through wood, concrete, and metal. To get there, you change the bit, not the tool. If you put a carpenter's costume on the drill, it won't drill a better hole.
+Take a drill. The same tool bores through wood, concrete, and metal. To do that, you change the bit, not the tool. If you put a carpenter's costume on the drill, it won't drill a better hole.
 
-This is exactly what we do with AI sub-agents. Take an LLM, slap a prompt on it that says "You are a React expert with 15 years of experience", and call it a specialized agent. The model hasn't changed. Its capabilities haven't changed.
+It's a useful lens for AI sub-agents. Take an LLM, slap a prompt on it that says "You are a React expert with 15 years of experience", and call it a specialized agent — the underlying model hasn't changed, and neither have its capabilities.
 
-What makes the difference is two things: the model chosen for the task (the bit) and the context provided (the working material). That's what Lytos structures.
+What makes the difference, in our experience, is two things: the model chosen for the task (the bit) and the context provided (the working material). That's what Lytos structures, as a complement to your existing practices.
 
 > *"Role-play doesn't replace context."*
 
@@ -64,7 +64,7 @@ This table is designed to be projected in training. It shows that Lytos doesn't 
 | Sprint Backlog | Sprint (sprint.md) + Board (BOARD.md) | Git-native, no SaaS needed |
 | Retrospective | Memory (memory/cortex/) | Knowledge persists across sprints, not just meeting notes |
 | Daily standup | `lyt board` | Project status in one command |
-| Scrum Master | Orchestrator | Planning rules, not another human role |
+| Scrum Master | Orchestrator | Planning rules that complement human facilitation |
 | Onboarding | Manifest (manifest.md) | A new developer (or AI) understands the project in 2 minutes |
 
 > *"Agile structured human collaboration. Lytos structures collaboration with AI."*
@@ -193,9 +193,9 @@ Developers hate processes that serve no purpose. They adopt ones that save them 
 
 3. **Debrief (5 min)** — The difference between the two is context. The prompt didn't change. The model didn't change. Only the structure around it changed. That's Lytos.
 
-**The key point in both exercises:** results converge. In traditional coding, 10 developers produce 10 different styles. With AI + a shared manifest, the code is consistent. For the first time, a 10-developer project can speak **with one voice**.
+**The key point in both exercises:** results tend to converge. In traditional coding, 10 developers bring 10 styles — and that variety is also what makes a team rich. With AI and a shared manifest, part of that form can harmonize, while differences of judgment continue to be what the humans contribute.
 
-> *"The developer brainstorms. Lytos harmonizes."*
+> *"The developer brainstorms. Lytos helps harmonize."*
 
 ## Punchlines to remember
 
@@ -213,7 +213,7 @@ All key phrases in one place, ready to reuse in training:
 | Context | *"Delegating to AI without structure is outsourcing without a brief."* |
 | Rules | *"What can't be verified won't be respected."* |
 | Lead | *"The human doesn't write every line. They define the world."* |
-| Team | *"The developer brainstorms. Lytos harmonizes."* |
+| Team | *"The developer brainstorms. Lytos helps harmonize."* |
 | Formula | **Result = Model x Context** |
 
 ## Resources to share

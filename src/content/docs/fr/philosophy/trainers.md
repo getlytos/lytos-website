@@ -38,18 +38,18 @@ Le nom porte la philosophie :
 Lytos est une méthode de développement assisté par IA. Au lieu de déguiser l'IA en persona, on lui donne ce qui la rend vraiment meilleure : un contexte projet structuré qui persiste entre les sessions. Tout vit en Markdown dans le repo Git. Portable, souverain, indépendant du modèle.
 
 ### Version 2 minutes
-L'agile a structuré la collaboration entre humains. Mais quand on travaille avec l'IA, il n'y a rien. Chaque session repart de zéro. Le développeur réexplique son projet. L'IA oublie tout. Le résultat est générique.
+L'agile a structuré la collaboration entre humains. Quand on travaille avec l'IA, le cadre est souvent moins formalisé. Chaque session peut repartir de zéro : le développeur réexplique son projet, l'IA oublie l'essentiel, le résultat tend vers le générique.
 
-L'industrie a répondu en créant des "agents spécialisés" — un agent architecte, un agent testeur, un agent reviewer. En réalité, c'est le même modèle avec des costumes différents. Ça rassure, ça ne fonctionne pas.
+Une réponse répandue a été de créer des "agents spécialisés" — un agent architecte, un agent testeur, un agent reviewer. C'est une approche qui donne des repères ; notre expérience suggère que le vrai levier se situe ailleurs, dans la qualité du contexte.
 
-Lytos prend le problème à l'envers. Plutôt que d'habiller l'IA, on structure ce qu'elle reçoit : un manifest projet, des procédures réutilisables, des critères de qualité vérifiables, un board de tâches, et une mémoire qui persiste. L'IA ne devine plus — elle sait.
+Lytos propose une voie complémentaire. Plutôt que d'habiller l'IA d'une persona, on structure ce qu'elle reçoit : un manifest projet, des procédures réutilisables, des critères de qualité vérifiables, un board de tâches, une mémoire qui persiste. L'IA devine moins — elle s'appuie sur du contexte partagé.
 
 ### Version atelier (5 minutes — avec la métaphore)
-Prenez une perceuse. Le même outil perce du bois, du béton, du métal. Pour y arriver, vous changez la mèche, pas l'outil. Si vous collez un costume de menuisier sur la perceuse, elle ne fera pas un meilleur trou.
+Prenez une perceuse. Le même outil perce du bois, du béton, du métal. Pour y arriver, on change la mèche, pas l'outil. Si on pose un costume de menuisier sur la perceuse, elle ne fera pas un meilleur trou.
 
-C'est exactement ce qu'on fait avec les sub-agents IA. On prend un LLM, on lui colle un prompt qui dit "Tu es un expert en React avec 15 ans d'expérience", et on appelle ça un agent spécialisé. Le modèle n'a pas changé. Ses capacités n'ont pas changé.
+C'est une grille de lecture utile pour les sub-agents IA. Prendre un LLM, lui coller un prompt "Tu es un expert en React avec 15 ans d'expérience", et l'appeler agent spécialisé — le modèle sous le capot n'a pas changé, ses capacités non plus.
 
-Ce qui fait la différence, c'est deux choses : le modèle choisi pour la tâche (la mèche) et le contexte fourni (le matériau de travail). C'est ça que Lytos structure.
+Ce qui fait la différence, selon notre expérience, c'est deux choses : le modèle choisi pour la tâche (la mèche) et le contexte fourni (le matériau de travail). C'est ce que Lytos structure, en complément de vos pratiques existantes.
 
 > *"Le role-play ne remplace pas le contexte."*
 
@@ -64,7 +64,7 @@ Ce tableau est conçu pour être projeté en formation. Il montre que Lytos ne r
 | Sprint Backlog | Sprint (sprint.md) + Board (BOARD.md) | Git-natif, pas besoin d'un SaaS |
 | Rétrospective | Memory (memory/cortex/) | Le savoir persiste entre les sprints, pas juste un compte-rendu |
 | Daily standup | `lyt board` | L'état du projet en une commande |
-| Scrum Master | Orchestrateur | Des règles de planification, pas un rôle humain de plus |
+| Scrum Master | Orchestrateur | Des règles de planification qui complètent la facilitation humaine |
 | Onboarding | Manifest (manifest.md) | Un nouveau développeur (ou une IA) comprend le projet en 2 minutes |
 
 > *"L'agile a structuré la collaboration humaine. Lytos structure la collaboration avec l'IA."*
@@ -193,9 +193,9 @@ Les développeurs détestent les process qui ne servent à rien. Ils adoptent ce
 
 3. **Debrief (5 min)** — La différence entre les deux, c'est le contexte. Le prompt n'a pas changé. Le modèle n'a pas changé. Seule la structure autour a changé. C'est ça, Lytos.
 
-**Le point clé des deux exercices :** les résultats convergent. En code traditionnel, 10 développeurs produisent 10 styles différents. Avec l'IA + un manifest partagé, le code est cohérent. Pour la première fois, un projet à 10 développeurs peut avoir **une seule voix**.
+**Le point clé des deux exercices :** les résultats tendent à converger. En développement traditionnel, 10 développeurs apportent 10 styles — et c'est aussi ce qui fait la richesse d'une équipe. Avec l'IA et un manifest partagé, une partie de la forme peut s'harmoniser, pendant que les différences de jugement continuent de faire la valeur des humains.
 
-> *"Le développeur brainstorme. Lytos harmonise."*
+> *"Le développeur brainstorme. Lytos aide à harmoniser."*
 
 ## Les punchlines à retenir
 
@@ -213,7 +213,7 @@ Toutes les phrases clés en un seul endroit, à réutiliser en formation :
 | Contexte | *"Déléguer à l'IA sans structure, c'est sous-traiter sans brief."* |
 | Rules | *"Ce qui ne se vérifie pas ne se respecte pas."* |
 | Lead | *"L'humain n'écrit pas chaque ligne. Il définit le monde."* |
-| Équipe | *"Le développeur brainstorme. Lytos harmonise."* |
+| Équipe | *"Le développeur brainstorme. Lytos aide à harmoniser."* |
 | Formule | **Résultat = Modèle x Contexte** |
 
 ## Ressources à partager

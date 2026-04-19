@@ -3,13 +3,13 @@ title: Guide Lead Développeur
 description: Comment architecturer, superviser et scaler le développement assisté par IA avec Lytos.
 ---
 
-## Votre nouveau rôle
+## Un rôle qui peut se déplacer
 
-Vous n'êtes plus un relecteur de code. Vous êtes un **architecte de système**.
+Le rôle de lead dev reste précieux — ce guide décrit comment il peut s'enrichir avec Lytos, sans remplacer ce que vous faites déjà.
 
-L'ancien modèle : lire chaque PR, vérifier le style, attraper les bugs, imposer les conventions. Avec Lytos, l'IA fait ça — elle suit les skills, respecte les rules, et applique les patterns de la memory.
+Le cœur historique : lire les PR importantes, trancher sur le style, attraper les bugs subtils, arbitrer les conventions. Ce travail reste utile, en particulier sur les décisions de conception. Ce qui peut se déplacer : une partie des vérifications mécaniques (style, conventions de base) peut descendre dans les rules, libérant du temps pour les revues de fond.
 
-Votre nouveau job : **définir le système qui fait que l'IA produit du bon travail.** Le manifest, les rules, le sprint, la memory. C'est plus impactant que de lire des diffs.
+Une nouvelle part du rôle peut émerger : **définir le système qui aide l'IA et l'équipe à produire du bon travail.** Le manifest, les rules, le sprint, la memory. C'est un levier complémentaire aux revues ligne-à-ligne, pas un remplacement.
 
 ---
 
@@ -72,13 +72,13 @@ La memory est ce qui rend le 10ème sprint meilleur que le 1er. Votre rôle c'es
 
 ---
 
-## Comment review le travail de l'IA
+## Comme reviewer le travail de l'IA
 
-Vous ne lisez plus le code ligne par ligne. Vous validez à un niveau supérieur :
+La revue ligne-à-ligne garde tout son sens quand elle apporte du jugement — architecture, choix de conception, cas limites. Ce que Lytos propose en plus, c'est une couche de validation à un niveau supérieur :
 
-| Ancienne review (code) | Nouvelle review (Lytos) |
+| Revue classique (code) | Revue avec Lytos (complément) |
 |------------------------|------------------------|
-| Vérifier les noms de variables | Les rules sont-elles respectées ? (`lyt lint` automatisera ça) |
+| Vérifier les noms de variables | Les rules sont-elles respectées ? (`lyt lint` peut aider) |
 | Vérifier le style | Le manifest est-il à jour ? |
 | Lire le diff | L'issue est-elle bien résolue ? Le résultat correspond-il à l'intention ? |
 | Attraper les bugs | Les tests passent ? La couverture est-elle suffisante ? |
@@ -152,26 +152,26 @@ Quand `lyt claim` sera disponible, chaque développeur prend son issue. Le board
 
 ## L'effet cumulatif
 
-Chaque sprint laisse derrière lui :
+Chaque sprint peut laisser derrière lui :
 - Des issues résolues (progrès)
 - De la memory mise à jour (savoir)
 - Des rules affinées (qualité)
 - Des patterns documentés (cohérence)
 
-Après 5 sprints, votre IA n'est plus la même IA. Elle a le contexte de votre projet, les décisions de votre équipe, la connaissance de votre domaine. Elle ne devine plus — elle sait.
+Après quelques sprints, le contexte disponible à l'IA se densifie : décisions d'équipe, connaissance du domaine, patterns projet. Elle devine moins parce qu'elle s'appuie davantage sur du contexte consigné.
 
-**C'est le vrai job du lead : construire un système qui devient plus intelligent au fil du temps.**
+**C'est une dimension possible du rôle de lead : construire, en plus des revues, un système qui s'enrichit au fil du temps.**
 
 ---
 
-## La cohérence d'équipe — ce qui était impossible avant
+## Cohérence d'équipe — une convergence plus accessible
 
-En développement traditionnel, vous ne pouvez pas demander à 10 développeurs de coder pareil. Conventions, linters, code reviews — ça réduit les écarts, ça ne les élimine jamais.
+En développement traditionnel, il est difficile d'obtenir dix développeurs qui codent à l'identique — conventions, linters et revues de code réduisent les écarts sans les effacer. Et une partie de la richesse d'une équipe vient précisément de cette diversité de styles.
 
-Avec l'IA + Lytos, c'est différent. Un manifest, des rules, des skills — partagés par toute l'équipe. Chaque développeur brainstorme et valide. Le code est produit par le même moteur, avec le même contexte.
+Avec l'IA et un cadre partagé comme Lytos, une partie de l'homogénéité devient plus accessible. Un manifest, des rules, des skills — partagés par l'équipe. Chaque développeur brainstorme et valide. Une partie du code est produite avec le même contexte.
 
-Le résultat : un projet à 10 développeurs qui a **une seule voix**. Pas parce qu'on a forcé des humains à coder pareil — mais parce que la structure garantit la cohérence.
+Le résultat : un projet où les différences de forme se réduisent, pendant que les différences de jugement continuent de faire la valeur des humains qui l'écrivent.
 
-> *"Le développeur brainstorme. Lytos harmonise."*
+> *"Le développeur brainstorme. Lytos aide à harmoniser."*
 
-> *"L'humain n'écrit pas chaque ligne. Il définit le monde."*
+> *"L'humain n'écrit pas toujours chaque ligne. Il définit aussi le cadre."*

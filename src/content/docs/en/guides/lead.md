@@ -3,13 +3,13 @@ title: Lead Developer Guide
 description: How to architect, supervise, and scale AI-assisted development with Lytos.
 ---
 
-## Your new role
+## A role that can shift
 
-You are no longer a code reviewer. You are a **system architect**.
+The lead dev role remains valuable — this guide describes how it can be enriched with Lytos, without replacing what you already do.
 
-The old model: read every PR, check style, catch bugs, enforce conventions. With Lytos, the AI does this — it follows skills, respects rules, and applies patterns from memory.
+The historical core: read important PRs, call the shots on style, catch subtle bugs, arbitrate conventions. This work remains useful, especially on design decisions. What can shift: part of the mechanical checks (style, basic conventions) can move into rules, freeing time for substantive review.
 
-Your new job: **define the system that makes the AI produce good work.** The manifest, the rules, the sprint, the memory. This is higher leverage than reading diffs.
+A new part of the role may emerge: **define the system that helps the AI and the team produce good work.** The manifest, the rules, the sprint, the memory. It's a complementary lever to line-by-line review, not a replacement.
 
 ---
 
@@ -74,11 +74,11 @@ Memory is what makes the 10th sprint better than the 1st. Your job is to ensure 
 
 ## How to review AI-produced work
 
-You don't read code line by line anymore. You validate at a higher level:
+Line-by-line review keeps its full meaning when it brings judgment — architecture, design choices, edge cases. What Lytos adds is a layer of validation at a higher level:
 
-| Old review (code) | New review (Lytos) |
+| Classic review (code) | Review with Lytos (complement) |
 |-------------------|-------------------|
-| Check variable names | Are the rules followed? (`lyt lint` will automate this) |
+| Check variable names | Are the rules followed? (`lyt lint` can help) |
 | Check code style | Is the manifest up to date? |
 | Read the diff | Is the issue well resolved? Does the result match the intent? |
 | Catch bugs | Do tests pass? Is coverage adequate? |
@@ -152,26 +152,26 @@ When `lyt claim` is available, each developer claims their issue. The board show
 
 ## The compound effect
 
-Each sprint leaves behind:
+Each sprint can leave behind:
 - Issues resolved (progress)
 - Memory updated (knowledge)
 - Rules refined (quality)
 - Patterns documented (consistency)
 
-After 5 sprints, your AI is not the same AI. It has your project's context, your team's decisions, your domain knowledge. It doesn't guess anymore — it knows.
+After a few sprints, the context available to the AI grows denser: team decisions, domain knowledge, project patterns. It guesses less because it leans more on recorded context.
 
-**That's the lead's real job: build a system that gets smarter over time.**
+**It's one possible dimension of the lead's role: to build, in addition to reviews, a system that grows richer over time.**
 
 ---
 
-## Team consistency — what was impossible before
+## Team consistency — convergence that becomes more accessible
 
-In traditional development, you can't ask 10 developers to code the same way. Conventions, linters, code reviews — they reduce gaps, they never eliminate them.
+In traditional development, it's hard to get ten developers to code identically — conventions, linters, and code reviews reduce gaps without erasing them. Part of a team's richness comes precisely from that diversity of styles.
 
-With AI + Lytos, it's different. One manifest, one set of rules, one set of skills — shared by the whole team. Each developer brainstorms and validates. The code is produced by the same engine, with the same context.
+With AI and a shared frame like Lytos, some of that homogeneity becomes more accessible. One manifest, one set of rules, one set of skills — shared by the team. Each developer brainstorms and validates. Part of the code is produced with the same context.
 
-The result: a 10-developer project that speaks **with one voice**. Not because you forced humans to code alike — but because structure guarantees consistency.
+The result: a project where differences of form narrow, while differences of judgment continue to be what the humans who write it contribute.
 
-> *"The developer brainstorms. Lytos harmonizes."*
+> *"The developer brainstorms. Lytos helps harmonize."*
 
-> *"The human doesn't write every line. They define the world."*
+> *"The human doesn't always write every line. They also define the frame."*

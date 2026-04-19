@@ -7,13 +7,13 @@ description: The founding philosophy of Lytos.
 
 ## The observation
 
-The AI industry copies human organization — agents with personas, roles, titles. It's comforting. It's not the most robust mechanism for quality, memory, or consistency.
+A large part of the AI industry copies human organization — agents with personas, roles, titles. This approach has the merit of being legible. Our experience suggests it isn't always the most robust mechanism when you're after quality, memory, and consistency over time.
 
-An AI agent has no fatigue, no ego, no office politics. But it has a limited context window — and it forgets everything between sessions.
+An AI agent has no fatigue, no ego, no office politics. But its context window is limited, and it generally forgets everything between sessions.
 
-## The reversal
+## A shift
 
-Instead of managing agents, you define the framework in which they operate.
+Rather than managing agents, you can also define the framework in which they operate.
 
 Agents are like Kubernetes pods — stateless, scalable, without identity. You don't name a pod. You define the desired state and the orchestrator allocates resources.
 
@@ -29,9 +29,9 @@ Agents are like Kubernetes pods — stateless, scalable, without identity. You d
 
 ## The human's role
 
-The human is the **system architect**. They define the foundation: the skills, the rules, the structure, the criteria. No one else can do this, because it demands an intimate understanding of the project, its stakes, its business context.
+The human is the **system architect**. They define the foundation: the skills, the rules, the structure, the criteria. This work demands an intimate understanding of the project, its stakes, its business context — an understanding that remains human.
 
-The human does not write every line of code. They define the world in which agents produce code.
+The human doesn't necessarily write every line of code. They define the frame in which the team and the AI produce together.
 
 ## Why text?
 

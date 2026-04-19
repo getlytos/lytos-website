@@ -7,13 +7,13 @@ description: La philosophie fondatrice de Lytos.
 
 ## Le constat
 
-L'industrie IA reproduit l'organisation humaine — des agents avec des personas, des rôles, des titres. C'est rassurant. Ce n'est pas le mécanisme le plus robuste pour obtenir qualité, mémoire et cohérence.
+Une grande partie de l'industrie IA reproduit l'organisation humaine — des agents avec des personas, des rôles, des titres. Cette approche a le mérite de la lisibilité. Notre expérience suggère qu'elle n'est pas toujours le mécanisme le plus robuste quand on cherche qualité, mémoire et cohérence dans la durée.
 
-Un agent IA n'a pas de fatigue, pas d'ego, pas de politique de bureau. Mais il a une fenêtre de contexte limitée — et il oublie tout entre les sessions.
+Un agent IA n'a ni fatigue, ni ego, ni politique de bureau. Mais sa fenêtre de contexte est limitée, et il oublie généralement tout entre les sessions.
 
-## Le renversement
+## Un déplacement
 
-Au lieu de gérer des agents, on définit le cadre dans lequel ils opèrent.
+Plutôt que de gérer des agents, on peut aussi définir le cadre dans lequel ils opèrent.
 
 Les agents sont comme des pods Kubernetes — stateless, scalables, sans identité. On ne nomme pas un pod. On définit l'état désiré et l'orchestrateur alloue les ressources.
 
@@ -29,9 +29,9 @@ Les agents sont comme des pods Kubernetes — stateless, scalables, sans identit
 
 ## Le rôle de l'humain
 
-L'humain est l'**architecte du système**. Il définit la fondation : les skills, les rules, la structure, les critères. Personne d'autre ne peut faire ça, parce que ça demande une compréhension intime du projet, de ses enjeux, de son contexte métier.
+L'humain est l'**architecte du système**. Il définit la fondation : les skills, les rules, la structure, les critères. Ce travail demande une compréhension intime du projet, de ses enjeux, de son contexte métier — une compréhension qui reste humaine.
 
-L'humain n'écrit pas chaque ligne de code. Il définit le monde dans lequel les agents produisent du code.
+L'humain n'écrit pas nécessairement chaque ligne de code. Il définit le cadre dans lequel l'équipe et l'IA produisent ensemble.
 
 ## Pourquoi du texte ?
 

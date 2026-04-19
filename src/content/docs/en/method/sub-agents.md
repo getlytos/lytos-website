@@ -1,15 +1,15 @@
 ---
 title: Sub-agents
-description: Why personas are useless — and what actually makes the difference.
+description: A critical reading of personas — and what seems to make the difference.
 ---
 
-## Sub-agents don't exist
+## Sub-agents: an approach that feels limited to us
 
-Your "React expert", your "senior architect", your "DevOps specialist" — it's the same LLM wearing a different costume.
+The "React expert", "senior architect", "DevOps specialist" you meet in many frameworks usually rely on the same LLM with a different system prompt.
 
-The AI industry invented agent personas the way companies invent job titles: it feels reassuring, it looks like structure, but it changes nothing about the output. A language model doesn't code better because you told it it's senior.
+Agent personas brought a form of organization to a new landscape; they offer a familiar vocabulary and a sense of structure. Our observation from practice: that disguise layer changes the outcome less than what plays out elsewhere — choice of model and quality of context.
 
-This page says out loud what practitioners already know.
+This page lays out a reading, not a general truth.
 
 ## The drill
 
@@ -27,9 +27,9 @@ It won't drill a better or worse hole.
 
 > *"An agent dressed as a senior dev doesn't know your code. It knows the word 'senior'."*
 
-This is exactly what the industry does with sub-agents. Take an LLM, slap a system prompt on it that says *"You are a senior developer with 15 years of React experience"*, and call it a specialized agent.
+You find this pattern in many sub-agent setups. Take an LLM, add a system prompt like *"You are a senior developer with 15 years of React experience"*, and present it as a specialized agent.
 
-The model hasn't changed. Its capabilities haven't changed. Its "experience" is a textual fiction.
+The model itself hasn't changed. Its capabilities haven't either. The "experience" on display is a textual construction.
 
 What makes the difference is **the bit** — the model chosen for the task:
 
@@ -42,17 +42,17 @@ What makes the difference is **the bit** — the model chosen for the task:
 
 Choosing the wrong model for a task is like drilling concrete with a wood bit. No costume will fix a wrong bit.
 
-## The persona illusion
+## The limits of personas
 
 The idea is seductive: create a "QA agent", an "architect agent", a "writer agent". Give them personalities, specializations, communication styles.
 
-Except it doesn't work.
+Our reading, from practice, is more nuanced.
 
-**A persona doesn't create competence.** Telling a model it's a security expert doesn't give it new security knowledge. Its weights haven't changed. Its training hasn't changed. All that changes is the probability distribution of its output tokens — it will *talk* like an expert, not *reason* like one.
+**A persona doesn't create new competence.** Telling a model it's a security expert doesn't give it security knowledge it didn't already have. Its weights haven't changed, and neither has its training. What changes is the probability distribution of its output tokens — it will *sound* more like an expert, without necessarily reasoning differently.
 
-**Personas add noise.** A 500-token system prompt describing a personality is 500 fewer tokens for useful context. And the model has to maintain the coherence of this fiction on top of solving the actual problem.
+**Personas have a context cost.** A 500-token system prompt describing a personality takes tokens away from useful context. The model also has to maintain the coherence of that fiction.
 
-**What works is a model strategy.** Not "which costume for my agent", but "which model for which task". It's an engineering decision, not a casting call.
+**What Lytos favors is a model strategy.** Less "which costume for my agent", more "which model for which task". An engineering decision, as a complement to existing framing practices.
 
 Lytos doesn't create personas. Lytos defines a strategy:
 
@@ -62,11 +62,11 @@ Lytos doesn't create personas. Lytos defines a strategy:
 
 The result doesn't depend on who the agent "is". It depends on what it knows and what it can do.
 
-## What actually matters
+## What seems to matter
 
-If personas do nothing, what makes the difference between an agent that produces a mediocre result and one that produces an excellent one?
+If personas have a limited effect, what — in our experience — makes the difference between a mediocre result and a satisfying one?
 
-Two things. Only two.
+Two dimensions seem decisive to us.
 
 ### The model
 
@@ -93,7 +93,7 @@ None of these tell the agent "who it is". They all tell it **what it needs to kn
 
 ## The Lytos approach
 
-Instead of creating 15 "specialized agents" that are all the same model in different costumes, Lytos does three things:
+Rather than multiplying "specialized agents" that share the same model under the hood, Lytos suggests focusing on three levers:
 
 **1. Choose the right model for the task.** This is the bit. The decision with the most impact on the result.
 
@@ -101,6 +101,6 @@ Instead of creating 15 "specialized agents" that are all the same model in diffe
 
 **3. Give a clear procedure.** This is the skill. Not "be an expert", but "here are the steps, here is the checklist, here are the validation criteria".
 
-The result: agents without costumes but with deep context, a clear procedure, and the right engine under the hood.
+The result: sessions without costumes but with deep context, a clear procedure, and a model chosen for the task.
 
-No fiction. No casting. Engineering.
+Less fiction, more engineering — as a complement to what already works for you.
