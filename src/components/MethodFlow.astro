@@ -116,21 +116,17 @@ const copy = lang === 'fr' ? {
 
 <style>
 	.mf {
-		background: var(--lytos-paper);
-		border: 1px solid var(--lytos-ink-12);
-		padding: 40px;
+		background: transparent;
+		padding: 0;
 		margin: 2rem 0;
-	}
-	:global(:root[data-theme='dark']) .mf {
-		background: #1a1a1a;
-		border-color: rgba(245, 242, 236, 0.12);
 	}
 	.mf-triad {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 24px;
 		margin-bottom: 40px;
 	}
+	.mf-card { min-width: 0; }
 	@media (max-width: 600px) {
 		.mf-triad { grid-template-columns: 1fr; }
 	}
@@ -201,9 +197,10 @@ const copy = lang === 'fr' ? {
 
 	.mf-pillars {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(5, minmax(0, 1fr));
 		gap: 16px;
 	}
+	.mf-pillar { min-width: 0; }
 	@media (max-width: 900px) {
 		.mf-pillars { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 	}
