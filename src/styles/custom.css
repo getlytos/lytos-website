@@ -132,6 +132,22 @@ a.site-title img {
 	filter: none !important;
 }
 
+/* ─── Header layout — identical across splash + docs ────────────
+   Starlight reserves the first grid column to the sidebar width on
+   docs pages (so the title "centers" under the sidebar zone). We
+   don't want that — the wordmark should sit flush-left everywhere
+   with the same layout as the splash template. */
+
+@media (min-width: 50rem) {
+	.header[class*='astro-'] {
+		grid-template-columns: auto 1fr auto !important;
+	}
+
+	.title-wrapper {
+		justify-self: start;
+	}
+}
+
 /* ─── Hero — mixed bold + italic for rhythm ───────────────────── */
 
 .hero h1 {

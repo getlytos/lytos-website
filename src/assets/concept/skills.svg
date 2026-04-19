@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-width="1.5" stroke-linecap="square" role="img" aria-label="Skills">
+  <g stroke="#3a4028" stroke-width="2">
+    <line x1="14" y1="20" x2="40" y2="20"/>
+    <path d="M 40 20 L 48 16 L 48 24 Z" fill="#3a4028" stroke="none"/>
+    <line x1="14" y1="32" x2="36" y2="32"/>
+    <path d="M 36 32 L 44 28 L 44 36 Z" fill="#3a4028" stroke="none"/>
+    <line x1="14" y1="44" x2="42" y2="44"/>
+    <path d="M 42 44 L 50 40 L 50 48 Z" fill="#3a4028" stroke="none"/>
+  </g>
+  <path d="M 18 18 L 22 22 M 22 18 L 26 22 M 26 18 L 30 22 M 30 18 L 34 22" stroke="#f5f2ec" stroke-width="0.8"/>
+</svg>

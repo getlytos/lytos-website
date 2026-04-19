@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-width="1.5" stroke-linecap="square" role="img" aria-label="Memory">
+  <path d="M 12 24 L 32 16 L 52 24 L 32 32 Z" stroke="#151515" fill="#f5f2ec"/>
+  <path d="M 12 34 L 32 26 L 52 34 L 32 42 Z" stroke="#151515" fill="#ebe7dd"/>
+  <path d="M 12 44 L 32 36 L 52 44 L 32 52 Z" stroke="#3a4028" fill="rgba(74,82,51,0.10)" stroke-width="2"/>
+</svg>

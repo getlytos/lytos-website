@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-width="1.5" stroke-linecap="square" role="img" aria-label="Rules">
+  <path d="M 16 12 L 12 12 L 12 52 L 16 52" stroke="#151515" stroke-width="2"/>
+  <path d="M 48 12 L 52 12 L 52 52 L 48 52" stroke="#151515" stroke-width="2"/>
+  <line stroke="#8a8273" x1="22" y1="24" x2="42" y2="24"/>
+  <line stroke="#8a8273" x1="22" y1="32" x2="36" y2="32"/>
+  <line stroke="#3a4028" stroke-width="2" x1="22" y1="40" x2="42" y2="40"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none" stroke-width="1.5" stroke-linecap="square" role="img" aria-label="Result = Model × Context">
+  <text x="72" y="110" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="0.18em" style="text-transform:uppercase" fill="#8a8273">What you get</text>
+  <text x="72" y="160" font-family="Newsreader,Georgia,serif" font-size="54" font-style="italic" fill="#151515">Result</text>
+  <line stroke="#151515" x1="220" y1="140" x2="260" y2="140"/>
+  <line stroke="#151515" x1="220" y1="155" x2="260" y2="155"/>
+  <text x="275" y="110" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="0.18em" style="text-transform:uppercase" fill="#8a8273">Provided by AI</text>
+  <text x="275" y="160" font-family="Newsreader,Georgia,serif" font-size="54" font-style="italic" fill="#5d574b">Model</text>
+  <g stroke="#151515" stroke-width="2">
+    <line x1="420" y1="130" x2="435" y2="150"/>
+    <line x1="435" y1="130" x2="420" y2="150"/>
+  </g>
+  <text x="455" y="110" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="0.18em" style="text-transform:uppercase" fill="#3a4028">What you provide</text>
+  <text x="455" y="160" font-family="Newsreader,Georgia,serif" font-size="54" font-style="italic" fill="#3a4028" font-weight="500">Context</text>
+  <line stroke="#3a4028" x1="455" y1="175" x2="608" y2="175" stroke-width="2"/>
+  <text x="72" y="225" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="0.18em" style="text-transform:uppercase" fill="#8a8273">The variable you control</text>
+  <line stroke="#8a8273" x1="72" y1="238" x2="210" y2="238" stroke-dasharray="2 3"/>
+  <path d="M 455 238 L 540 238" stroke="#3a4028" stroke-width="1.5"/>
+  <circle cx="540" cy="238" r="3" fill="#3a4028"/>
+</svg>
