@@ -87,17 +87,24 @@ main h1 {
 	line-height: 1.25;
 }
 
-/* Site title (next to the glyph in the header) in Newsreader */
+/* Site title — Plex Mono uppercase, letter-spaced (matches design spec) */
 .site-title,
 a.site-title,
 header .site-title,
+header a.site-title,
 header a.site-title span {
-	font-family: 'Newsreader', Georgia, serif !important;
-	font-feature-settings: 'ss01';
+	font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+	font-size: 0.9rem;
 	font-weight: 500;
-	letter-spacing: -0.01em;
-	font-size: 1.35rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
 	line-height: 1;
+	color: var(--lytos-ink);
+}
+
+:root[data-theme='dark'] .site-title,
+:root[data-theme='dark'] a.site-title {
+	color: var(--lytos-paper);
 }
 
 /* ─── Hero — mixed bold + italic for rhythm ───────────────────── */
@@ -127,6 +134,32 @@ header a.site-title span {
 	border-radius: 2px !important;
 	font-weight: 500;
 	letter-spacing: 0.005em;
+}
+
+/* Secondary action — outlined: paper background, ink border + text */
+.action.secondary,
+.sl-link-button.secondary {
+	background: transparent !important;
+	color: var(--lytos-ink) !important;
+	border: 1px solid var(--lytos-ink) !important;
+}
+
+.action.secondary:hover,
+.sl-link-button.secondary:hover {
+	background: var(--lytos-ink) !important;
+	color: var(--lytos-paper) !important;
+}
+
+:root[data-theme='dark'] .action.secondary,
+:root[data-theme='dark'] .sl-link-button.secondary {
+	color: var(--lytos-paper) !important;
+	border-color: var(--lytos-paper) !important;
+}
+
+:root[data-theme='dark'] .action.secondary:hover,
+:root[data-theme='dark'] .sl-link-button.secondary:hover {
+	background: var(--lytos-paper) !important;
+	color: var(--lytos-ink) !important;
 }
 
 /* ─── Code — readable on paper ────────────────────────────────── */
