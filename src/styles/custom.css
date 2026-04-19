@@ -240,6 +240,139 @@ a.site-title img {
 	transition: transform var(--lytos-dur) var(--lytos-ease);
 }
 
+/* ─── Hero illustration — V6 "Issue Board vivant" ──────────────
+   A mini kanban where one card migrates from In Progress to Done,
+   then the Done card appears. All CSS animations, no JS.
+   Scoped under .lytos-hero-board to avoid collisions. */
+
+.lytos-hero-board {
+	width: 100%;
+	max-width: 480px;
+	margin: 0 auto;
+	background: var(--lytos-paper);
+	border: 1px solid var(--lytos-ink-12);
+	padding: 16px;
+	font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	font-size: 11px;
+	color: var(--lytos-ink);
+}
+
+:root[data-theme='dark'] .lytos-hero-board {
+	background: #1a1a1a;
+	border-color: rgba(245, 242, 236, 0.12);
+	color: var(--lytos-paper);
+}
+
+.lytos-hero-board .lhb-head {
+	display: flex;
+	justify-content: space-between;
+	font-size: 10px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--lytos-ink-dim);
+	margin-bottom: 14px;
+}
+
+.lytos-hero-board .lhb-cols {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 12px;
+}
+
+.lytos-hero-board .lhb-col {
+	min-height: 200px;
+}
+
+.lytos-hero-board .lhb-col h5 {
+	font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	font-size: 10px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--lytos-ink-soft);
+	margin: 0 0 10px;
+	font-weight: 500;
+	padding-bottom: 6px;
+	border-bottom: 1px solid var(--lytos-ink-12);
+}
+
+:root[data-theme='dark'] .lytos-hero-board .lhb-col h5 {
+	color: #a8a294;
+	border-bottom-color: rgba(245, 242, 236, 0.12);
+}
+
+.lytos-hero-board .lhb-card {
+	background: var(--lytos-paper-deep);
+	border: 1px solid var(--lytos-ink-12);
+	padding: 8px 10px;
+	margin-bottom: 8px;
+	font-size: 11px;
+	color: var(--lytos-ink);
+	opacity: 0;
+	animation: lhbCardIn 0.5s forwards;
+}
+
+:root[data-theme='dark'] .lytos-hero-board .lhb-card {
+	background: #131418;
+	border-color: rgba(245, 242, 236, 0.12);
+	color: var(--lytos-paper);
+}
+
+.lytos-hero-board .lhb-card small {
+	display: block;
+	color: var(--lytos-ink-dim);
+	font-size: 9px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	margin-top: 3px;
+}
+
+.lytos-hero-board .lhb-ci-1 { animation-delay: 0.3s; }
+.lytos-hero-board .lhb-ci-2 { animation-delay: 0.6s; }
+
+/* The migrating card — fades in at 0.9s, then slides to Done at 2.5s */
+.lytos-hero-board .lhb-ci-3 {
+	animation:
+		lhbCardIn 0.5s 0.9s forwards,
+		lhbCardMove 1.4s 2.8s forwards;
+}
+
+/* The Done card — appears in olive after the migration completes */
+.lytos-hero-board .lhb-ci-4 {
+	animation-delay: 4.3s;
+	background: var(--lytos-olive-soft);
+	border-color: var(--lytos-olive-line);
+	color: var(--lytos-olive-deep);
+}
+
+:root[data-theme='dark'] .lytos-hero-board .lhb-ci-4 {
+	background: rgba(74, 82, 51, 0.25);
+	border-color: rgba(138, 149, 102, 0.4);
+	color: #c9d0a8;
+}
+
+.lytos-hero-board .lhb-ci-5 { animation-delay: 1.5s; }
+
+@keyframes lhbCardIn {
+	to { opacity: 1; }
+}
+
+@keyframes lhbCardMove {
+	0% { opacity: 1; transform: translateX(0); }
+	40% { opacity: 0.35; transform: translateX(55%) translateY(-4px); }
+	100% { opacity: 0; transform: translateX(130%) translateY(0); }
+}
+
+/* Reduced motion — show the end state without animation */
+@media (prefers-reduced-motion: reduce) {
+	.lytos-hero-board .lhb-card {
+		opacity: 1;
+		animation: none !important;
+	}
+	.lytos-hero-board .lhb-ci-3 {
+		opacity: 0;
+	}
+}
+
 /* ─── Sidebar — V3 "Wash" (soft olive tint on active) ──────────── */
 
 .sidebar-content a,
