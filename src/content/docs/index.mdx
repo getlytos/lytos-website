@@ -44,9 +44,6 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 import MethodFlow from '../../components/MethodFlow.astro';
 import LytosPillars from '../../components/LytosPillars.astro';
 import lytBoard from '../../assets/lyt-board.png';
-import lytShow from '../../assets/lyt-show.png';
-import lytLint from '../../assets/lyt-lint.png';
-import lytDoctor from '../../assets/lyt-doctor.png';
 
 ## Do you develop with AI?
 
@@ -89,27 +86,17 @@ Each pillar is a folder you can open and read. No black box, no hidden state —
 
 ---
 
-## The limits of the sub-agent approach
+## Why this approach
 
-Most current AI frameworks suggest delegating to agents: an "architect" agent, a "tester" agent, a "reviewer" agent. The more you delegate, the harder it becomes to keep the thread. Context scatters more easily, decisions become harder to trace.
+Most AI frameworks suggest delegating to autonomous agents — an "architect" agent, a "tester" agent, a "reviewer" agent. The more you delegate, the harder it becomes to keep the thread, and your project context ends up on their servers, in their formats.
 
-**Lytos offers a complementary approach.**
+Lytos takes the opposite path. The AI stays a tool, powerful but directed. The context stays in your repo, as versioned Markdown. You define the intent, you validate every step, the model executes.
 
-No autonomous agents. No personas deciding for you. The AI stays a tool — powerful, but directed. You define the intent. You validate every step. The model executes. You govern.
+> *"Choose your AI. Don't belong to it."*
 
-[Why the sub-agent approach feels limited →](/en/method/sub-agents/)
+Claude today. GPT or Gemini tomorrow. Your conventions, your manifest, your memory: they travel with the repo.
 
----
-
-## Your context belongs to you
-
-With classic cloud tools, your project context lives on their servers, in their formats, dependent on their APIs. Switching models means starting over.
-
-With Lytos, everything is Markdown in your Git repo. Your manifest, your standards, your project memory: version-controlled, portable, readable by any model.
-
-Claude today. GPT or Gemini tomorrow. Your context doesn't move.
-
-[Learn more about sovereignty →](/en/philosophy/sovereignty/)
+[Why not sub-agents →](/en/method/sub-agents/) · [Sovereignty in detail →](/en/philosophy/sovereignty/)
 
 ---
 
@@ -136,10 +123,6 @@ lyt init
 
 [See all commands on npm →](https://www.npmjs.com/package/lytos-cli)
 
-<img src={lytShow.src} alt="lyt show — Issue detail with progress bar" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
-<img src={lytLint.src} alt="lyt lint — Validate .lytos/ structure" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
-<img src={lytDoctor.src} alt="lyt doctor — Health score and diagnostic" style="border-radius: 2px; border: 1px solid var(--lytos-ink-12); margin: 0.5rem 0 1.5rem;" />
-
 ---
 
 ## Works with your current setup
@@ -157,17 +140,11 @@ Your tools. Your models. Your method.
 
 ## For teams: consistency that becomes more accessible with AI
 
-In traditional development, it's hard to get ten developers to code identically — and it isn't always desirable. Each brings their own style, habits, preferences. Coding conventions, linters and code reviews reduce the gaps without erasing them; part of a team's richness comes from that variety.
-
-With AI and a shared frame like Lytos, some of that homogeneity can become more accessible — without erasing individual habits.
-
-One manifest, one set of rules, one set of skills — shared by the team. Each developer brainstorms, refines the requirements, validates the result. Part of the code can then be produced with the same context, the same constraints, the same procedures.
-
-The result: a project where differences of form narrow, while differences of judgment continue to be what the humans who write it contribute.
+One manifest, one set of rules, one set of skills — shared by the team. Each developer brainstorms, refines the requirements, validates the result — and the code produced respects the same frame. Differences of form narrow, while differences of judgment continue to be what the humans who write the code contribute.
 
 > *"The developer brainstorms. Lytos helps harmonize."*
 
-The developer's role recenters on what AI does poorly: defining the need, challenging the proposal, validating. Lytos aims to help each line produced respect the project's identity — as a complement to the reviews and conventions already in place.
+The developer's role recenters on what AI does poorly: defining the need, challenging the proposal, validating. Lytos is a complement to the reviews and conventions already in place, not a replacement.
 
 [Dev roles in the AI era →](/en/philosophy/roles/)
 
@@ -188,3 +165,14 @@ The developer's role recenters on what AI does poorly: defining the need, challe
     "I strongly prefer working with a versioned manifest, memory, rules and skills than with a simple persona like 'you are a senior dev'. Quality comes from durable context, explicit procedures and verifiable criteria — not role-playing."
   </Card>
 </CardGrid>
+
+---
+
+## Install Lytos
+
+```bash
+npm install -g lytos-cli
+lyt init
+```
+
+In 2 minutes, your repo has its manifest, rules, and board. From there, the AI knows your project.
