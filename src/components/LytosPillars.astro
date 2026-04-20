@@ -95,7 +95,7 @@ const captions = lang === 'fr' ? {
 };
 ---
 
-<div class="pillars">
+<div class="pillars not-content">
 	<!-- I · Manifest -->
 	<div class="pillar">
 		<div class="pillar-head">
@@ -260,6 +260,9 @@ const captions = lang === 'fr' ? {
 		grid-template-columns: repeat(5, minmax(0, 1fr));
 		gap: 14px;
 		margin: 2rem 0;
+	}
+	.pillars > .pillar {
+		margin-top: 0;
 	}
 	@media (max-width: 1100px) {
 		.pillars { grid-template-columns: repeat(3, minmax(0, 1fr)); }

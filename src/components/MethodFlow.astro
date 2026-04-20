@@ -52,7 +52,7 @@ const copy = lang === 'fr' ? {
 };
 ---
 
-<div class="mf">
+<div class="mf not-content">
 	<div class="mf-triad">
 		<div class="mf-card">
 			<svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
@@ -119,6 +119,10 @@ const copy = lang === 'fr' ? {
 		background: transparent;
 		padding: 0;
 		margin: 2rem 0;
+	}
+	.mf-triad > .mf-card,
+	.mf-pillars > .mf-pillar {
+		margin-top: 0;
 	}
 	.mf-triad {
 		display: grid;
