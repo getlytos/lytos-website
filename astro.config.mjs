@@ -5,6 +5,9 @@ import rehypeExternalLinks from 'rehype-external-links';
 
 export default defineConfig({
 	site: 'https://lytos.org',
+	redirects: {
+		'/': '/en/',
+	},
 	markdown: {
 		rehypePlugins: [
 			[
