@@ -6,10 +6,8 @@
  */
 import Default from '@astrojs/starlight/components/SiteTitle.astro';
 
-const route = Astro.locals?.starlightRoute;
-const entry = route?.entry;
-const slug: string = entry?.id ?? entry?.slug ?? '';
-const lang: 'en' | 'fr' = slug.startsWith('fr/') ? 'fr' : 'en';
+const pathname = Astro.url.pathname;
+const lang: 'en' | 'fr' = pathname.startsWith('/fr/') || pathname === '/fr' ? 'fr' : 'en';
 
 const labels = lang === 'fr'
 	? { docs: 'Documentation', cli: 'CLI' }
