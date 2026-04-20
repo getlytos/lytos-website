@@ -29,6 +29,8 @@ Aucun n'a tort. Chacun résout le même problème — "comment l'agent sait-il c
 | AGENTS.md | Codex OpenAI, communauté | racine du repo | majuscules | limite cumulée de 32 Kio dans la CLI Codex (`project_doc_max_bytes`) |
 | cursor rules | Cursor | `.cursor/rules/*.mdc` | minuscules | par fichier, chargés par pattern |
 | copilot-instructions.md | GitHub Copilot | `.github/copilot-instructions.md` | minuscules | budget de taille modeste |
+| GEMINI.md | Google Gemini CLI / Jules | racine du repo | majuscules | aucune limite dure publiée |
+| .windsurfrules | Windsurf / Codeium | racine du repo | minuscules, sans extension | budget souple appliqué par Cascade |
 
 Ce sont des conventions, pas des standards. Elles évoluent — vérifiez la doc à jour de chaque vendor avant de vous appuyer sur des limites précises.
 

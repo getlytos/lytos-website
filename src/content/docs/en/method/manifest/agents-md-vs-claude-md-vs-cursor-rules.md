@@ -29,6 +29,8 @@ None of these are wrong. They each solve the same problem — "how does the agen
 | AGENTS.md | OpenAI Codex, community | repo root | uppercase | 32 KiB cumulative limit in the Codex CLI (`project_doc_max_bytes`) |
 | cursor rules | Cursor | `.cursor/rules/*.mdc` | lowercase | per-file, loaded by pattern |
 | copilot-instructions.md | GitHub Copilot | `.github/copilot-instructions.md` | lowercase | modest size budget |
+| GEMINI.md | Google Gemini CLI / Jules | repo root | uppercase | no published hard limit |
+| .windsurfrules | Windsurf / Codeium | repo root | lowercase, no extension | soft budget enforced by Cascade |
 
 These are conventions, not standards. They evolve — check each vendor's current docs before relying on specific limits.
 

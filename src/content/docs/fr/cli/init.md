@@ -14,7 +14,7 @@ lytos init
 La commande est interactive. Elle vous demande :
 
 1. **Nom du projet** — utilisé dans le manifest
-2. **Outil IA** — Claude Code, Cursor, ou aucun (crée le fichier de config approprié)
+2. **Outil IA** — Claude Code, Cursor, Codex (OpenAI), GitHub Copilot, Gemini CLI, Windsurf, ou aucun. Chaque choix génère le fichier d'adaptateur que cet outil lit au démarrage de session (`CLAUDE.md`, `.cursorrules`, `AGENTS.md`, `.github/copilot-instructions.md`, `GEMINI.md`, ou `.windsurfrules`).
 
 ## Ce que ça crée
 
