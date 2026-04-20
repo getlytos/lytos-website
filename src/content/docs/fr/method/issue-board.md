@@ -56,6 +56,16 @@ created: 2026-04-14
 0-icebox → 1-backlog → 2-sprint → 3-in-progress → 4-review → 5-done
 ```
 
+Chaque transition est typiquement déclenchée par une commande CLI :
+
+| De → Vers | Commande | Qui |
+|-----------|----------|-----|
+| `1-backlog` → `3-in-progress` | `lyt claim ISS-XXXX` ou `lyt start ISS-XXXX` | Le développeur qui prend la tâche |
+| `3-in-progress` → `4-review` | Effectuée par l'agent IA en fin de codage (via le skill session-start) | L'agent, une fois la definition of done atteinte |
+| `4-review` → `5-done` | `lyt close ISS-XXXX` (une) ou `lyt close` (batch, avec confirmation) | L'humain, après validation |
+
+Le dossier `4-review/` est une **salle d'attente** : le code est fini mais n'a pas encore été validé (review humaine, review par un pair, CI au vert, QA manuelle — peu importe la barrière définie par l'équipe). `lyt close` sans argument promeut toutes les issues de 4-review en une fois ; `lyt close ISS-XXXX` en ferme une spécifique et peut aussi servir de raccourci "skip review" sur une issue encore en 3-in-progress.
+
 La commande `lytos board` régénère `BOARD.md` à partir du frontmatter de toutes les issues.
 
 ## Niveaux de priorité
