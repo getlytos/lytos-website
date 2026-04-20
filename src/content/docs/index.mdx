@@ -48,35 +48,26 @@ import lytShow from '../../assets/lyt-show.png';
 import lytLint from '../../assets/lyt-lint.png';
 import lytDoctor from '../../assets/lyt-doctor.png';
 
-## The limits of the sub-agent approach
+## What you lose every session
 
-Most current AI frameworks suggest delegating to agents: an "architect" agent, a "tester" agent, a "reviewer" agent. The more you delegate, the harder it becomes to keep the thread. Context scatters more easily, decisions become harder to trace.
+You switch models. You open a new session. You go from Claude to Codex.
+And each time, the same ritual: re-supply the context, repeat the conventions, correct the same drifts.
 
-**Lytos offers a complementary approach.**
+Meanwhile, the debt sets in. Today's generated code no longer matches yesterday's. Conventions slip. The project grows faster than the AI's ability to find its way in it.
 
-No autonomous agents. No personas deciding for you. The AI stays a tool — powerful, but directed. You define the intent. You validate every step. The model executes. You govern.
+Many have come to accept this friction as normal. It isn't.
 
-[Why the sub-agent approach feels limited →](/en/method/sub-agents/)
-
----
-
-## Without shared reference, each session starts from scratch
-
-Without a shared frame, every conversation tends to start over: re-explaining the architecture, repeating the constraints, correcting the same approximations. The model then produces generic code, sometimes disconnected from the real project.
-
-It's a familiar friction: time spent reframing, inconsistencies that can build up. Lytos aims to reduce this friction by recording the context once, in the repo.
+**Lytos addresses this by anchoring the context where it belongs: in the repo.**
 
 ---
 
-## Your context belongs to you
+## Who it's for
 
-With classic cloud tools, your project context lives on their servers, in their formats, dependent on their APIs. Switching models means starting over.
-
-With Lytos, everything is Markdown in your Git repo. Your manifest, your standards, your project memory: version-controlled, portable, readable by any model.
-
-Claude today. GPT or Gemini tomorrow. Your context doesn't move.
-
-[Learn more about sovereignty →](/en/philosophy/sovereignty/)
+| Profile | Typical setup | What Lytos brings |
+|---|---|---|
+| **Vibe-coder / maker** | Claude Code, Codex, AI apps + GitHub | A manifest the AI reads every session. Less re-explaining, a context that compounds. |
+| **Developer** | IDE + Git (GitHub / GitLab) + AI as a tool | Versioned rules, a memory that builds, a board that traces the work — in the repo, not in a SaaS. |
+| **Team** | IDE + Git + CI + reviews + tickets | Shared manifest, skills, rules. The AI produces in the project's style. Tickets live in the repo — not in Jira. |
 
 ---
 
@@ -95,6 +86,30 @@ Each pillar is a folder you can open and read. No black box, no hidden state —
 <LytosPillars lang="en" />
 
 [Explore the 5 pillars in detail →](/en/method/manifest/)
+
+---
+
+## The limits of the sub-agent approach
+
+Most current AI frameworks suggest delegating to agents: an "architect" agent, a "tester" agent, a "reviewer" agent. The more you delegate, the harder it becomes to keep the thread. Context scatters more easily, decisions become harder to trace.
+
+**Lytos offers a complementary approach.**
+
+No autonomous agents. No personas deciding for you. The AI stays a tool — powerful, but directed. You define the intent. You validate every step. The model executes. You govern.
+
+[Why the sub-agent approach feels limited →](/en/method/sub-agents/)
+
+---
+
+## Your context belongs to you
+
+With classic cloud tools, your project context lives on their servers, in their formats, dependent on their APIs. Switching models means starting over.
+
+With Lytos, everything is Markdown in your Git repo. Your manifest, your standards, your project memory: version-controlled, portable, readable by any model.
+
+Claude today. GPT or Gemini tomorrow. Your context doesn't move.
+
+[Learn more about sovereignty →](/en/philosophy/sovereignty/)
 
 ---
 

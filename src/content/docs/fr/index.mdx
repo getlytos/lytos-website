@@ -48,39 +48,26 @@ import lytShow from '../../../assets/lyt-show.png';
 import lytLint from '../../../assets/lyt-lint.png';
 import lytDoctor from '../../../assets/lyt-doctor.png';
 
-## Les limites du paradigme sub-agents
+## Ce que vous perdez à chaque session
 
-La majorité des frameworks IA actuels vous proposent de déléguer à des agents : un agent "architecte", un agent "testeur", un agent "reviewer". Plus on délègue, moins on garde le fil. Le contexte s'éparpille plus facilement, les décisions deviennent plus difficiles à tracer.
+Vous changez de modèle. Vous ouvrez une nouvelle session. Vous passez de Claude à Codex.
+Et chaque fois, le même rituel : il faut redonner le contexte, répéter les conventions, corriger les mêmes dérives.
 
-**Lytos propose une approche complémentaire.**
+Pendant ce temps, la dette s'installe. Le code généré aujourd'hui ne ressemble plus à celui d'hier. Les conventions glissent. Le projet grossit plus vite que la capacité de l'IA à s'y repérer.
 
-> *"L'agile a structuré la collaboration humaine. Lytos essaie de structurer la collaboration avec l'IA."*
+Cette friction, beaucoup ont fini par l'accepter comme normale. Elle ne l'est pas.
 
-Pas d'agents autonomes. Pas de personas qui décident à votre place. L'IA reste un outil — puissant, mais dirigé. C'est vous qui définissez l'intention. C'est vous qui validez chaque étape. Le modèle exécute. Vous, vous gouvernez.
-
-[Pourquoi l'approche sub-agents nous semble limitée →](/fr/method/sub-agents/)
-
----
-
-## Sans référence partagée, chaque session repart de zéro
-
-Sans cadre commun, chaque conversation tend à recommencer : on réexplique l'architecture, on rappelle les contraintes, on corrige les mêmes approximations. Le modèle génère alors du code générique, parfois déconnecté du projet réel.
-
-C'est une friction bien connue : du temps passé à recadrer, des incohérences qui peuvent s'accumuler. Lytos essaie de réduire cette friction en consignant le contexte une fois pour toutes dans le dépôt.
+**Lytos répond à ce problème en ancrant le contexte à l'endroit où il doit vivre : dans le repo.**
 
 ---
 
-## Votre contexte vous appartient
+## Pour qui, pour quoi
 
-Avec les outils cloud classiques, votre contexte projet vit dans leurs serveurs, dans leurs formats, dépendant de leurs APIs. Changer de modèle signifie tout recommencer.
-
-Avec Lytos, tout est en Markdown dans votre dépôt Git. Votre manifest, vos standards, votre mémoire de projet : version-contrôlés, portables, lisibles par n'importe quel modèle.
-
-Aujourd'hui Claude. Demain GPT ou Gemini. Votre contexte ne bouge pas.
-
-> *"Choisissez votre IA. Ne lui appartenez pas."*
-
-[En savoir plus sur la souveraineté →](/fr/philosophy/sovereignty/)
+| Profil | Setup typique | Ce que Lytos apporte |
+|---|---|---|
+| **Vibe-coder / maker** | Claude Code, Codex, apps IA + GitHub | Un manifest que l'IA lit à chaque session. Moins de réexplication, un contexte qui s'enrichit. |
+| **Développeur** | IDE + Git (GitHub / GitLab) + IA en appoint | Règles versionnées, mémoire qui se construit, board qui trace le travail — dans le repo, pas dans un SaaS. |
+| **Équipe** | IDE + Git + CI + revues + tickets | Manifest, skills, rules partagés. L'IA produit dans le style du projet. Les tickets vivent dans le repo — pas dans Jira. |
 
 ---
 
@@ -99,6 +86,34 @@ Chaque pilier est un dossier que vous pouvez ouvrir et lire. Pas de boîte noire
 <LytosPillars lang="fr" />
 
 [Découvrir les 5 piliers en détail →](/fr/method/manifest/)
+
+---
+
+## Les limites du paradigme sub-agents
+
+La majorité des frameworks IA actuels vous proposent de déléguer à des agents : un agent "architecte", un agent "testeur", un agent "reviewer". Plus on délègue, moins on garde le fil. Le contexte s'éparpille plus facilement, les décisions deviennent plus difficiles à tracer.
+
+**Lytos propose une approche complémentaire.**
+
+> *"L'agile a structuré la collaboration humaine. Lytos essaie de structurer la collaboration avec l'IA."*
+
+Pas d'agents autonomes. Pas de personas qui décident à votre place. L'IA reste un outil — puissant, mais dirigé. C'est vous qui définissez l'intention. C'est vous qui validez chaque étape. Le modèle exécute. Vous, vous gouvernez.
+
+[Pourquoi l'approche sub-agents nous semble limitée →](/fr/method/sub-agents/)
+
+---
+
+## Votre contexte vous appartient
+
+Avec les outils cloud classiques, votre contexte projet vit dans leurs serveurs, dans leurs formats, dépendant de leurs APIs. Changer de modèle signifie tout recommencer.
+
+Avec Lytos, tout est en Markdown dans votre dépôt Git. Votre manifest, vos standards, votre mémoire de projet : version-contrôlés, portables, lisibles par n'importe quel modèle.
+
+Aujourd'hui Claude. Demain GPT ou Gemini. Votre contexte ne bouge pas.
+
+> *"Choisissez votre IA. Ne lui appartenez pas."*
+
+[En savoir plus sur la souveraineté →](/fr/philosophy/sovereignty/)
 
 ---
 
