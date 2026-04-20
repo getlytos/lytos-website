@@ -15,9 +15,9 @@ Cette page liste ce qui est vérifié aujourd'hui. La réponse courte : si votre
 | **Claude Code Desktop** | ✅ natif | `CLAUDE.md` | Même moteur que la CLI. Ouvrir le dossier du dépôt dans l'app suffit, le bridge est lu dès la première session. |
 | **Cursor** | ✅ natif | `.cursor/rules/lytos.mdc` | Généré par `lyt init --tool cursor`. Cursor lit automatiquement les `.cursor/rules/*.mdc`. |
 | **Codex CLI** (OpenAI) | ✅ natif | `AGENTS.md` | Généré par `lyt init --tool codex`. Précédence : `~/.codex/AGENTS.md` puis de la racine Git au dossier courant. Limite cumulée de 32 Kio. |
-| **GitHub Copilot Chat / Agents** | ✅ natif | `.github/copilot-instructions.md` | Adaptateur prévu — voir [lytos-cli ISS-0039](https://github.com/getlytos/lytos-cli). |
-| **Gemini CLI / Jules** | ✅ natif | `GEMINI.md` | Adaptateur prévu — voir [lytos-cli ISS-0039](https://github.com/getlytos/lytos-cli). |
-| **Windsurf / Codeium** | ✅ natif | `.windsurfrules` | Adaptateur prévu — voir [lytos-cli ISS-0039](https://github.com/getlytos/lytos-cli). |
+| **GitHub Copilot Chat / Agents** | ✅ natif | `.github/copilot-instructions.md` | Généré par `lyt init --tool copilot`. Instructions repo lues à chaque requête Copilot. |
+| **Gemini CLI / Jules** | ✅ natif | `GEMINI.md` | Généré par `lyt init --tool gemini`. Instructions racine lues au démarrage de session. |
+| **Windsurf / Codeium** | ✅ natif | `.windsurfrules` | Généré par `lyt init --tool windsurf`. Cascade lit le fichier à chaque session. |
 | **Codex app web** | ⚠️ à vérifier | — | L'app web pourrait ne pas lire `AGENTS.md` comme la CLI. Contournement : coller le contenu du bridge dans le champ "Rules" de l'interface web. |
 | **Claude.ai Projects** (web) | ⚠️ manuel | — | Coller le contenu de `.lytos/manifest.md` (ou du bridge `CLAUDE.md`) dans "Instructions du projet", une fois pour toutes. |
 | **ChatGPT Projects** (web) | ⚠️ manuel | — | Même approche — coller le manifest dans les "Instructions personnalisées" du projet. |
@@ -29,7 +29,7 @@ Cette page liste ce qui est vérifié aujourd'hui. La réponse courte : si votre
 
 Votre éditeur ou CLI lit un fichier projet sans configuration. Un `lyt init --tool <nom>` suffit à générer le bridge. L'IA lit `.lytos/` automatiquement à chaque session.
 
-Cela couvre **Claude Code (CLI et Desktop), Cursor, Codex CLI, Copilot, Gemini, Windsurf** une fois tous les adaptateurs livrés. Aucune étape supplémentaire par session.
+Cela couvre **Claude Code (CLI et Desktop), Cursor, Codex CLI, Copilot, Gemini, Windsurf**. Aucune étape supplémentaire par session.
 
 ### 2. Bridge-et-copie — pour les apps cloud sans convention fichier
 
