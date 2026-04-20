@@ -1,0 +1,162 @@
+---
+/**
+ * Custom PageTitle: renders breadcrumbs + JSON-LD BreadcrumbList
+ * before Starlight's default title.
+ *
+ * No plugin — derived from the current slug so it works for every
+ * content page without per-page config.
+ *
+ * Hidden on home and single-segment pages (depth ≤ 1) where a
+ * breadcrumb would be redundant or visually noisy.
+ */
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const route = Astro.locals?.starlightRoute;
+const entry = route?.entry;
+const slug: string = entry?.id ?? entry?.slug ?? '';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://lytos.org';
+const lang: 'en' | 'fr' = slug.startsWith('fr/') ? 'fr' : 'en';
+
+// Strip the language prefix, keep only the path segments
+const segments = slug.replace(/^(en|fr)\//, '').split('/').filter(Boolean);
+
+// Human-friendly labels per segment
+const labels: Record<string, { en: string; fr: string }> = {
+	'method': { en: 'The Method', fr: 'La Méthode' },
+	'memory': { en: 'Memory', fr: 'Memory' },
+	'skills': { en: 'Skills', fr: 'Skills' },
+	'rules': { en: 'Rules', fr: 'Rules' },
+	'issue-board': { en: 'Issue Board', fr: 'Issue Board' },
+	'manifest': { en: 'Manifest', fr: 'Manifest' },
+	'sub-agents': { en: 'Sub-agents', fr: 'Sub-agents' },
+	'orchestrator': { en: 'Orchestrator', fr: 'Orchestrateur' },
+	'compatibility': { en: 'Compatibility', fr: 'Compatibilité' },
+	'getting-started': { en: 'Getting Started', fr: 'Démarrer' },
+	'introduction': { en: 'Introduction', fr: 'Introduction' },
+	'quickstart': { en: 'Quick Start', fr: 'Démarrage rapide' },
+	'installation': { en: 'Installation', fr: 'Installation' },
+	'guides': { en: 'Guides', fr: 'Guides' },
+	'starter': { en: 'How It Works', fr: 'Comment ça marche' },
+	'developer': { en: 'Developer', fr: 'Développeur' },
+	'lead': { en: 'Lead Developer', fr: 'Lead Développeur' },
+	'cli': { en: 'CLI', fr: 'CLI' },
+	'overview': { en: 'Overview', fr: "Vue d'ensemble" },
+	'init': { en: 'lytos init', fr: 'lytos init' },
+	'board': { en: 'lytos board', fr: 'lytos board' },
+	'philosophy': { en: 'Philosophy', fr: 'Philosophie' },
+	'manifesto': { en: 'Manifesto', fr: 'Manifeste' },
+	'sovereignty': { en: 'Sovereignty', fr: 'Souveraineté' },
+	'trainers': { en: 'Trainer Kit', fr: 'Kit formateur' },
+	'roles': { en: 'Dev Roles in the AI Era', fr: 'Les métiers du dev' },
+};
+
+function label(seg: string): string {
+	const entry = labels[seg];
+	if (entry) return entry[lang];
+	// Fallback: humanize the slug (kebab-case → title case)
+	return seg
+		.split('-')
+		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+		.join(' ');
+}
+
+// Build the crumb list. We skip the last segment (the current page)
+// because the page title itself already announces where we are.
+const crumbs = [
+	{ label: lang === 'fr' ? 'Accueil' : 'Home', url: `/${lang}/` },
+	...segments.slice(0, -1).map((_, i) => {
+		const path = segments.slice(0, i + 1).join('/');
+		return { label: label(segments[i]), url: `/${lang}/${path}/` };
+	}),
+];
+
+const showBreadcrumbs = segments.length >= 2;
+
+// BreadcrumbList JSON-LD — always include the current page as the
+// last element so Google sees the full path.
+const currentTitle: string = entry?.data?.title ?? '';
+const jsonLdList = [
+	...crumbs,
+	{ label: currentTitle, url: `/${lang}/${segments.join('/')}/` },
+];
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: jsonLdList.map((c, i) => ({
+		'@type': 'ListItem',
+		position: i + 1,
+		name: c.label,
+		item: `${siteUrl}${c.url}`,
+	})),
+};
+---
+
+{showBreadcrumbs && (
+	<>
+		<nav class="lytos-breadcrumbs" aria-label={lang === 'fr' ? "Fil d'Ariane" : 'Breadcrumb'}>
+			<ol>
+				{crumbs.map((c, i) => (
+					<li>
+						<a href={c.url}>{c.label}</a>
+						{i < crumbs.length && <span class="sep" aria-hidden="true">›</span>}
+					</li>
+				))}
+			</ol>
+		</nav>
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+	</>
+)}
+
+<Default><slot /></Default>
+
+<style>
+	.lytos-breadcrumbs {
+		margin: 0 0 0.75rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.72rem;
+		letter-spacing: 0.08em;
+		color: var(--lytos-ink-dim);
+	}
+	.lytos-breadcrumbs ol {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0;
+	}
+	.lytos-breadcrumbs li {
+		display: inline-flex;
+		align-items: center;
+	}
+	.lytos-breadcrumbs a {
+		color: var(--lytos-ink-soft);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition:
+			color var(--lytos-dur) var(--lytos-ease),
+			border-color var(--lytos-dur) var(--lytos-ease);
+	}
+	.lytos-breadcrumbs a:hover {
+		color: var(--lytos-olive-deep);
+		border-bottom-color: var(--lytos-olive-deep);
+	}
+	.lytos-breadcrumbs .sep {
+		padding: 0 0.6em;
+		color: var(--lytos-ink-12);
+	}
+	:global(:root[data-theme='dark']) .lytos-breadcrumbs {
+		color: rgba(245, 242, 236, 0.45);
+	}
+	:global(:root[data-theme='dark']) .lytos-breadcrumbs a {
+		color: rgba(245, 242, 236, 0.7);
+	}
+	:global(:root[data-theme='dark']) .lytos-breadcrumbs a:hover {
+		color: #c9d0a8;
+		border-bottom-color: #c9d0a8;
+	}
+	:global(:root[data-theme='dark']) .lytos-breadcrumbs .sep {
+		color: rgba(245, 242, 236, 0.2);
+	}
+</style>

@@ -79,7 +79,9 @@ R : Informellement, oui — un skill peut en référencer un autre ("voir `testi
 ## Pour aller plus loin
 
 - Lire le pilier parent : [Skills](/fr/method/skills/)
-- Voir aussi : [Exemples de règles pour IA de codage](/fr/method/rules/ai-coding-rules-examples/)
+- [Alternative aux sub-agents Claude](/fr/method/sub-agents/alternative-to-claude-sub-agents/) — pourquoi un agent bien contextualisé l'emporte souvent sur un casting de personas
+- [Comment écrire un CLAUDE.md efficace](/fr/method/manifest/writing-claude-md-that-works/) — le fichier où l'IA lit ses premières instructions
+- [Exemples de règles pour IA de codage](/fr/method/rules/ai-coding-rules-examples/) — des seuils vérifiables que l'IA respecte avant de rendre le code
 - Lien externe : [Documentation Anthropic sur les agent skills](https://docs.anthropic.com/en/docs/claude-code/overview)
 
 ## Essayer Lytos en 2 minutes

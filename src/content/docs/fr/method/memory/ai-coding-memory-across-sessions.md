@@ -60,7 +60,9 @@ R : Oui — et le gain arrive sans doute plus vite, puisque c'est aussi vous qui
 ## Pour aller plus loin
 
 - Lire le pilier parent : [Memory](/fr/method/memory/)
-- Voir aussi : [Comment écrire un CLAUDE.md efficace](/fr/method/manifest/writing-claude-md-that-works/)
+- [Comment écrire un CLAUDE.md efficace](/fr/method/manifest/writing-claude-md-that-works/) — le fichier qui oriente l'IA vers votre dossier memory
+- [Kanban dans Git pour projets IA](/fr/method/issue-board/kanban-in-git-for-ai-projects/) — comment l'état du projet (memory + board) survit aux sessions
+- [Comment écrire un skill pour un agent IA](/fr/method/skills/how-to-write-a-skill/) — les skills font référence à la memory pour rester à jour du projet
 - Lien externe : [Documentation Claude Code d'Anthropic](https://docs.anthropic.com/en/docs/claude-code/overview)
 
 ## Essayer Lytos en 2 minutes

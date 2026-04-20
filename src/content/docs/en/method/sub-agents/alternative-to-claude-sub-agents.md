@@ -59,7 +59,9 @@ A: The manifest, rules, and memory are versioned in git. Everyone — human or A
 ## Learn more
 
 - Read the parent pillar: [Sub-agents](/en/method/sub-agents/)
-- Related: [AI coding memory across sessions](/en/method/memory/ai-coding-memory-across-sessions/)
+- [AI coding memory across sessions](/en/method/memory/ai-coding-memory-across-sessions/) — what fills the single agent's context
+- [Writing a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/) — how to hand the agent its instructions
+- [How to write a skill for an AI agent](/en/method/skills/how-to-write-a-skill/) — procedures replace personas
 - External: [Anthropic's guidance on agent design](https://www.anthropic.com/engineering/building-effective-agents)
 
 ## Try Lytos in 2 minutes

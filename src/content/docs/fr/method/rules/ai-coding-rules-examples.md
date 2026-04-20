@@ -106,7 +106,8 @@ R : Oui — un fichier de règles par langage convient très bien (`rules/python
 ## Pour aller plus loin
 
 - Lire le pilier parent : [Rules](/fr/method/rules/)
-- Voir aussi : [Comment écrire un skill pour un agent IA](/fr/method/skills/how-to-write-a-skill/)
+- [Comment écrire un skill pour un agent IA](/fr/method/skills/how-to-write-a-skill/) — les procédures que l'IA suit, à la place des personas
+- [Comment écrire un CLAUDE.md efficace](/fr/method/manifest/writing-claude-md-that-works/) — le fichier où l'IA lit ses premières instructions
 - Lien externe : [Documentation des pratiques d'ingénierie Google](https://google.github.io/eng-practices/)
 
 ## Essayer Lytos en 2 minutes

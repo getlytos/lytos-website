@@ -73,7 +73,8 @@ A: Yes. They are part of the project's working conditions and should version wit
 ## Learn more
 
 - Read the parent pillar: [Manifest](/en/method/manifest/)
-- Related: [Writing a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/)
+- [Writing a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/) — the file where the AI reads its first instructions
+- [Compatibility](/en/method/compatibility/) — which tools auto-load each bridge file
 - External: [AGENTS.md community specification](https://agents.md/) · [Cursor rules documentation](https://docs.cursor.com/context/rules)
 
 ## Try Lytos in 2 minutes

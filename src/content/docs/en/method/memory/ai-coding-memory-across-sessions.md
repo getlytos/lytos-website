@@ -60,7 +60,9 @@ A: Yes — and arguably it pays off faster, since you are also the one who would
 ## Learn more
 
 - Read the parent pillar: [Memory](/en/method/memory/)
-- Related: [Writing a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/)
+- [Writing a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/) — the file that points the AI at your memory folder
+- [Kanban in Git for AI projects](/en/method/issue-board/kanban-in-git-for-ai-projects/) — how project state (memory + board) stays durable across sessions
+- [How to write a skill for an AI agent](/en/method/skills/how-to-write-a-skill/) — skills reference memory to stay project-aware
 - External: [Anthropic's Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/overview)
 
 ## Try Lytos in 2 minutes

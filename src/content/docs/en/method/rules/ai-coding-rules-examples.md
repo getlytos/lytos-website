@@ -106,7 +106,8 @@ A: Yes — a rule file per language is fine (`rules/python.md`, `rules/typescrip
 ## Learn more
 
 - Read the parent pillar: [Rules](/en/method/rules/)
-- Related: [How to write a skill for an AI agent](/en/method/skills/how-to-write-a-skill/)
+- [How to write a skill for an AI agent](/en/method/skills/how-to-write-a-skill/) — procedures the AI follows, replacing personas
+- [Writing a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/) — the file where the AI reads its first instructions
 - External: [Google engineering practices documentation](https://google.github.io/eng-practices/)
 
 ## Try Lytos in 2 minutes

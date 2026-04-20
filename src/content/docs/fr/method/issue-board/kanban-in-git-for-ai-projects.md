@@ -87,7 +87,8 @@ R : Gardez Jira s'il vous sert. Un board en dossiers peut coexister, limité au 
 ## Pour aller plus loin
 
 - Lire le pilier parent : [Issue Board](/fr/method/issue-board/)
-- Voir aussi : [Comment organiser la mémoire de Claude Code entre sessions](/fr/method/memory/ai-coding-memory-across-sessions/)
+- [Comment écrire un CLAUDE.md efficace](/fr/method/manifest/writing-claude-md-that-works/) — le fichier où l'IA lit ses premières instructions
+- [Comment organiser la mémoire de Claude Code entre sessions](/fr/method/memory/ai-coding-memory-across-sessions/) — le savoir durable que l'IA lit à chaque session
 - Lien externe : [Guide GitHub pour gérer le travail dans un dépôt](https://docs.github.com/en/issues/tracking-your-work-with-issues)
 
 ## Essayer Lytos en 2 minutes

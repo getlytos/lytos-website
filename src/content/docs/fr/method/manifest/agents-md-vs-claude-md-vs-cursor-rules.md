@@ -73,7 +73,8 @@ R : Oui. Ils font partie des conditions de travail du projet et doivent se versi
 ## Pour aller plus loin
 
 - Lire le pilier parent : [Manifest](/fr/method/manifest/)
-- Voir aussi : [Comment écrire un CLAUDE.md efficace](/fr/method/manifest/writing-claude-md-that-works/)
+- [Comment écrire un CLAUDE.md efficace](/fr/method/manifest/writing-claude-md-that-works/) — le fichier où l'IA lit ses premières instructions
+- [Compatibilité](/fr/method/compatibility/) — quels outils chargent automatiquement chaque fichier bridge
 - Lien externe : [Spécification communautaire AGENTS.md](https://agents.md/) · [Documentation des règles Cursor](https://docs.cursor.com/context/rules)
 
 ## Essayer Lytos en 2 minutes

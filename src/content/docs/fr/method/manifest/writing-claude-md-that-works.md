@@ -75,7 +75,9 @@ R : Commencez plus petit — un CLAUDE.md avec juste la stack technique, les con
 ## Pour aller plus loin
 
 - Lire le pilier parent : [Manifest](/fr/method/manifest/)
-- Voir aussi : [AGENTS.md vs CLAUDE.md vs cursor rules](/fr/method/manifest/agents-md-vs-claude-md-vs-cursor-rules/)
+- [AGENTS.md vs CLAUDE.md vs cursor rules](/fr/method/manifest/agents-md-vs-claude-md-vs-cursor-rules/) — comment les trois grandes conventions se comparent
+- [Comment organiser la mémoire de Claude Code entre sessions](/fr/method/memory/ai-coding-memory-across-sessions/) — le savoir durable que l'IA lit à chaque session
+- [Exemples de règles pour IA de codage](/fr/method/rules/ai-coding-rules-examples/) — des seuils vérifiables que l'IA respecte avant de rendre le code
 - Lien externe : [Documentation Claude Code d'Anthropic](https://docs.anthropic.com/en/docs/claude-code/overview)
 
 ## Essayer Lytos en 2 minutes

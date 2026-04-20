@@ -87,7 +87,8 @@ A: Keep Jira if it serves you. A folder-based board can run alongside, scoped to
 ## Learn more
 
 - Read the parent pillar: [Issue Board](/en/method/issue-board/)
-- Related: [AI coding memory across sessions](/en/method/memory/ai-coding-memory-across-sessions/)
+- [Writing a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/) — the file where the AI reads its first instructions
+- [AI coding memory across sessions](/en/method/memory/ai-coding-memory-across-sessions/) — the durable knowledge the AI reads each session
 - External: [GitHub's guide to managing work in a repo](https://docs.github.com/en/issues/tracking-your-work-with-issues)
 
 ## Try Lytos in 2 minutes

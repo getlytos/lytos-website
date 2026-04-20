@@ -79,7 +79,9 @@ A: Informally, yes — a skill can reference another ("see `testing.md` for test
 ## Learn more
 
 - Read the parent pillar: [Skills](/en/method/skills/)
-- Related: [AI coding rules examples](/en/method/rules/ai-coding-rules-examples/)
+- [Alternative to Claude sub-agents](/en/method/sub-agents/alternative-to-claude-sub-agents/) — why one well-contextualized agent often beats a cast of personas
+- [Writing a CLAUDE.md that works](/en/method/manifest/writing-claude-md-that-works/) — the file where the AI reads its first instructions
+- [AI coding rules examples](/en/method/rules/ai-coding-rules-examples/) — verifiable thresholds the AI respects before handing back code
 - External: [Anthropic's documentation on agent skills](https://docs.anthropic.com/en/docs/claude-code/overview)
 
 ## Try Lytos in 2 minutes

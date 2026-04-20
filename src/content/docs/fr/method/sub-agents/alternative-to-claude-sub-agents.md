@@ -59,7 +59,9 @@ R : Le manifest, les rules et la memory sont versionnés dans git. Tout le monde
 ## Pour aller plus loin
 
 - Lire le pilier parent : [Sub-agents](/fr/method/sub-agents/)
-- Voir aussi : [Comment organiser la mémoire de Claude Code entre sessions](/fr/method/memory/ai-coding-memory-across-sessions/)
+- [Comment organiser la mémoire de Claude Code entre sessions](/fr/method/memory/ai-coding-memory-across-sessions/) — le savoir durable que l'IA lit à chaque session
+- [Comment écrire un CLAUDE.md efficace](/fr/method/manifest/writing-claude-md-that-works/) — le fichier où l'IA lit ses premières instructions
+- [Comment écrire un skill pour un agent IA](/fr/method/skills/how-to-write-a-skill/) — les procédures que l'IA suit, à la place des personas
 - Lien externe : [Recommandations d'Anthropic sur la conception d'agents](https://www.anthropic.com/engineering/building-effective-agents)
 
 ## Essayer Lytos en 2 minutes

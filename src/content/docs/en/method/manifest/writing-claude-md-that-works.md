@@ -75,7 +75,9 @@ A: Start smaller — a CLAUDE.md with just the tech stack, the coding convention
 ## Learn more
 
 - Read the parent pillar: [Manifest](/en/method/manifest/)
-- Related: [AGENTS.md vs CLAUDE.md vs cursor rules](/en/method/manifest/agents-md-vs-claude-md-vs-cursor-rules/)
+- [AGENTS.md vs CLAUDE.md vs cursor rules](/en/method/manifest/agents-md-vs-claude-md-vs-cursor-rules/) — how the three main vendor conventions compare
+- [AI coding memory across sessions](/en/method/memory/ai-coding-memory-across-sessions/) — the durable knowledge the AI reads each session
+- [AI coding rules examples](/en/method/rules/ai-coding-rules-examples/) — verifiable thresholds the AI respects before handing back code
 - External: [Anthropic's Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/overview)
 
 ## Try Lytos in 2 minutes
