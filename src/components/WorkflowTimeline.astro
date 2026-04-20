@@ -1,0 +1,128 @@
+---
+/**
+ * Vertical timeline for a sequential workflow.
+ *
+ * Each step has a role (label) and an action (title), plus an optional
+ * detail paragraph. Rendered as <ol> (semantically ordered) with a
+ * vertical rail, numbered nodes, and two-line typography.
+ */
+interface Step {
+	role: string;
+	action: string;
+	detail?: string;
+}
+
+interface Props {
+	steps: Step[];
+}
+
+const { steps } = Astro.props;
+---
+
+<ol class="workflow-timeline not-content">
+	{steps.map((step, i) => (
+		<li>
+			<div class="wt-node" aria-hidden="true">
+				<span class="wt-num">{String(i + 1).padStart(2, '0')}</span>
+			</div>
+			<div class="wt-content">
+				<div class="wt-role">{step.role}</div>
+				<div class="wt-action">{step.action}</div>
+				{step.detail && <p class="wt-detail">{step.detail}</p>}
+			</div>
+		</li>
+	))}
+</ol>
+
+<style>
+	.workflow-timeline {
+		list-style: none;
+		margin: 2rem 0;
+		padding: 0;
+		position: relative;
+	}
+	.workflow-timeline::before {
+		content: '';
+		position: absolute;
+		left: 15px;
+		top: 14px;
+		bottom: 14px;
+		width: 1px;
+		background: var(--lytos-ink-12);
+	}
+	.workflow-timeline > li {
+		position: relative;
+		display: grid;
+		grid-template-columns: 32px 1fr;
+		gap: 1.25rem;
+		padding-bottom: 1.75rem;
+		margin: 0;
+	}
+	.workflow-timeline > li:last-child {
+		padding-bottom: 0;
+	}
+	.wt-node {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background: var(--lytos-paper);
+		border: 1.5px solid var(--lytos-ink);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 1;
+		flex-shrink: 0;
+	}
+	.wt-num {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.7rem;
+		font-weight: 600;
+		color: var(--lytos-ink);
+		letter-spacing: 0.04em;
+		line-height: 1;
+	}
+	.wt-content {
+		min-width: 0;
+		padding-top: 2px;
+	}
+	.wt-role {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.68rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--lytos-ink-50);
+		margin-bottom: 0.25rem;
+	}
+	.wt-action {
+		font-family: 'Newsreader', Georgia, serif;
+		font-size: 1.15rem;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		line-height: 1.3;
+		color: var(--lytos-ink);
+		margin-bottom: 0.35rem;
+	}
+	.wt-detail {
+		font-size: 0.88rem;
+		line-height: 1.55;
+		color: var(--lytos-ink-soft);
+		margin: 0;
+	}
+	:global(:root[data-theme='dark']) .workflow-timeline::before {
+		background: rgba(245, 242, 236, 0.14);
+	}
+	:global(:root[data-theme='dark']) .wt-node {
+		background: #131418;
+		border-color: var(--lytos-paper);
+	}
+	:global(:root[data-theme='dark']) .wt-num {
+		color: var(--lytos-paper);
+	}
+	:global(:root[data-theme='dark']) .wt-action {
+		color: var(--lytos-paper);
+	}
+	:global(:root[data-theme='dark']) .wt-detail {
+		color: #a8a294;
+	}
+</style>

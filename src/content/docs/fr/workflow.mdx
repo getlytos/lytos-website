@@ -1,0 +1,132 @@
+---
+title: Workflow Lytos
+description: Comment Lytos s'insère dans le travail, en solo et en équipe. Deux workflows types, du besoin produit à la livraison.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import WorkflowTimeline from '../../../components/WorkflowTimeline.astro';
+
+export const soloSteps = [
+	{
+		role: 'Dev',
+		action: 'Définit le cadre',
+		detail:
+			"Manifest (identité, stack, contraintes), rules (seuils de qualité), skills (procédures pour les tâches récurrentes). Un investissement initial qui sert toutes les sessions suivantes.",
+	},
+	{
+		role: 'Dev',
+		action: 'Écrit une issue',
+		detail:
+			"Description technique du besoin, à la place d'un prompt jeté. L'issue vit dans le repo, avec son frontmatter YAML (priorité, type, références).",
+	},
+	{
+		role: 'Dev + IA',
+		action: 'Exécute',
+		detail:
+			"L'IA lit le cadre (manifest + rules + skills + memory) et l'issue, puis produit du code dans le style du projet — pas en mode générique.",
+	},
+	{
+		role: 'Dev',
+		action: 'Valide et ajuste',
+		detail:
+			'Challenge la proposition, corrige les écarts, vérifie la checklist de la skill utilisée.',
+	},
+	{
+		role: 'Dev',
+		action: 'Capture dans memory',
+		detail:
+			'Ce qui mérite de persister (décisions d\'archi, patterns, bugs évités) va dans memory/. Prochaine session, le contexte est déjà là.',
+	},
+	{
+		role: 'Dev',
+		action: 'Commit et close',
+		detail:
+			"Commit avec référence à l'issue, board mis à jour, issue déplacée en done/. Pas de perte de trace.",
+	},
+];
+
+export const teamSteps = [
+	{
+		role: 'PO / Client',
+		action: 'Besoin produit',
+		detail:
+			'Exprimé dans l\'outil de ticketing produit (Jira, Linear, etc.). Workflow existant inchangé — Lytos n\'intervient pas à ce niveau.',
+	},
+	{
+		role: 'Scrum Master',
+		action: 'Planification du sprint',
+		detail: 'Priorités, capacité, planning. Inchangé.',
+	},
+	{
+		role: 'Lead Dev',
+		action: 'Maintient le cadre',
+		detail:
+			"Garde le manifest, les rules et les skills à jour. Nouveau volet du rôle : gardien du contexte partagé, comme un style guide — mais exécutable par l'IA.",
+	},
+	{
+		role: 'Dev',
+		action: 'Traduit le ticket en issue Lytos',
+		detail:
+			"Transforme le besoin produit en spec technique pour l'IA. C'est le cœur du nouveau métier : formaliser ce que l'IA doit faire, dans le vocabulaire du projet.",
+	},
+	{
+		role: 'Dev + IA',
+		action: 'Implémentation',
+		detail:
+			"L'IA produit dans le style du projet (rules + skills + memory). Le dev valide, challenge, ajuste.",
+	},
+	{
+		role: 'Dev',
+		action: 'Ouvre une PR',
+		detail:
+			"Référence à l'issue Lytos, checklist cochée, tests passent. La PR porte le contexte avec elle.",
+	},
+	{
+		role: 'Lead Dev / Reviewer',
+		action: 'Review',
+		detail:
+			"Vérifie que les rules et skills sont respectés. Ajoute à memory ce qui doit être appris pour les issues suivantes.",
+	},
+	{
+		role: 'CI/CD',
+		action: 'Merge et deploy',
+		detail: 'Pipeline existant inchangé. Lytos n\'y touche pas.',
+	},
+];
+
+Lytos ne remplace pas votre processus. Il ajoute une couche technique entre le besoin produit et le code généré par l'IA. Ci-dessous, deux workflows types — en solo et en équipe — montrent où Lytos s'insère et où rien ne change.
+
+<Tabs>
+	<TabItem label="Développeur solo">
+		<WorkflowTimeline steps={soloSteps} />
+	</TabItem>
+	<TabItem label="En équipe">
+		<WorkflowTimeline steps={teamSteps} />
+	</TabItem>
+</Tabs>
+
+---
+
+## Comment les rôles évoluent
+
+**Dev** — Moins de boilerplate, plus de formalisation du besoin technique. Son artefact n'est plus seulement le code, mais aussi l'issue qui le décrit. Cette traduction « ticket produit → issue technique pour l'IA » devient une compétence en soi.
+
+**Lead Dev** — Conserve ses responsabilités d'architecture. S'y ajoute la garde du contexte partagé : manifest, rules, skills. L'équivalent d'un style guide — mais exécutable par l'IA, pas seulement lu en revue.
+
+**PO / Scrum Master** — Rôle inchangé. Lytos agit à la couche technique ; le ticketing produit et la méthodologie d'équipe restent intacts.
+
+**Surface émergente** — Sur des équipes avancées, une fonction transverse de *curation de skills et memory* peut apparaître. Elle peut être portée par le lead dev, un staff, ou un profil dédié. Rien d'obligatoire — juste une observation.
+
+---
+
+## Ce que ça change pour une direction technique
+
+- **Output IA reproductible** — rules + skills = cadre vérifiable. Deux devs avec la même issue produisent du code comparable.
+- **Onboarding accéléré** — un nouveau dev lit le manifest et connaît le projet. Plus de transfert de contexte implicite qui ne se fait jamais complètement.
+- **Traçabilité** — chaque issue a un frontmatter YAML, chaque skill est explicite, chaque commit référence son issue. Revue d'audit plus simple.
+- **Portabilité modèle** — changer de fournisseur IA ne casse rien. Le contexte est dans le repo, pas dans un SaaS tiers.
+- **Dette réduite** — le code généré aujourd'hui ressemble à celui d'hier. Les conventions ne glissent plus entre sessions ou entre développeurs.
+
+---
+
+Ce workflow n'est pas une révolution — c'est une formalisation de ce que beaucoup d'équipes font déjà de manière implicite, rendue explicite et versionnée dans le repo. Rien ne vous empêche de commencer petit : un manifest, deux skills, quelques rules. Le reste se construit au rythme du projet.

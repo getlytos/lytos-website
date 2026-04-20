@@ -58,6 +58,13 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Workflow',
+					translations: { fr: 'Workflow' },
+					items: [
+						{ label: 'Overview', slug: 'workflow', translations: { fr: "Vue d'ensemble" } },
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						{ label: 'How It Works', slug: 'guides/starter', translations: { fr: 'Comment ça marche' } },
