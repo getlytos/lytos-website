@@ -67,7 +67,7 @@ export const teamSteps = [
 		role: 'Dev',
 		action: 'Traduit le ticket en issue Lytos',
 		detail:
-			"Transforme le besoin produit en spec technique pour l'IA. C'est le cœur du nouveau métier : formaliser ce que l'IA doit faire, dans le vocabulaire du projet.",
+			"Transforme le besoin produit en spec technique pour l'IA. Un développeur reste un développeur — il ajoute à son métier une compétence de cadrage : le prompt engineering appliqué au projet, dans son vocabulaire.",
 	},
 	{
 		role: 'Dev + IA',
@@ -109,7 +109,7 @@ Lytos ne remplace pas votre processus. Il ajoute une couche technique entre le b
 
 ## Comment les rôles évoluent
 
-**Dev** — Moins de boilerplate, plus de formalisation du besoin technique. Son artefact n'est plus seulement le code, mais aussi l'issue qui le décrit. Cette traduction « ticket produit → issue technique pour l'IA » devient une compétence en soi.
+**Dev** — Moins de boilerplate, plus de formalisation du besoin technique. Son artefact n'est plus seulement le code, mais aussi l'issue qui le décrit. Le métier reste celui de développeur, avec en plus une compétence de cadrage — le prompt engineering appliqué au projet.
 
 **Lead Dev** — Conserve ses responsabilités d'architecture. S'y ajoute la garde du contexte partagé : manifest, rules, skills. L'équivalent d'un style guide — mais exécutable par l'IA, pas seulement lu en revue.
 
@@ -123,7 +123,9 @@ Lytos ne remplace pas votre processus. Il ajoute une couche technique entre le b
 
 - **Output IA reproductible** — rules + skills = cadre vérifiable. Deux devs avec la même issue produisent du code comparable.
 - **Onboarding accéléré** — un nouveau dev lit le manifest et connaît le projet. Plus de transfert de contexte implicite qui ne se fait jamais complètement.
-- **Traçabilité** — chaque issue a un frontmatter YAML, chaque skill est explicite, chaque commit référence son issue. Revue d'audit plus simple.
+- **Montée en compétence des juniors** — un junior ou une nouvelle recrue produit dans le cadre du projet dès ses premières issues. Manifest, rules, skills et memory jouent le rôle d'un senior silencieux : ils cadrent le travail sans mobiliser de temps senior.
+- **Traçabilité** — chaque issue a un frontmatter YAML, chaque skill est explicite, chaque commit référence son issue.
+- **Code IA auditable** — contrairement à un chat privé avec l'IA qui ne laisse rien derrière, chaque ligne générée via Lytos s'appuie sur une issue, des rules et une skill versionnées. Le *pourquoi* du code est lisible à froid, dans le repo — compliance et revues d'audit facilitées.
 - **Portabilité modèle** — changer de fournisseur IA ne casse rien. Le contexte est dans le repo, pas dans un SaaS tiers.
 - **Dette réduite** — le code généré aujourd'hui ressemble à celui d'hier. Les conventions ne glissent plus entre sessions ou entre développeurs.
 

@@ -67,7 +67,7 @@ export const teamSteps = [
 		role: 'Dev',
 		action: 'Translates the ticket into a Lytos issue',
 		detail:
-			"Transforms the product need into a technical spec for the AI. This is the heart of the new craft: formalizing what the AI should do, in the project's vocabulary.",
+			"Transforms the product need into a technical spec for the AI. A developer remains a developer — they add a framing skill to their craft: prompt engineering applied to the project, in its vocabulary.",
 	},
 	{
 		role: 'Dev + AI',
@@ -109,7 +109,7 @@ Lytos doesn't replace your process. It adds a technical layer between the produc
 
 ## How the roles evolve
 
-**Dev** — Less boilerplate, more formalization of the technical need. Their artifact is no longer only the code, but also the issue that describes it. This "product ticket → technical issue for AI" translation becomes a skill in itself.
+**Dev** — Less boilerplate, more formalization of the technical need. Their artifact is no longer only the code, but also the issue that describes it. A developer remains a developer, with an added framing skill — prompt engineering applied to the project.
 
 **Lead Dev** — Retains architecture responsibilities. Adds guardianship of the shared context: manifest, rules, skills. The equivalent of a style guide — but executable by AI, not just read in review.
 
@@ -123,7 +123,9 @@ Lytos doesn't replace your process. It adds a technical layer between the produc
 
 - **Reproducible AI output** — rules + skills = verifiable frame. Two devs with the same issue produce comparable code.
 - **Accelerated onboarding** — a new dev reads the manifest and knows the project. No more implicit context transfer that never fully happens.
-- **Traceability** — each issue has YAML frontmatter, each skill is explicit, each commit references its issue. Audit review is simpler.
+- **Junior ramp-up** — a junior or new hire produces within the project's frame from their very first issues. Manifest, rules, skills, and memory act as silent senior guidance — framing the work without tying up senior time.
+- **Traceability** — each issue has YAML frontmatter, each skill is explicit, each commit references its issue.
+- **Auditable AI output** — unlike a private AI chat that leaves nothing behind, every line generated via Lytos rests on a versioned issue, explicit rules, and a referenced skill. The *why* of the code is readable cold, in the repo — compliance and audit reviews made simpler.
 - **Model portability** — switching AI providers doesn't break anything. The context is in the repo, not in a third-party SaaS.
 - **Reduced debt** — today's generated code matches yesterday's. Conventions no longer slip between sessions or between developers.
 
