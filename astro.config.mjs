@@ -87,6 +87,7 @@ export default defineConfig({
 			customCss: ['./src/styles/custom.css'],
 			components: {
 				Footer: './src/components/LytosFooter.astro',
+				Head: './src/components/LytosHead.astro',
 				PageTitle: './src/components/PageTitle.astro',
 			},
 			expressiveCode: {

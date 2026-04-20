@@ -1,0 +1,41 @@
+---
+/**
+ * Custom Head: renders Starlight's default <head> tags, then appends only
+ * the Open Graph and Twitter Card meta that Starlight doesn't emit.
+ *
+ * Starlight already emits: og:title, og:description, og:url, og:type,
+ * og:locale, og:site_name, twitter:card. We add the missing pieces:
+ *   - og:image (pointing at /og-default.png by default, or a per-page
+ *     override via the frontmatter `og_image` field)
+ *   - twitter:title, twitter:description, twitter:image
+ *
+ * Per-page image override via `og_image: /path.png` in frontmatter.
+ */
+import Default from '@astrojs/starlight/components/Head.astro';
+
+const route = Astro.locals?.starlightRoute;
+const entry = route?.entry;
+const data: { title?: string; description?: string; og_image?: string } = entry?.data ?? {};
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://lytos.org';
+const pathname = Astro.url.pathname;
+const slug: string = (entry?.id ?? '') as string;
+const lang: 'en' | 'fr' = slug.startsWith('fr/') || pathname.startsWith('/fr/') ? 'fr' : 'en';
+
+const title: string = data.title ?? 'Lytos';
+const fallbackDescription =
+	lang === 'fr'
+		? 'Lytos — une méthode human-first pour travailler avec des agents IA de code.'
+		: 'Lytos — a human-first method for working with AI coding agents.';
+const description: string = data.description ?? fallbackDescription;
+
+const imagePath = data.og_image ?? '/og-default.png';
+const image = imagePath.startsWith('http') ? imagePath : `${siteUrl}${imagePath}`;
+---
+
+<Default><slot /></Default>
+
+<meta property="og:image" content={image} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
