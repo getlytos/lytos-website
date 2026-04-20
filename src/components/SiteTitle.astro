@@ -1,0 +1,63 @@
+---
+/**
+ * Custom SiteTitle: renders the default logo + adds top-nav links
+ * ("Documentation" and "CLI") so the splash home signals there's
+ * actual documentation behind it — not a one-pager.
+ */
+import Default from '@astrojs/starlight/components/SiteTitle.astro';
+
+const route = Astro.locals?.starlightRoute;
+const entry = route?.entry;
+const slug: string = entry?.id ?? entry?.slug ?? '';
+const lang: 'en' | 'fr' = slug.startsWith('fr/') ? 'fr' : 'en';
+
+const labels = lang === 'fr'
+	? { docs: 'Documentation', cli: 'CLI' }
+	: { docs: 'Documentation', cli: 'CLI' };
+
+const links = [
+	{ label: labels.docs, href: `/${lang}/method/manifest/` },
+	{ label: labels.cli,  href: `/${lang}/cli/overview/` },
+];
+---
+
+<Default />
+
+<nav class="lytos-topnav" aria-label={lang === 'fr' ? 'Navigation principale' : 'Main navigation'}>
+	{links.map((l) => (
+		<a href={l.href}>{l.label}</a>
+	))}
+</nav>
+
+<style>
+	.lytos-topnav {
+		display: none;
+		gap: 1.25rem;
+		margin-inline-start: 1.5rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.78rem;
+		letter-spacing: 0.04em;
+	}
+	.lytos-topnav a {
+		color: var(--lytos-ink-soft);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition:
+			color var(--lytos-dur) var(--lytos-ease),
+			border-color var(--lytos-dur) var(--lytos-ease);
+	}
+	.lytos-topnav a:hover {
+		color: var(--lytos-olive-deep);
+		border-bottom-color: var(--lytos-olive-deep);
+	}
+	@media (min-width: 50rem) {
+		.lytos-topnav { display: inline-flex; align-items: center; }
+	}
+	:global(:root[data-theme='dark']) .lytos-topnav a {
+		color: rgba(245, 242, 236, 0.7);
+	}
+	:global(:root[data-theme='dark']) .lytos-topnav a:hover {
+		color: #c9d0a8;
+		border-bottom-color: #c9d0a8;
+	}
+</style>

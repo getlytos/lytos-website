@@ -30,7 +30,7 @@ export default defineConfig({
 				fr: { label: 'Français', lang: 'fr' },
 			},
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/getlytos/lytos-method' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/getlytos/lytos-cli' },
 				{ icon: 'x.com', label: 'X', href: 'https://x.com/fred' },
 			],
 			sidebar: [
@@ -89,6 +89,7 @@ export default defineConfig({
 				Footer: './src/components/LytosFooter.astro',
 				Head: './src/components/LytosHead.astro',
 				PageTitle: './src/components/PageTitle.astro',
+				SiteTitle: './src/components/SiteTitle.astro',
 			},
 			expressiveCode: {
 				themes: ['github-light', 'github-dark'],
