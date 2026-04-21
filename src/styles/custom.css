@@ -539,3 +539,11 @@ header a.site-title span {
 	font-size: 0.88em;
 	line-height: 1.65;
 }
+
+/* Markdown tables — keep the first column on one line so role / command
+   labels don't wrap onto two lines. The surrounding Starlight wrapper
+   already scrolls horizontally on narrow viewports, so no overflow risk. */
+.sl-markdown-content table th:first-child,
+.sl-markdown-content table td:first-child {
+	white-space: nowrap;
+}
