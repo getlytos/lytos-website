@@ -64,6 +64,15 @@ The net effect: the agent has access to every skill, but only pays the context c
 | **security** | OWASP Top 10, authentication, authorization, secrets | `skills/security/SKILL.md` |
 | **api-design** | REST conventions, pagination, error format, rate limiting | `skills/api-design/SKILL.md` |
 
+## Startup depth — lightweight vs standard
+
+`session-start` reads the current issue's frontmatter to pick how much context the AI loads before coding.
+
+- **Lightweight startup** is allowed *only* when the issue is explicitly `effort: XS` **and** `complexity: light`. The AI still loads the mandatory safety baseline — manifest, `memory/MEMORY.md`, default rules, `BOARD.md`, and the issue file itself — but defers cortex notes, project-specific rule files, and broad codebase exploration until the issue clearly needs them.
+- **Standard startup** remains mandatory for every other combination. If either field is missing, the AI defaults to standard. If the task grows mid-session, it immediately upgrades from lightweight to standard.
+
+This is how small issues stay fast without burning the context window, and why the `effort` and `complexity` fields in issue frontmatter are load-bearing — they are not just prioritization hints.
+
 ## How skills are selected for a task
 
 The `skill` field in an issue's frontmatter is now **optional** — a hint for borderline tasks:

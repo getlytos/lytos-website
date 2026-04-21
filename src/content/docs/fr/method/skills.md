@@ -64,6 +64,15 @@ Résultat : l'agent a accès à tous les skills, mais ne paie le coût en contex
 | **security** | OWASP Top 10, authentification, autorisation, secrets | `skills/security/SKILL.md` |
 | **api-design** | Conventions REST, pagination, format d'erreurs, rate limiting | `skills/api-design/SKILL.md` |
 
+## Profondeur de startup — léger vs standard
+
+`session-start` lit le frontmatter de l'issue en cours pour décider combien de contexte l'IA charge avant de coder.
+
+- **Startup léger** autorisé *uniquement* quand l'issue est explicitement `effort: XS` **et** `complexity: light`. L'IA charge quand même la baseline de sécurité obligatoire — manifest, `memory/MEMORY.md`, default rules, `BOARD.md`, et l'issue elle-même — mais diffère les notes cortex, les rules spécifiques au projet et l'exploration large du codebase tant que l'issue n'en a pas besoin.
+- **Startup standard** reste obligatoire pour toute autre combinaison. Si l'un des deux champs manque, l'IA retombe sur standard. Si la tâche grossit en cours de session, elle repasse immédiatement en standard.
+
+C'est ainsi que les petites issues restent rapides sans brûler la fenêtre de contexte — et c'est pour ça que `effort` et `complexity` dans le frontmatter portent vraiment quelque chose : ce ne sont pas juste des indicateurs de priorisation.
+
 ## Comment les skills sont sélectionnés pour une tâche
 
 Le champ `skill` du frontmatter d'une issue est désormais **optionnel** — un indice pour les tâches ambiguës :
