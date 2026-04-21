@@ -18,10 +18,13 @@ issue-board/
 ├── 3-in-progress/              # En cours de développement
 ├── 4-review/                   # En revue ou test
 ├── 5-done/                     # Terminées
+├── 6-private-notes/            # Brouillons locaux (git-ignorés)
 └── templates/
     ├── issue-feature.md
     └── issue-task.md
 ```
+
+> `6-private-notes/` est protégé par un `.lytos/.gitignore` livré par `lyt init`. Tout ce que vous déposez dedans reste sur votre machine — idéal pour les brouillons de lancement, les notes de roadmap personnelles ou les réflexions en cours qui n'ont pas vocation à partir sur un dépôt public.
 
 ## Format d'une issue
 

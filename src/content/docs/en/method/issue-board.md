@@ -18,10 +18,13 @@ issue-board/
 ├── 3-in-progress/              # Currently being worked on
 ├── 4-review/                   # In review or testing
 ├── 5-done/                     # Completed
+├── 6-private-notes/            # Local-only drafts (git-ignored)
 └── templates/
     ├── issue-feature.md
     └── issue-task.md
 ```
+
+> `6-private-notes/` is protected by a `.lytos/.gitignore` shipped by `lyt init`. Anything you drop there stays on your machine — ideal for launch drafts, personal roadmap notes, or work-in-progress thoughts that shouldn't land in a public repo.
 
 ## Issue format
 
