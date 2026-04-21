@@ -56,7 +56,7 @@ created: 2026-04-14
 ## Cycle de vie
 
 ```
-0-icebox → 1-backlog → 2-sprint → 3-in-progress → 4-review → 5-done
+0-icebox → 1-backlog → 2-sprint → 3-in-progress → 4-review → 5-done → archive/<quarter>/
 ```
 
 Chaque transition est typiquement déclenchée par une commande CLI :
@@ -66,10 +66,13 @@ Chaque transition est typiquement déclenchée par une commande CLI :
 | `1-backlog` → `3-in-progress` | `lyt claim ISS-XXXX` ou `lyt start ISS-XXXX` | Le développeur qui prend la tâche |
 | `3-in-progress` → `4-review` | Effectuée par l'agent IA en fin de codage (via le skill session-start) | L'agent, une fois la definition of done atteinte |
 | `4-review` → `5-done` | `lyt close ISS-XXXX` (une) ou `lyt close` (batch, avec confirmation) | L'humain, après validation |
+| `5-done` → `archive/<quarter>/` | [`lyt archive`](/fr/cli/archive/) (défaut : plus de 7 jours) | L'humain, quand la fenêtre de rétention est passée |
 
 Le dossier `4-review/` est une **salle d'attente** : le code est fini mais n'a pas encore été validé (review humaine, review par un pair, CI au vert, QA manuelle — peu importe la barrière définie par l'équipe). `lyt close` sans argument promeut toutes les issues de 4-review en une fois ; `lyt close ISS-XXXX` en ferme une spécifique et peut aussi servir de raccourci "skip review" sur une issue encore en 3-in-progress.
 
-La commande `lytos board` régénère `BOARD.md` à partir du frontmatter de toutes les issues.
+Le dossier `5-done/` est une **fenêtre de rétention** : les issues fermées y restent 7 jours par défaut pour que rétros, références de PR et vérifications de rollback les aient encore sous la main. `lyt archive` les déplace vers `archive/<quarter>/` une fois assez vieilles — l'archivage est explicite et ne tourne plus sur `lyt board`.
+
+`lyt board` régénère `BOARD.md` à partir du frontmatter de toutes les issues. Il est read-only sur le système de fichiers — il ne déplace aucun fichier.
 
 ## Niveaux de priorité
 

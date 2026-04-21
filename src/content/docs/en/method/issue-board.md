@@ -69,7 +69,7 @@ created: 2026-04-14
 ## Issue lifecycle
 
 ```
-0-icebox → 1-backlog → 2-sprint → 3-in-progress → 4-review → 5-done
+0-icebox → 1-backlog → 2-sprint → 3-in-progress → 4-review → 5-done → archive/<quarter>/
 ```
 
 Each transition is typically triggered by a CLI command:
@@ -79,10 +79,13 @@ Each transition is typically triggered by a CLI command:
 | `1-backlog` → `3-in-progress` | `lyt claim ISS-XXXX` or `lyt start ISS-XXXX` | Developer picking up the work |
 | `3-in-progress` → `4-review` | Performed by the AI agent at the end of coding (via the session-start skill) | Agent, once the definition of done is met |
 | `4-review` → `5-done` | `lyt close ISS-XXXX` (single) or `lyt close` (batch, with confirm) | Human, after validation |
+| `5-done` → `archive/<quarter>/` | [`lyt archive`](/en/cli/archive/) (default: older than 7 days) | Human, when the retention window has passed |
 
 The `4-review/` folder is a **waiting room**: the code is done but has not yet been validated (human review, peer review, CI green, manual QA — whatever the team's gate is). Running `lyt close` without arguments promotes every issue in 4-review at once; `lyt close ISS-XXXX` closes one specifically and can also act as a skip-review shortcut on an issue still in 3-in-progress.
 
-The `lytos board` command regenerates `BOARD.md` from the frontmatter of all issues.
+The `5-done/` folder is a **retention window**: closed issues stay visible for 7 days by default so retros, PR cross-references and rollback verification still have them at hand. `lyt archive` moves them to `archive/<quarter>/` once old enough — archival is explicit and does not ride on `lyt board`.
+
+`lyt board` regenerates `BOARD.md` from the frontmatter of all issues. It is read-only on the filesystem — it never moves files.
 
 ## Priority levels
 

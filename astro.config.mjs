@@ -88,6 +88,7 @@ export default defineConfig({
 						{ label: 'Overview', slug: 'cli/overview', translations: { fr: 'Vue d\'ensemble' } },
 						{ label: 'lytos init', slug: 'cli/init' },
 						{ label: 'lytos board', slug: 'cli/board' },
+						{ label: 'lytos archive', slug: 'cli/archive' },
 					],
 				},
 				{

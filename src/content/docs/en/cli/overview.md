@@ -22,7 +22,8 @@ npx lytos-cli init
 | Command | What it does |
 |---------|--------------|
 | `lyt init` | Scaffold `.lytos/` in your project (interactive, detects your stack) |
-| `lyt board` | Regenerate `BOARD.md` from issue frontmatter |
+| `lyt board` | Regenerate `BOARD.md` from issue frontmatter (read-only on the filesystem) |
+| [`lyt archive`](/en/cli/archive/) | Move completed issues from `5-done/` to `archive/<quarter>/` (default: older than 7 days). `--all`, `--older-than`, `--dry-run` |
 | `lyt lint` | Validate `.lytos/` structure and content |
 | `lyt doctor` | Full diagnostic — missing files, broken links, stale memory, health score |
 | `lyt show` | Display issue detail with progress bar |
