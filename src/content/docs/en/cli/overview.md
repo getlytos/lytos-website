@@ -27,7 +27,7 @@ npx lytos-cli init
 | `lyt doctor` | Full diagnostic — missing files, broken links, stale memory, health score |
 | `lyt show` | Display issue detail with progress bar |
 | `lyt start` | Start an issue — move to in-progress, create branch, update board |
-| `lyt close` | Close an issue — move to done, check the checklist, update board |
+| `lyt close` | Explicitly close a validated issue or batch-close `4-review/` — check the checklist and update the board |
 | `lyt claim` | Assign an issue to yourself |
 | `lyt upgrade` | Update method files in `.lytos/` from the bundled version |
 | `lyt update` | Update the Lytos CLI itself to the latest version |

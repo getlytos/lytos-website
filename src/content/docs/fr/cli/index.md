@@ -30,7 +30,7 @@ Le binaire `lyt` est le nom court (on peut aussi utiliser `lytos` ou `lytos-cli`
 | `lyt show ISS-XXXX` | Affiche le détail d'une issue avec une barre de progression |
 | `lyt start ISS-XXXX` | Démarre une issue — la déplace en in-progress, crée la branche, met à jour le board |
 | `lyt claim ISS-XXXX` | S'assigne une issue (vérifie aussi la fraîcheur d'origin pour éviter les claims concurrents) |
-| `lyt close ISS-XXXX` | Ferme une issue — la déplace en 5-done |
+| `lyt close ISS-XXXX` | Clôt une issue validée — la promeut en `5-done` depuis `4-review` (ou explicitement depuis `3-in-progress`) |
 | `lyt close` | Ferme en batch toutes les issues de `4-review/` — demande confirmation, `--yes` skippe |
 | `lyt upgrade` | Met à jour les skills et rules bundlés dans `.lytos/` |
 

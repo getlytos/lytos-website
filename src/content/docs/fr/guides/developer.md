@@ -47,16 +47,18 @@ Si quelque chose d'imprévu arrive :
 
 ### 4. Fermez l'issue
 
-Quand la checklist est complète :
+Quand la checklist est complète et que le code est prêt pour validation :
 ```
 "Tous les items sont faits. Ferme l'issue, mets à jour le board, et sauvegarde ce qu'on a appris en memory."
 ```
 
 L'IA va :
-- Mettre à jour le frontmatter de l'issue en `5-done`
-- Déplacer le fichier dans `5-done/`
+- Mettre à jour le frontmatter de l'issue en `4-review`
+- Déplacer le fichier dans `4-review/`
 - Régénérer BOARD.md
 - Écrire dans la memory si un apprentissage a eu lieu
+
+Une fois la review validée, l'humain lance `lyt close` pour promouvoir l'issue en `5-done`.
 
 ---
 

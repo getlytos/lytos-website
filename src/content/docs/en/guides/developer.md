@@ -47,16 +47,18 @@ If something unexpected comes up:
 
 ### 4. Close the issue
 
-When the checklist is complete:
+When the checklist is complete and the code is ready for validation:
 ```
 "All items are done. Close the issue, update the board, and save what we learned to memory."
 ```
 
 The AI will:
-- Update the issue frontmatter to `5-done`
-- Move the file to `5-done/`
+- Update the issue frontmatter to `4-review`
+- Move the file to `4-review/`
 - Regenerate BOARD.md
 - Write to memory if learning occurred
+
+Once the review is green, the human runs `lyt close` to promote the issue to `5-done`.
 
 ---
 
