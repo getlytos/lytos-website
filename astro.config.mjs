@@ -68,6 +68,13 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'For organizations',
+					translations: { fr: 'Pour les organisations' },
+					items: [
+						{ label: 'Business case', slug: 'business', translations: { fr: 'Enjeux business' } },
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						{ label: 'How It Works', slug: 'guides/starter', translations: { fr: 'Comment ça marche' } },

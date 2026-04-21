@@ -40,10 +40,16 @@ hero:
         rel: noopener noreferrer
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
 import MethodFlow from '../../../components/MethodFlow.astro';
 import LytosPillars from '../../../components/LytosPillars.astro';
 import lytBoard from '../../../assets/lyt-board.png';
+
+<Aside type="tip" title="Vous décidez pour une équipe, une DSI ou une organisation ?">
+Lytos rend l'IA productive *et* gouvernable : contexte projet versionné dans votre repo, output IA auditable, indépendance fournisseur. Trois minutes pour voir l'impact concret pour votre organisation.
+
+[Voir l'impact organisation →](/fr/business/)
+</Aside>
 
 ## Vous développez avec l'IA ?
 
@@ -65,6 +71,7 @@ Cette friction, beaucoup ont fini par l'accepter comme normale. Elle ne l'est pa
 | **Vibe-coder / maker** | Claude Code, Codex, apps IA + GitHub | Un manifest que l'IA lit à chaque session. Moins de réexplication, un contexte qui s'enrichit. |
 | **Développeur** | IDE + Git (GitHub / GitLab) + IA en appoint | Règles versionnées, mémoire qui se construit, board qui trace le travail — dans le repo, pas dans un SaaS. |
 | **Équipe** | IDE + Git + CI + revues + ticketing produit | Manifest, skills, rules partagés. L'IA produit dans le style du projet. Les specs techniques pour l'IA vivent dans le repo, à côté du code. |
+| **Décideur / CTO / DSI** | Vue produit + équipes IA + conformité | Output IA reproductible et auditable, contexte projet souverain (jamais en SaaS tiers), onboarding accéléré. [Voir l'impact organisation →](/fr/business/) |
 
 ---
 

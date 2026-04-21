@@ -1,0 +1,110 @@
+---
+title: Lytos pour les organisations
+description: Cinq enjeux concrets que Lytos adresse pour une équipe, une DSI ou une direction technique — productivité, souveraineté, conformité, continuité business, montée en compétence.
+---
+
+Lytos n'est pas un SaaS supplémentaire à intégrer. C'est une méthode open-source qui place le contexte de vos projets dans vos repos Git — où il aurait toujours dû être. Cette page liste ce que ça change concrètement pour une organisation, sans jargon technique.
+
+---
+
+## 1. Productivité mesurable
+
+Aujourd'hui, vos développeurs réexpliquent leur projet à chaque session IA — l'architecture, les conventions, les contraintes. Cette friction se répète des dizaines de fois par jour à l'échelle d'une équipe.
+
+Avec Lytos, le contexte du projet (manifest, règles, mémoire) est lu **automatiquement** par l'IA au début de chaque session. Pas de réexplication. Pas de code générique à recorriger.
+
+À la clé : moins de temps perdu à recadrer l'IA, plus de temps sur les vrais sujets — design, validation, architecture.
+
+---
+
+## 2. Souveraineté du contexte projet
+
+Avec les outils IA classiques, le contexte de vos projets — vos conventions, vos décisions techniques, vos règles métier — finit dans les serveurs du fournisseur, dans son format, dépendant de son API.
+
+Avec Lytos, **tout est en Markdown dans votre dépôt Git** : votre manifest, vos rules, votre mémoire projet. Versionné, portable, lisible par n'importe quel modèle.
+
+Quand un fournisseur change de prix, de modèle, ou disparaît, votre contexte ne bouge pas. Il vous appartient.
+
+---
+
+## 3. Auditabilité : l'IA cesse d'être une boîte noire
+
+Un chat privé avec l'IA ne laisse rien derrière lui. Aucune trace de pourquoi tel code a été généré, sous quelles règles, à partir de quelle spec.
+
+Avec Lytos, **chaque ligne générée par l'IA s'appuie sur** :
+- une issue versionnée (le quoi),
+- des rules explicites (les contraintes),
+- une skill référencée (le comment).
+
+Tout est dans le repo, lisible à froid. Une revue d'audit, un contrôle compliance, un debrief post-incident — tout devient traçable. Particulièrement pertinent pour les contextes RGPD, ISO 27001, ou les industries régulées.
+
+---
+
+## 4. Continuité business : changer d'IA sans tout perdre
+
+Les modèles IA évoluent tous les 3 à 6 mois. Les fournisseurs changent leurs prix, leurs APIs, leurs conditions. Aujourd'hui Claude. Demain GPT, Mistral ou un nouveau venu. Sans préparation, chaque migration est un projet en soi.
+
+Lytos est **agnostique du modèle**. Le manifest, les rules, la mémoire fonctionnent identiquement avec Claude Code, Cursor, Codex, Copilot, Gemini, Windsurf — et tout ce qui sortira demain.
+
+Changer de fournisseur IA devient un choix opérationnel, pas un risque stratégique.
+
+---
+
+## 5. Onboarding accéléré et montée en compétence des juniors
+
+Aujourd'hui, intégrer un nouveau développeur prend des semaines : transferts de contexte implicite, lecture de code, questions sans fin au senior. Avec l'IA en complément, le junior ou le nouveau produit du code… mais pas dans le style du projet.
+
+Avec Lytos :
+- **Le nouveau dev lit le manifest** et connaît le projet en quelques minutes.
+- **L'IA produit dans le cadre du projet** dès la première issue (les rules, skills et memory jouent le rôle d'un senior silencieux).
+- **Le temps du senior est préservé** : moins de questions répétitives, plus de temps sur les vrais sujets.
+
+Concrètement, un junior avec Lytos atteint le niveau opérationnel plus vite, et son output ressemble à celui d'un senior — parce que le cadre est partagé.
+
+---
+
+## Comment Lytos s'insère sans bouleverser
+
+Lytos **ne remplace pas** vos outils existants. Il s'ajoute :
+
+- Votre **outil de ticketing** (Jira, Linear, Azure DevOps) garde son rôle pour le besoin produit.
+- Votre **CI/CD**, vos **revues de code**, vos **conventions** restent en place.
+- Vos **développeurs continuent d'être développeurs** — Lytos ajoute simplement à leur métier la formalisation du besoin technique pour l'IA.
+
+Le PO décrit le besoin produit dans Jira. Le développeur le traduit en issue Lytos (spec technique pour l'IA, dans le vocabulaire du projet). L'IA implémente dans le cadre. Le lead dev review. Le pipeline déploie. Rien ne change dans la chaîne — un maillon de qualité s'ajoute.
+
+[Voir le workflow détaillé en équipe →](/fr/workflow/)
+
+---
+
+## Pour démarrer
+
+Lytos est **open-source, MIT, sans télémétrie**. Aucun engagement, aucun compte à créer, aucun SaaS à approuver.
+
+```bash
+npm install -g lytos-cli
+lyt init
+```
+
+Trois minutes pour scaffolder la structure dans un projet existant. Le développeur peut tester en local. L'équipe peut adopter par projet, sans bouleverser l'organisation.
+
+---
+
+## En résumé
+
+| Enjeu | Sans Lytos | Avec Lytos |
+|---|---|---|
+| **Productivité** | Réexplication à chaque session | Contexte lu automatiquement |
+| **Souveraineté** | Contexte chez le fournisseur | Contexte dans votre repo Git |
+| **Auditabilité** | Chats privés, opaques | Issue + rules + skill traçables |
+| **Continuité** | Lock-in fournisseur | Indépendance modèle |
+| **Onboarding** | Semaines de transfert implicite | Manifest lu en minutes |
+
+---
+
+Lytos est une méthode pragmatique, pas une révolution. Elle formalise et rend gouvernable ce que beaucoup d'équipes font déjà de manière implicite. Le ticket d'entrée est faible, l'impact se mesure rapidement.
+
+Pour aller plus loin :
+- [La méthode en détail](/fr/method/manifest/) — les 5 piliers
+- [Le workflow Lytos en équipe](/fr/workflow/) — comment ça s'insère, étape par étape
+- [La compatibilité avec vos outils IA](/fr/method/compatibility/) — adaptateurs natifs pour Claude Code, Cursor, Copilot, Gemini, Windsurf, Codex
