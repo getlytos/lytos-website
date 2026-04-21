@@ -8,13 +8,27 @@ description: Scaffold the .lytos/ directory in your project.
 ## Usage
 
 ```bash
-lytos init
+lyt init                                       # interactive
+lyt init --name "Acme API" --tool claude --yes # non-interactive, single tool
+lyt init --tool claude,cursor,copilot --yes    # multi-tool: several bridges at once
+lyt init --all-tools --yes                     # every shipping adapter
 ```
 
-The command is interactive. It will ask you:
+The command is interactive by default. It will ask you:
 
 1. **Project name** — used in the manifest
-2. **AI tool** — Claude Code, Cursor, Codex (OpenAI), GitHub Copilot, Gemini CLI, Windsurf, or none. Each generates the adapter file that tool reads at session start (`CLAUDE.md`, `.cursorrules`, `AGENTS.md`, `.github/copilot-instructions.md`, `GEMINI.md`, or `.windsurfrules`).
+2. **AI tool(s)** — Claude Code, Cursor, Codex (OpenAI), GitHub Copilot, Gemini CLI, Windsurf, Multiple (CSV), All tools, or None. Each choice generates the adapter file that tool reads at session start (`CLAUDE.md`, `.cursor/rules/lytos.mdc`, `AGENTS.md`, `.github/copilot-instructions.md`, `GEMINI.md`, or `.windsurfrules`).
+
+### Mixed-team repos
+
+If several developers use different AI tools on the same repo, generate every bridge in one run. Each bridge points at the same `.lytos/` directory, so switching tools does not require reconfiguring the project.
+
+```bash
+lyt init --tool claude,cursor,copilot   # CSV of exactly what the team uses
+lyt init --all-tools                    # all six shipping adapters
+```
+
+`none` can appear in the CSV as a no-op (so scripts can pass `"none,claude"` without a special case). Unknown values exit with an error before any file is written.
 
 ## What it creates
 
@@ -53,8 +67,13 @@ The command is interactive. It will ask you:
 | Flag | Description |
 |------|-------------|
 | `--name <name>` | Project name (skip the prompt) |
-| `--tool <tool>` | AI tool: `claude`, `cursor`, or `none` |
-| `--force` | Overwrite existing `.lytos/` directory |
+| `--tool <tools>` | Single value or CSV: `claude`, `cursor`, `codex`, `copilot`, `gemini`, `windsurf`, `none`. Example: `--tool claude,cursor,copilot` |
+| `--all-tools` | Scaffold bridges for every shipping adapter (claude, cursor, codex, copilot, gemini, windsurf) |
+| `--yes` | Accept all prompts, use detected defaults |
+| `--force` | Overwrite an existing `.lytos/` directory |
+| `--dry-run` | Print what would be created without touching the filesystem |
+| `--lang <en\|fr>` | Content language for generated markdown |
+| `--profile <vibe-coder\|developer\|lead>` | Briefing profile printed after init |
 
 ## Stack detection
 

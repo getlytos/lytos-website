@@ -8,13 +8,27 @@ description: Créer le répertoire .lytos/ dans votre projet.
 ## Utilisation
 
 ```bash
-lytos init
+lyt init                                       # interactif
+lyt init --name "Acme API" --tool claude --yes # non-interactif, un seul outil
+lyt init --tool claude,cursor,copilot --yes    # multi-outils : plusieurs bridges en une passe
+lyt init --all-tools --yes                     # tous les adaptateurs shippants
 ```
 
-La commande est interactive. Elle vous demande :
+La commande est interactive par défaut. Elle vous demande :
 
 1. **Nom du projet** — utilisé dans le manifest
-2. **Outil IA** — Claude Code, Cursor, Codex (OpenAI), GitHub Copilot, Gemini CLI, Windsurf, ou aucun. Chaque choix génère le fichier d'adaptateur que cet outil lit au démarrage de session (`CLAUDE.md`, `.cursorrules`, `AGENTS.md`, `.github/copilot-instructions.md`, `GEMINI.md`, ou `.windsurfrules`).
+2. **Outil(s) IA** — Claude Code, Cursor, Codex (OpenAI), GitHub Copilot, Gemini CLI, Windsurf, Plusieurs (CSV), Tous les outils, ou Aucun. Chaque choix génère le fichier d'adaptateur que cet outil lit au démarrage de session (`CLAUDE.md`, `.cursor/rules/lytos.mdc`, `AGENTS.md`, `.github/copilot-instructions.md`, `GEMINI.md`, ou `.windsurfrules`).
+
+### Repos avec équipe mixte
+
+Si plusieurs développeurs utilisent des outils IA différents sur le même repo, générez tous les bridges en une seule fois. Chaque bridge pointe vers le même dossier `.lytos/`, donc changer d'outil ne demande aucune reconfiguration du projet.
+
+```bash
+lyt init --tool claude,cursor,copilot   # CSV exactement ce que l'équipe utilise
+lyt init --all-tools                    # les six adaptateurs shippants
+```
+
+`none` peut apparaître dans la CSV en no-op (pour que des scripts puissent passer `"none,claude"` sans cas particulier). Les valeurs inconnues sortent en erreur avant qu'aucun fichier ne soit écrit.
 
 ## Ce que ça crée
 
@@ -53,8 +67,13 @@ La commande est interactive. Elle vous demande :
 | Flag | Description |
 |------|-------------|
 | `--name <nom>` | Nom du projet (saute le prompt) |
-| `--tool <outil>` | Outil IA : `claude`, `cursor`, ou `none` |
-| `--force` | Écraser le répertoire `.lytos/` existant |
+| `--tool <outils>` | Valeur unique ou CSV : `claude`, `cursor`, `codex`, `copilot`, `gemini`, `windsurf`, `none`. Exemple : `--tool claude,cursor,copilot` |
+| `--all-tools` | Génère les bridges de tous les adaptateurs shippants (claude, cursor, codex, copilot, gemini, windsurf) |
+| `--yes` | Accepte tous les prompts, utilise les défauts détectés |
+| `--force` | Écraser un répertoire `.lytos/` existant |
+| `--dry-run` | Afficher ce qui serait créé sans toucher au système de fichiers |
+| `--lang <en\|fr>` | Langue du contenu markdown généré |
+| `--profile <vibe-coder\|developer\|lead>` | Profil de briefing affiché après init |
 
 ## Détection de stack
 
