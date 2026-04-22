@@ -3,7 +3,7 @@ title: The Lytos CLI
 description: A single npm install that scaffolds .lytos/ in any project, validates it, moves issues through the kanban, and closes them one by one or in batch. Installed as `lytos-cli` with `lyt` as the short binary.
 ---
 
-The CLI is how Lytos lands in a real repository. One `lyt init` scaffolds the five pillars as folders, detects your stack, writes the right adapter file for your AI tool (`CLAUDE.md`, `.cursorrules`, `AGENTS.md`…), and installs a pre-commit hook so branch naming stays consistent.
+The CLI is how Lytos lands in a real repository. One `lyt init` scaffolds the five pillars as folders, detects your stack, writes the right adapter file for your AI tool (`CLAUDE.md`, `.cursor/rules/lytos.mdc`, `AGENTS.md`…), and installs a pre-commit hook so branch naming stays consistent.
 
 ## Install
 

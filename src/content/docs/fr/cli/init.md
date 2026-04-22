@@ -75,6 +75,16 @@ lyt init --all-tools                    # les six adaptateurs shippants
 | `--lang <en\|fr>` | Langue du contenu markdown généré |
 | `--profile <vibe-coder\|developer\|lead>` | Profil de briefing affiché après init |
 
+## Migration depuis le legacy `.cursorrules`
+
+L'ancienne convention Cursor était un fichier plat `.cursorrules` à la racine du projet. Le layout moderne (`.cursor/rules/*.mdc` avec front-matter) est celui que `lyt init --tool cursor` livre aujourd'hui. Si votre projet porte encore le fichier hérité, lancez :
+
+```bash
+lyt upgrade --migrate-cursor
+```
+
+Cette commande déplace votre contenu `.cursorrules` existant vers `.cursor/rules/lytos.mdc`, en l'enveloppant avec le front-matter moderne. Le contenu original est préservé — c'est une conversion de format, pas une remise à zéro. Voir [`lyt upgrade`](/fr/cli/upgrade/) pour le comportement complet.
+
 ## Détection de stack
 
 `lytos init` détecte automatiquement votre stack technique en regardant :

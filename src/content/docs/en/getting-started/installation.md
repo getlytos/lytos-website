@@ -51,7 +51,7 @@ Perfect for developers who code directly from AI web apps.
 └── scripts/              ← automation tools
 ```
 
-Plus a `CLAUDE.md` or `.cursorrules` at your project root (depending on your AI tool choice).
+Plus a `CLAUDE.md` or `.cursor/rules/lytos.mdc` at your project root (depending on your AI tool choice).
 
 ## After installation
 

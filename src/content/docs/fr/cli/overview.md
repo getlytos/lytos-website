@@ -30,7 +30,7 @@ npx lytos-cli init
 | `lyt start` | Démarre une issue — déplace vers in-progress, crée la branche, met à jour le board |
 | `lyt close` | Clôt explicitement une issue validée ou batch-clôture `4-review/` — vérifie la checklist et met à jour le board |
 | `lyt claim` | Attribue une issue à vous-même |
-| `lyt upgrade` | Met à jour les fichiers méthode dans `.lytos/` depuis la version bundled |
+| [`lyt upgrade`](/fr/cli/upgrade/) | Met à jour les fichiers méthode dans `.lytos/` depuis la version bundled. `--migrate-cursor` gère la transition du legacy `.cursorrules` vers `.cursor/rules/lytos.mdc`. |
 | `lyt update` | Met à jour le CLI Lytos lui-même vers la dernière version |
 
 ## Principes de conception

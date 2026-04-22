@@ -51,7 +51,7 @@ Parfait pour les développeurs qui codent directement depuis les apps IA.
 └── scripts/              ← outils d'automatisation
 ```
 
-Plus un `CLAUDE.md` ou `.cursorrules` à la racine du projet.
+Plus un `CLAUDE.md` ou `.cursor/rules/lytos.mdc` à la racine du projet.
 
 ## Après l'installation
 

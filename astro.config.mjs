@@ -89,6 +89,7 @@ export default defineConfig({
 						{ label: 'lytos init', slug: 'cli/init' },
 						{ label: 'lytos board', slug: 'cli/board' },
 						{ label: 'lytos archive', slug: 'cli/archive' },
+						{ label: 'lytos upgrade', slug: 'cli/upgrade' },
 					],
 				},
 				{
