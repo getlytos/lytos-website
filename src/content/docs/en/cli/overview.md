@@ -31,6 +31,7 @@ npx lytos-cli init
 | `lyt close` | Explicitly close a validated issue or batch-close `4-review/` — check the checklist and update the board |
 | `lyt claim` | Assign an issue to yourself |
 | [`lyt upgrade`](/en/cli/upgrade/) | Update method files in `.lytos/` from the bundled version. `--migrate-cursor` handles the legacy `.cursorrules` → `.cursor/rules/lytos.mdc` transition. |
+| [`lyt review`](/en/cli/review/) | Cross-model audit for issues in `4-review/`. Prints a self-contained prompt for a **fresh AI session** (ideally a different vendor than the implementer) and ingests the returned `GO`/`NO_GO` verdict. `--all --export`, `--accept`, `--overwrite`. |
 | `lyt update` | Update the Lytos CLI itself to the latest version |
 
 ## Design principles

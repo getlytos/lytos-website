@@ -90,6 +90,7 @@ export default defineConfig({
 						{ label: 'lytos board', slug: 'cli/board' },
 						{ label: 'lytos archive', slug: 'cli/archive' },
 						{ label: 'lytos upgrade', slug: 'cli/upgrade' },
+						{ label: 'lytos review', slug: 'cli/review' },
 					],
 				},
 				{

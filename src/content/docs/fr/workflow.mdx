@@ -76,6 +76,12 @@ export const teamSteps = [
 			"L'IA produit dans le style du projet (rules + skills + memory). Le dev valide, challenge, ajuste.",
 	},
 	{
+		role: 'Reviewer (IA différente)',
+		action: 'Audit cross-model via lyt review',
+		detail:
+			"Une session IA fraîche — idéalement un vendor différent de l'implémenteur — lance `lyt review ISS-XXXX` sur la branche. Elle lit l'issue, le diff, les rules, la skill code-review, et retourne un verdict GO ou NO_GO. NO_GO renvoie l'issue en 3-in-progress avec une liste de corrections concrète ; GO la laisse en 4-review pour validation humaine. L'indépendance des biais est tout l'intérêt : un modèle qui audite son propre code partage les angles morts qui ont causé l'erreur.",
+	},
+	{
 		role: 'Dev',
 		action: 'Ouvre une PR',
 		detail:
@@ -83,9 +89,9 @@ export const teamSteps = [
 	},
 	{
 		role: 'Lead Dev / Reviewer',
-		action: 'Review',
+		action: 'Review humaine',
 		detail:
-			"Vérifie que les rules et skills sont respectés. Ajoute à memory ce qui doit être appris pour les issues suivantes.",
+			"Passe humaine finale par-dessus l'audit cross-model. Vérifie que les rules et skills sont respectés. Ajoute à memory ce qui doit être appris pour les issues suivantes.",
 	},
 	{
 		role: 'CI/CD',

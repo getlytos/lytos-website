@@ -76,6 +76,12 @@ export const teamSteps = [
 			"The AI produces in the project's style (rules + skills + memory). The dev validates, challenges, adjusts.",
 	},
 	{
+		role: 'Reviewer (different AI)',
+		action: 'Cross-model audit via lyt review',
+		detail:
+			"A fresh AI session — ideally a different vendor than the implementer — runs `lyt review ISS-XXXX` against the branch. It reads the issue, the diff, the rules, the code-review skill, and returns a GO or NO_GO verdict. NO_GO sends the issue back to 3-in-progress with a concrete fix list; GO leaves it in 4-review awaiting human validation. Bias independence is the whole point: a model auditing its own code shares the blind spots that caused the mistake.",
+	},
+	{
 		role: 'Dev',
 		action: 'Opens a PR',
 		detail:
@@ -83,9 +89,9 @@ export const teamSteps = [
 	},
 	{
 		role: 'Lead Dev / Reviewer',
-		action: 'Review',
+		action: 'Human review',
 		detail:
-			'Verifies that rules and skills are respected. Adds to memory what should be learned for future issues.',
+			'Final human pass on top of the cross-model audit. Verifies that rules and skills are respected. Adds to memory what should be learned for future issues.',
 	},
 	{
 		role: 'CI/CD',
