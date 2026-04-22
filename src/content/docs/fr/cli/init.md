@@ -85,6 +85,10 @@ lyt upgrade --migrate-cursor
 
 Cette commande déplace votre contenu `.cursorrules` existant vers `.cursor/rules/lytos.mdc`, en l'enveloppant avec le front-matter moderne. Le contenu original est préservé — c'est une conversion de format, pas une remise à zéro. Voir [`lyt upgrade`](/fr/cli/upgrade/) pour le comportement complet.
 
+### Pour les équipes — forcer la règle
+
+L'interface Team Rules de Cursor (Settings → Rules) propose une option **« Enforce this rule »** qui empêche les membres de l'équipe de désactiver ou modifier la règle localement. Si votre équipe a besoin d'une garantie dure que chaque session Cursor charge `.lytos/` — pour de la compliance, de l'audit, ou de l'onboarding — la personne qui gère l'espace Cursor peut marquer la règle Lytos comme enforced là-bas. C'est un réglage Cursor, pas quelque chose que `lyt init` contrôle ; le CLI écrit un fichier `.mdc` standard auquel n'importe lequel des quatre modes d'activation peut être appliqué.
+
 ## Détection de stack
 
 `lytos init` détecte automatiquement votre stack technique en regardant :
