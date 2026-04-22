@@ -51,6 +51,10 @@ Running `lyt upgrade --migrate-cursor`:
 
 Your original rules are preserved verbatim — the migration is a format upgrade, not a reset.
 
+### Auto-detection
+
+A plain `lyt upgrade` (no flag) does **not** silently leave a legacy `.cursorrules` behind. When it sees one at the project root and there is no `.cursor/rules/lytos.mdc` yet, it prints a warning telling you to run `lyt upgrade --migrate-cursor`. The warning is informational — the legacy file is left in place so the migration stays opt-in.
+
 ### Idempotent and safe
 
 Running `--migrate-cursor` twice is harmless: the second invocation sees no legacy file and prints `No legacy .cursorrules to migrate`. Combine with `--dry-run` to preview.

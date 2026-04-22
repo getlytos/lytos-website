@@ -51,6 +51,10 @@ Le format de règles actuel de Cursor est des fichiers `.mdc` par règle sous `.
 
 Vos règles originales sont préservées verbatim — la migration est une mise à jour de format, pas une remise à zéro.
 
+### Auto-détection
+
+Un `lyt upgrade` sans flag ne laisse **pas** silencieusement un `.cursorrules` hérité en place. Quand il en voit un à la racine du projet et qu'aucun `.cursor/rules/lytos.mdc` n'existe encore, il affiche un avertissement qui vous renvoie vers `lyt upgrade --migrate-cursor`. L'avertissement est informatif — le fichier hérité reste en place pour que la migration reste opt-in.
+
 ### Idempotent et sans risque
 
 Lancer `--migrate-cursor` deux fois est sans risque : la seconde invocation ne voit pas de fichier hérité et affiche `No legacy .cursorrules to migrate`. À combiner avec `--dry-run` pour previewer.
