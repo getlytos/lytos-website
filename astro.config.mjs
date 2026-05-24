@@ -100,7 +100,14 @@ export default defineConfig({
 						{ label: 'Manifesto', slug: 'philosophy/manifesto', translations: { fr: 'Manifeste' } },
 						{ label: 'Sovereignty', slug: 'philosophy/sovereignty', translations: { fr: 'Souveraineté' } },
 						{ label: 'Trainer Kit', slug: 'philosophy/trainers', translations: { fr: 'Kit formateur' } },
-						{ label: 'Dev Roles in the AI Era', slug: 'philosophy/roles', translations: { fr: 'Les métiers du dev' } },
+						{ label: 'The New Team Paradigm', slug: 'philosophy/roles', translations: { fr: 'Le nouveau paradigme d\'équipe' } },
+					],
+				},
+				{
+					label: 'Thinking',
+					translations: { fr: 'Réflexions' },
+					items: [
+						{ label: 'The Scrum Master is becoming a feature', slug: 'thinking/scrum-master-is-a-feature', translations: { fr: 'Le Scrum Master devient une feature' } },
 					],
 				},
 			],
