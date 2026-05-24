@@ -23,6 +23,12 @@ Not because it's clever. Because it's where the work happens. An AI agent that r
 
 No external tool required. No sync needed. No drift between what's written and what's built.
 
+## Governed Velocity
+
+This is the paradigm shift in one sentence: **the speed of a builder, the quality of a lead dev, without the ceremony overhead**.
+
+Agile answered *"waterfall plans too much — let's ship fast."* Lytos answers *"AI executes fast but without traceability — let's govern without slowing down."* Not Agile 2.0. A new premise.
+
 ## Does this sound familiar?
 
 Most teams that adopted AI tools in 2024–2025 are in this situation: the AI is fast, the output is uneven, nobody really knows why a decision was made, and context disappears between sessions. If you recognize yourself in the middle column, that's the problem Lytos solves.
@@ -82,3 +88,9 @@ That's the team. Three roles. No Scrum Master. No ceremonies.
 A team of three to five people, working repo-first, can move faster and ship cleaner than a Scrum team twice its size — because there's no management layer to maintain.
 
 That's not a feature of AI. It's a feature of removing the gap between where the project lives and where the work happens.
+
+## Two tensions worth naming
+
+**The Builder is a high bar.** Directing AI well requires domain knowledge, technical judgment, and the ability to evaluate output. Someone arriving at Lytos without that background will struggle. Two answers: either the Gouvernant's rules are strong enough to compensate, or Lytos helps Builders develop judgment through tool feedback — a poorly structured issue is flagged with an explanation, not just blocked.
+
+**Governance must disappear into the gesture.** If it feels like overhead, it gets bypassed. An issue drop that triggers the right gitflow, an issue that opens with the right context pre-loaded — that's the central challenge of any repo-first workflow. The frame only works if working inside it is faster than working around it.
