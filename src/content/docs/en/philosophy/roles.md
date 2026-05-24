@@ -23,6 +23,24 @@ Not because it's clever. Because it's where the work happens. An AI agent that r
 
 No external tool required. No sync needed. No drift between what's written and what's built.
 
+## Does this sound familiar?
+
+Most teams that adopted AI tools in 2024–2025 are in this situation: the AI is fast, the output is uneven, nobody really knows why a decision was made, and context disappears between sessions. If you recognize yourself in the middle column, that's the problem Lytos solves.
+
+| | Before AI | Most teams today | With Lytos |
+|---|---|---|---|
+| **Project memory** | In heads, Confluence, meetings | The AI knows nothing the next morning — same briefing every session | In the repo, reloaded automatically every session |
+| **Auditability** | Ticket + PR — partial | Nobody can answer in code review: who generated this, with which model, on which prompt? | Issue + ADR + commit — reconstructible two years later |
+| **Delivery speed** | Limited by human coordination | Fast, but unpredictable — significant rework | Fast and consistent — the frame prevents rework |
+| **Code quality** | Depends on the human reviewer | Two developers, the same prompt, two different architectures | `rules/` applied every session — consistency is structural |
+| **Conventions** | Verbal, in Confluence, rarely enforced | Reinterpreted at every session — or simply ignored | Versioned in `rules/`, enforced automatically |
+| **AI hallucination** | N/A | Undetectable until review — the AI invents decisions, ignores constraints | Manifest + rules reduce drift — every session restarts from the same constraints |
+| **Sovereignty** | Data locked in a SaaS vendor | Context locked in the AI provider's chat history | Everything in Git — you own it, portable, no vendor lock-in |
+| **Switching AI providers** | N/A | Change Claude for GPT = all context lost, start over | Switch the engine, keep the frame — zero context loss |
+| **AI cost** | N/A | Constant rebriefing = wasted tokens every session | Structured context = predictable cost, cacheable |
+| **Reproducibility** | Processes documented, hard to replay | Prompts are throwaway — impossible to reproduce what was produced | Issue + skill + rules = reproducible, transmissible workflow |
+| **Onboarding** | Weeks of context transfer | Each new AI session — or new team member — starts from zero | Clone the repo, read `.lytos/` — immediately operational |
+
 ## The ideal team
 
 This premise has a natural consequence for how a team is structured.
