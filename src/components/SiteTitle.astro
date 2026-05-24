@@ -10,12 +10,14 @@ const pathname = Astro.url.pathname;
 const lang: 'en' | 'fr' = pathname.startsWith('/fr/') || pathname === '/fr' ? 'fr' : 'en';
 
 const labels = lang === 'fr'
-	? { docs: 'Documentation', cli: 'CLI' }
-	: { docs: 'Documentation', cli: 'CLI' };
+	? { docs: 'Documentation', cli: 'CLI', blog: 'Blog', contact: 'Contact' }
+	: { docs: 'Documentation', cli: 'CLI', blog: 'Blog', contact: 'Contact' };
 
 const links = [
 	{ label: labels.docs, href: `/${lang}/method/manifest/` },
 	{ label: labels.cli,  href: `/${lang}/cli/overview/` },
+	{ label: labels.blog, href: `/${lang}/blog/` },
+	{ label: labels.contact, href: `/${lang}/contact/` },
 ];
 ---
 

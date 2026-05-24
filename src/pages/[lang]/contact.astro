@@ -1,0 +1,179 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { type BlogLang } from '../../lib/blog';
+
+export function getStaticPaths() {
+	return ['en', 'fr'].map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as BlogLang;
+const isFr = lang === 'fr';
+const title = 'Contact';
+const description = isFr
+	? 'Contacter Lytos pour une question, une démonstration ou une collaboration.'
+	: 'Contact Lytos for a question, demo, or collaboration.';
+const copy = isFr
+	? {
+			kicker: 'Lytos / Contact',
+			heading: 'Parlons de votre manière de builder.',
+			intro:
+				'Pour une question sur Lytos, une démonstration, un retour produit ou une collaboration, envoyez un message direct.',
+			name: 'Nom',
+			email: 'Email',
+			message: 'Message',
+			submit: 'Préparer le message',
+			note: "Le formulaire ouvre votre client email local. L'adresse n'est pas exposée en clair dans le HTML.",
+			fallback: 'Si votre navigateur bloque l’ouverture, réessayez après avoir rempli le message.',
+		}
+	: {
+			kicker: 'Lytos / Contact',
+			heading: 'Tell us how you build.',
+			intro: 'For a question about Lytos, a demo, product feedback, or a collaboration, send a direct message.',
+			name: 'Name',
+			email: 'Email',
+			message: 'Message',
+			submit: 'Prepare message',
+			note: 'The form opens your local email client. The address is not exposed in plain text in the HTML.',
+			fallback: 'If your browser blocks the handoff, try again after filling in the message.',
+		};
+---
+
+<BlogLayout title={title} description={description} lang={lang}>
+	<section class="blog-container contact-page">
+		<div class="contact-copy">
+			<div class="blog-kicker">{copy.kicker}</div>
+			<h1 class="blog-title">{copy.heading}</h1>
+			<p class="blog-description">{copy.intro}</p>
+		</div>
+
+		<form class="contact-form" data-contact-form>
+			<label>
+				<span>{copy.name}</span>
+				<input name="name" autocomplete="name" required />
+			</label>
+			<label>
+				<span>{copy.email}</span>
+				<input name="email" type="email" autocomplete="email" required />
+			</label>
+			<label>
+				<span>{copy.message}</span>
+				<textarea name="message" rows="8" required></textarea>
+			</label>
+			<button class="contact-submit" type="submit">{copy.submit}</button>
+			<p class="contact-note">{copy.note}</p>
+			<p class="contact-note" data-contact-status hidden>{copy.fallback}</p>
+		</form>
+	</section>
+</BlogLayout>
+
+<script>
+	const form = document.querySelector('[data-contact-form]');
+	const status = document.querySelector('[data-contact-status]');
+	const user = ['frederic'];
+	const domain = ['galline', 'fr'];
+
+	form?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const data = new FormData(form);
+		const name = String(data.get('name') ?? '').trim();
+		const email = String(data.get('email') ?? '').trim();
+		const message = String(data.get('message') ?? '').trim();
+		const to = `${user.join('')}@${domain.join('.')}`;
+		const subject = encodeURIComponent('Lytos contact');
+		const body = encodeURIComponent(`${message}\n\n${name}\n${email}`);
+
+		window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+		status?.removeAttribute('hidden');
+	});
+</script>
+
+<style>
+	.contact-page {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(20rem, 30rem);
+		gap: clamp(2rem, 7vw, 5rem);
+		padding-block: clamp(3rem, 8vw, 6rem);
+	}
+
+	.contact-copy {
+		align-self: start;
+	}
+
+	.contact-form {
+		display: grid;
+		gap: 1rem;
+		padding-top: 0.5rem;
+	}
+
+	.contact-form label {
+		display: grid;
+		gap: 0.4rem;
+	}
+
+	.contact-form span,
+	.contact-note {
+		color: var(--lytos-ink-soft);
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.78rem;
+		letter-spacing: 0.04em;
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		width: 100%;
+		box-sizing: border-box;
+		border: 1px solid var(--lytos-ink-12);
+		border-radius: 2px;
+		background: rgba(255, 255, 255, 0.32);
+		color: var(--lytos-ink);
+		font: inherit;
+		line-height: 1.5;
+		padding: 0.8rem 0.9rem;
+	}
+
+	.contact-form textarea {
+		resize: vertical;
+	}
+
+	.contact-form input:focus,
+	.contact-form textarea:focus {
+		border-color: var(--lytos-olive-line);
+		outline: 2px solid var(--lytos-olive-soft);
+		outline-offset: 1px;
+	}
+
+	.contact-submit {
+		justify-self: start;
+		border: 1px solid var(--lytos-olive-deep);
+		border-radius: 2px;
+		background: var(--lytos-olive-deep);
+		color: var(--lytos-paper);
+		cursor: pointer;
+		font: 500 0.95rem/1 var(--sl-font-system);
+		padding: 0.8rem 1rem;
+		transition:
+			background var(--lytos-dur) var(--lytos-ease),
+			border-color var(--lytos-dur) var(--lytos-ease),
+			transform 60ms var(--lytos-ease);
+	}
+
+	.contact-submit:hover {
+		background: var(--lytos-olive-dark);
+		border-color: var(--lytos-olive-dark);
+	}
+
+	.contact-submit:active {
+		transform: translateY(1px);
+	}
+
+	.contact-note {
+		margin: 0;
+		line-height: 1.55;
+	}
+
+	@media (max-width: 48rem) {
+		.contact-page {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

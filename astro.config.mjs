@@ -103,13 +103,6 @@ export default defineConfig({
 						{ label: 'The New Team Paradigm', slug: 'philosophy/roles', translations: { fr: 'Le nouveau paradigme d\'équipe' } },
 					],
 				},
-				{
-					label: 'Thinking',
-					translations: { fr: 'Réflexions' },
-					items: [
-						{ label: 'The Scrum Master is becoming a feature', slug: 'thinking/scrum-master-is-a-feature', translations: { fr: 'Le Scrum Master devient une feature' } },
-					],
-				},
 			],
 			customCss: ['./src/styles/custom.css'],
 			components: {

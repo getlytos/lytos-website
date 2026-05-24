@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../../../layouts/BlogLayout.astro';
+import {
+	blogLocales,
+	formatDate,
+	getTerms,
+	slugFromEntry,
+	slugify,
+	sortNewestFirst,
+	type BlogLang,
+} from '../../../../lib/blog';
+
+export async function getStaticPaths() {
+	const posts = (await getCollection('blog')).filter((entry) => !entry.data.draft);
+
+	return getTerms(posts, 'category').flatMap((term) =>
+		['en', 'fr'].flatMap((lang) => {
+			const localizedPosts = posts.filter(
+				(post) => post.data.lang === lang && slugify(post.data.category) === term.slug,
+			);
+			if (localizedPosts.length === 0) return [];
+			return [{ params: { lang, category: term.slug }, props: { term, posts: localizedPosts } }];
+		}),
+	);
+}
+
+const lang = Astro.params.lang as BlogLang;
+const labels = blogLocales[lang];
+const posts = sortNewestFirst(Astro.props.posts);
+const term = Astro.props.term;
+const title = `${labels.categoryPrefix}: ${term.label}`;
+const description =
+	lang === 'fr'
+		? `Articles Lytos dans la catégorie ${term.label}.`
+		: `Lytos articles in the ${term.label} category.`;
+---
+
+<BlogLayout title={title} description={description} lang={lang}>
+	<section class="blog-container blog-hero">
+		<a class="blog-back" href={`/${lang}/blog/`}>{labels.backToBlog}</a>
+		<div class="blog-kicker">{labels.categoryPrefix}</div>
+		<h1 class="blog-title">{term.label}</h1>
+		<p class="blog-description">{description}</p>
+	</section>
+
+	<section class="blog-container blog-list">
+		{posts.map((post) => (
+			<article class="blog-card">
+				<div class="blog-meta">{formatDate(post.data.date, lang)} · {post.data.author}</div>
+				<h2>
+					<a href={`/${lang}/blog/${slugFromEntry(post)}/`}>{post.data.title}</a>
+				</h2>
+				<p>{post.data.description}</p>
+			</article>
+		))}
+	</section>
+</BlogLayout>

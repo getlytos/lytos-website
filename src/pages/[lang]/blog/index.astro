@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import {
+	blogLocales,
+	formatDate,
+	getTerms,
+	slugFromEntry,
+	sortNewestFirst,
+	type BlogLang,
+} from '../../../lib/blog';
+
+export function getStaticPaths() {
+	return ['en', 'fr'].map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as BlogLang;
+const labels = blogLocales[lang];
+const posts = sortNewestFirst(
+	(await getCollection('blog')).filter((entry) => entry.data.lang === lang && !entry.data.draft),
+);
+const categories = getTerms(posts, 'category');
+const tags = getTerms(posts, 'tag');
+const title = labels.blog;
+const description =
+	lang === 'fr'
+		? 'Articles, réflexions et notes de terrain sur Lytos, le développement assisté par IA et les équipes repo-first.'
+		: 'Articles, reflections, and field notes about Lytos, AI-assisted development, and repo-first teams.';
+---
+
+<BlogLayout title={title} description={description} lang={lang}>
+	<section class="blog-container blog-hero">
+		<div class="blog-kicker">Lytos / {labels.blog}</div>
+		<h1 class="blog-title">{labels.archive}</h1>
+		<p class="blog-description">{description}</p>
+	</section>
+
+	<section class="blog-container blog-grid" aria-label={labels.allPosts}>
+		<div class="blog-list">
+			{posts.length === 0 && <p>{labels.empty}</p>}
+			{posts.map((post) => {
+				const category = getTerms([post], 'category')[0];
+				return (
+					<article class="blog-card">
+						<div class="blog-meta">
+							{formatDate(post.data.date, lang)} · {post.data.author} ·{' '}
+							<a href={`/${lang}/blog/category/${category.slug}/`}>{post.data.category}</a>
+						</div>
+						<h2>
+							<a href={`/${lang}/blog/${slugFromEntry(post)}/`}>{post.data.title}</a>
+						</h2>
+						<p>{post.data.description}</p>
+					</article>
+				);
+			})}
+		</div>
+
+		<aside class="blog-sidebar">
+			<section>
+				<h2>{labels.categories}</h2>
+				<ul class="blog-pills">
+					{categories.map((category) => (
+						<li>
+							<a class="blog-pill" href={`/${lang}/blog/category/${category.slug}/`}>
+								{category.label} <span>{category.count}</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
+			<section>
+				<h2>{labels.tags}</h2>
+				<ul class="blog-pills">
+					{tags.map((tag) => (
+						<li>
+							<a class="blog-pill" href={`/${lang}/blog/tag/${tag.slug}/`}>
+								{tag.label} <span>{tag.count}</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		</aside>
+	</section>
+</BlogLayout>
