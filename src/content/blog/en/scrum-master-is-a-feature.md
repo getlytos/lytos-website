@@ -1,6 +1,14 @@
 ---
 title: The Scrum Master is becoming a feature
 description: Agile built a management layer above the code. That layer is now the bottleneck. The repo was always the project.
+date: 2026-05-24
+author: Frédéric Galliné
+category: Organization
+tags:
+  - Agile
+  - AI
+  - Repo-first
+lang: en
 ---
 
 At some point, software teams started managing their work in tools that don't know what a commit is.

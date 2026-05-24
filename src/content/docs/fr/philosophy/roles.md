@@ -23,6 +23,12 @@ Pas parce que c'est malin. Parce que c'est là que le travail se passe. Un agent
 
 Pas d'outil externe nécessaire. Pas de synchronisation. Pas de dérive entre ce qui est écrit et ce qui est construit.
 
+## La vélocité gouvernée
+
+Le déplacement de paradigme en une phrase : **la vitesse d'un builder, la qualité d'un lead dev, sans l'overhead des cérémonies**.
+
+L'agile répondait à *"le waterfall planifie trop — livrons vite."* Lytos répond à *"l'IA exécute vite mais sans traçabilité — gouvernons sans ralentir."* Ce n'est pas Agile 2.0. C'est une nouvelle prémisse.
+
 ## Ça vous parle ?
 
 La plupart des équipes qui ont adopté l'IA en 2024-2025 sont dans cette situation : l'IA est rapide, le résultat est inégal, personne ne sait vraiment pourquoi une décision a été prise, et le contexte disparaît entre chaque session. Si vous vous reconnaissez dans la colonne du milieu, c'est le problème que Lytos résout.
@@ -82,3 +88,9 @@ C'est l'équipe. Trois rôles. Pas de Scrum Master. Pas de cérémonies.
 Une équipe de trois à cinq personnes, travaillant repo-first, peut aller plus vite et livrer plus proprement qu'une équipe Scrum deux fois plus grande — parce qu'il n'y a pas de couche de gestion à maintenir.
 
 Ce n'est pas une feature de l'IA. C'est une feature du fait de supprimer l'écart entre là où le projet vit et là où le travail se passe.
+
+## Deux tensions à nommer
+
+**Le Builder est un profil élevé.** Bien diriger l'IA demande une connaissance du domaine, du jugement technique et la capacité à évaluer l'output. Quelqu'un qui arrive chez Lytos sans ce bagage va peiner. Deux réponses : soit les rules du Gouvernant sont assez solides pour compenser, soit Lytos aide le Builder à monter en compétence via le feedback de l'outil — une issue mal structurée est signalée avec une explication, pas seulement bloquée.
+
+**La gouvernance doit disparaître dans le geste.** Si elle se ressent comme un overhead, elle sera contournée. Un drop d'issue qui déclenche le bon gitflow, une issue qui s'ouvre avec le bon contexte pré-chargé — c'est le défi central de tout workflow repo-first. Le cadre ne fonctionne que si travailler dedans est plus rapide que travailler autour.

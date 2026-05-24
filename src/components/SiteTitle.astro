@@ -1,7 +1,7 @@
 ---
 /**
  * Custom SiteTitle: renders the default logo + adds top-nav links
- * ("Documentation" and "CLI") so the splash home signals there's
+ * so the splash home signals there's
  * actual documentation behind it — not a one-pager.
  */
 import Default from '@astrojs/starlight/components/SiteTitle.astro';
@@ -10,11 +10,12 @@ const pathname = Astro.url.pathname;
 const lang: 'en' | 'fr' = pathname.startsWith('/fr/') || pathname === '/fr' ? 'fr' : 'en';
 
 const labels = lang === 'fr'
-	? { docs: 'Documentation', cli: 'CLI' }
-	: { docs: 'Documentation', cli: 'CLI' };
+	? { docs: 'Documentation', blog: 'Blog', cli: 'CLI' }
+	: { docs: 'Documentation', blog: 'Blog', cli: 'CLI' };
 
 const links = [
 	{ label: labels.docs, href: `/${lang}/method/manifest/` },
+	{ label: labels.blog, href: `/${lang}/blog/` },
 	{ label: labels.cli,  href: `/${lang}/cli/overview/` },
 ];
 ---

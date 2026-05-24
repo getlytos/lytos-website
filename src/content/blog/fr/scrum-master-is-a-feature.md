@@ -1,6 +1,14 @@
 ---
 title: Le Scrum Master devient une feature
 description: L'agile a construit une couche de gestion au-dessus du code. Cette couche est devenue le goulot d'étranglement. Le repo a toujours été le projet.
+date: 2026-05-24
+author: Frédéric Galliné
+category: Organisation
+tags:
+  - Agile
+  - IA
+  - Repo-first
+lang: fr
 ---
 
 À un moment, les équipes de développement ont commencé à gérer leur travail dans des outils qui ne savent pas ce qu'est un commit.

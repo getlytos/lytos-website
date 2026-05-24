@@ -1,0 +1,53 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import {
+	blogLocales,
+	formatDate,
+	getTerms,
+	slugFromEntry,
+	slugify,
+	type BlogLang,
+} from '../../../lib/blog';
+
+export async function getStaticPaths() {
+	const posts = (await getCollection('blog')).filter((entry) => !entry.data.draft);
+
+	return posts.map((post) => ({
+		params: { lang: post.data.lang, slug: slugFromEntry(post) },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const lang = post.data.lang as BlogLang;
+const labels = blogLocales[lang];
+const { Content } = await render(post);
+const category = getTerms([post], 'category')[0];
+---
+
+<BlogLayout title={post.data.title} description={post.data.description} lang={lang}>
+	<article class="blog-article">
+		<header class="blog-article-header">
+			<a class="blog-back" href={`/${lang}/blog/`}>{labels.backToBlog}</a>
+			<h1 class="blog-article-title">{post.data.title}</h1>
+			<div class="blog-meta">
+				{formatDate(post.data.date, lang)} · {post.data.author} ·{' '}
+				<a href={`/${lang}/blog/category/${category.slug}/`}>{post.data.category}</a>
+			</div>
+			<ul class="blog-pills" aria-label={labels.tags}>
+				{post.data.tags.map((tag) => (
+					<li>
+						<a class="blog-pill" href={`/${lang}/blog/tag/${slugify(tag)}/`}>
+							{tag}
+						</a>
+					</li>
+				))}
+			</ul>
+		</header>
+
+		<div class="blog-content">
+			<Content />
+		</div>
+	</article>
+</BlogLayout>

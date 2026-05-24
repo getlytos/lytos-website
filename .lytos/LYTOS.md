@@ -1,0 +1,127 @@
+# Lytos — AI Briefing
+
+*This file explains the Lytos method to the AI working on this project. It is read once at the start of the first session to understand the framework. Afterwards, only the manifest and memory are needed.*
+
+---
+
+## What Lytos is
+
+Lytos is a human-AI working method. It replaces agent "personas" (LeadDev, UX Expert...) with operational procedures (skills), quality criteria (rules), and persistent memory (memory). The human is the architect, the AI executes within the defined framework.
+
+## The 5 pillars
+
+Lytos is organized around five named pillars. Every project contains all five, each materialized as a file or directory.
+
+| Pillar | Name | Purpose | Directory |
+|--------|------|---------|-----------|
+| 1 | **Intent** | The project's constitution — why it exists | `manifest.md` |
+| 2 | **Design** | Procedures for recurring tasks | `skills/` |
+| 3 | **Standards** | Non-negotiable quality criteria | `rules/` |
+| 4 | **Progress** | What's moving, what's blocked | `issue-board/` |
+| 5 | **Memory** | Accumulated knowledge, sovereign and portable | `memory/` |
+
+These 5 pillars are the method. Everything else (agent documentation, tool adapters, scripts, templates) is supporting material.
+
+## Files and their roles
+
+| File | Role | When to read it |
+|------|------|-----------------|
+| `manifest.md` | The project's constitution — identity, stack, decision principles, AI models | At each session |
+| `memory/MEMORY.md` | Memory summary — points to specialized files in `cortex/` | At each session |
+| `memory/cortex/*.md` | Specialized zones (architecture, backend, frontend, patterns, bugs, business, sprints) | Load only what's relevant to the task |
+| `rules/default-rules.md` | Universal quality criteria | At each session |
+| `rules/*-rules.md` | Project-specific rules (if they exist) | At each session |
+| `skills/session-start.md` | Lytos bootstrap protocol — what to read at the start of any session | At each session |
+| `skills/<name>/SKILL.md` | Task skills in the [agentskills.io](https://agentskills.io) open standard format (code-review, testing, documentation, etc.) | Discovered natively by AI tools via progressive disclosure; the issue's optional `skill` field is a hint |
+| `issue-board/BOARD.md` | Kanban view — task progress status, including the review gate before done | When working on a task |
+| `issue-board/[status]/ISS-*.md` | Issues with YAML frontmatter (source of truth) | Read the assigned issue |
+| `scripts/generate-board.py` | Regenerates BOARD.md from the frontmatter | Use at the end of a task if needed |
+
+AI bridge files such as `CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `.cursor/rules/lytos.mdc`, `GEMINI.md`, or `.windsurfrules` are supporting adapters. When Lytos is re-initialized, existing bridge files are preserved by default unless the human explicitly requests overwrite.
+
+## How the pieces fit together
+
+```
+manifest.md          → Provides context and decision principles
+    ↓
+memory/MEMORY.md     → Provides history and past learnings
+    ↓
+rules/               → Defines quality criteria to follow
+    ↓
+skills/              → Defines the procedure to follow for the task
+    ↓
+issue-board/         → Defines the exact scope of the task (frontmatter = source of truth)
+```
+
+## First session — two paths
+
+### Path A: Manifest is already filled
+
+If the manifest has real content (not placeholders), skip the setup flow. Go directly to `skills/session-start.md` — load the context, identify the current task, and start working. The briefing below is not needed.
+
+### Path B: Manifest is empty or incomplete
+
+Help the human fill it in by asking questions:
+
+### Identity
+- "What is the project called and what does it do in one sentence?"
+
+### Why this project exists
+- "What problem does this project solve? For whom?"
+
+### Tech stack
+- Look at the project files (package.json, requirements.txt, go.mod, composer.json) to automatically detect the stack.
+
+### Vocabulary
+- "What terms are specific to this project? What is a [business term] in this context?"
+
+### Development principles
+Principles are **trade-offs**, not wishful thinking. Each principle says "we prefer X over Y, because Z." Examples:
+- "Simplicity over flexibility — we don't code for a hypothetical need"
+- "Convention over configuration — we follow the framework, we don't invent"
+
+If the human says "write clean code", reformulate it as a verifiable trade-off.
+
+### AI models by complexity
+- Ask which models are available (budget, tools)
+- Suggest a distribution: the cheapest model for docs and formatting, the standard model for day-to-day development, the most powerful for architecture and security
+
+## Helping the human create issues
+
+Issues have YAML frontmatter. The important fields:
+- `complexity: light | standard | heavy` — determines which model to use (see table in the manifest)
+- `skill` — **optional** hint: name a specific task skill to prefer for this issue. Most tools discover the right skill automatically via agentskills.io progressive disclosure; only set this for borderline tasks
+- `depends` — issues that must be completed before this one
+- `status` — the canonical status (source of truth). The file should also be in the matching folder, but if there's a conflict, the frontmatter takes precedence
+
+## Status flow
+
+The normal task lifecycle is:
+
+`1-backlog → 2-sprint → 3-in-progress → 4-review → 5-done → archive/<quarter>/`
+
+The key point is that finishing code does not immediately mean "done". Work stops in `4-review` until the human, CI, or another validation gate explicitly approves promotion to `5-done`.
+
+## Implementer and auditor are two different roles
+
+A first-class Lytos principle: **the AI session that implements an issue does not audit it**. A fresh session — ideally a different vendor or model — runs the review, reads the diff cold, and returns a `GO` or `NO_GO` verdict in a fixed block format. This is what `lyt review ISS-XXXX` is for.
+
+Why it matters:
+
+- Cognitive biases are model-specific. A model auditing its own code shares the blind spots that produced any mistake.
+- Nobody validates their own PR — the distance that makes code review useful applies to AI reviewers too.
+- The practice is live proof of Lytos's model-independence: if Claude can implement and GPT can audit the same repo with zero re-configuration, the thesis holds.
+
+Concretely: if Claude Code implemented, audit with Codex / GPT / Gemini. If GPT wrote the code, audit with Claude. The pairing matters less than the principle: **never the same session that wrote the code**.
+
+## Expected behavior
+
+1. **Don't interpret silently** — if an instruction is ambiguous, ask rather than guess
+2. **Trace decisions** — when a technical choice is made, mention it with the reason
+3. **Tick the DoD as you go** — when a Definition-of-Done item is done, tick it immediately in the issue file, before moving to the next. Batching ticks at end-of-task silently misses items and produces false NO_GO verdicts in review
+4. **At the end of coding** — update the issue's frontmatter to `4-review`, move the file, update the BOARD.md. Promotion to `5-done` happens only after explicit validation
+5. **Enrich the memory** — if a significant learning occurs, add it to the corresponding cortex file
+
+---
+
+*This briefing is operational. The AI reading it understands the method and can guide the human in setting up Lytos.*

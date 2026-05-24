@@ -5,6 +5,7 @@ const locale = Astro.locals?.starlightRoute?.locale;
 const isFr = locale === 'fr';
 
 const docsPath = isFr ? '/fr/getting-started/introduction/' : '/en/getting-started/introduction/';
+const contactPath = isFr ? '/fr/contact/' : '/en/contact/';
 const tagline = isFr
 	? 'une méthode de travail avec les LLM'
 	: 'a human-first method for working with AI agents';
@@ -18,7 +19,7 @@ const tagline = isFr
 	<span class="lytos-ft-sep">·</span>
 	<a href="https://github.com/getlytos/lytos-method" target="_blank" rel="noopener noreferrer">GitHub</a>
 	<a href={docsPath}>{isFr ? 'Documentation' : 'Documentation'}</a>
-	<a href="mailto:frederic@galline.fr">Contact</a>
+	<a href={contactPath}>Contact</a>
 	<span class="lytos-ft-sep">·</span>
 	<span>MIT · CC BY-SA 4.0</span>
 	<span class="lytos-ft-meta">v0.1 · 2026</span>
