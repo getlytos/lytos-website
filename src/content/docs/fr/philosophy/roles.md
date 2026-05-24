@@ -23,6 +23,24 @@ Pas parce que c'est malin. Parce que c'est là que le travail se passe. Un agent
 
 Pas d'outil externe nécessaire. Pas de synchronisation. Pas de dérive entre ce qui est écrit et ce qui est construit.
 
+## Ça vous parle ?
+
+La plupart des équipes qui ont adopté l'IA en 2024-2025 sont dans cette situation : l'IA est rapide, le résultat est inégal, personne ne sait vraiment pourquoi une décision a été prise, et le contexte disparaît entre chaque session. Si vous vous reconnaissez dans la colonne du milieu, c'est le problème que Lytos résout.
+
+| | Avant l'IA | La plupart des équipes aujourd'hui | Avec Lytos |
+|---|---|---|---|
+| **Mémoire du projet** | Dans les têtes, dans Confluence, dans les réunions | L'IA ne sait plus rien le lendemain matin — même briefing à chaque session | Dans le repo, rechargée automatiquement à chaque session |
+| **Auditabilité** | Ticket + PR — traçabilité partielle | Personne ne peut répondre en code review : qui a généré ça, avec quel modèle, sur quel prompt ? | Issue + ADR + commit — reconstructible deux ans plus tard |
+| **Vitesse de livraison** | Limitée par la coordination humaine | Rapide, mais imprévisible — beaucoup de retravail | Rapide et cohérent — le cadre évite le retravail |
+| **Qualité du code** | Dépend du reviewer humain | Deux devs, le même prompt, deux architectures différentes | `rules/` appliquées à chaque session — la cohérence est structurelle |
+| **Conventions** | Verbales, dans Confluence, rarement respectées | Réinterprétées à chaque session — ou simplement ignorées | Versionnées dans `rules/`, appliquées automatiquement |
+| **Hallucination IA** | N/A | Indétectable avant la review — l'IA invente des décisions, ignore des contraintes | Manifest + rules réduisent la dérive — chaque session repart des mêmes contraintes |
+| **Souveraineté** | Données enfermées chez un vendor SaaS | Contexte enfermé dans l'historique de chat du fournisseur IA | Tout dans Git — vous en êtes propriétaires, portable, sans lock-in |
+| **Changement de fournisseur IA** | N/A | Changer Claude pour GPT = tout le contexte perdu, recommencer | On change le moteur, le cadre reste — zéro perte de contexte |
+| **Coût IA** | N/A | Rebriefing constant = tokens gaspillés à chaque session | Contexte structuré = coût prévisible et optimisable |
+| **Reproductibilité** | Processus documentés, difficiles à rejouer | Les prompts sont jetables — impossible de reproduire ce qui a été produit | Issue + skill + rules = workflow reproductible et transmissible |
+| **Onboarding** | Semaines de transfert de contexte | Chaque nouvelle session IA — ou nouveau membre — repart de zéro | Cloner le repo, lire `.lytos/` — opérationnel immédiatement |
+
 ## L'équipe idéale
 
 Ce principe a une conséquence naturelle sur la façon dont une équipe est structurée.
